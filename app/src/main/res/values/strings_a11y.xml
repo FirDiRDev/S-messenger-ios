@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a11y_level">Размер текста</string>
+    <string name="a11y_level_large">Крупный</string>
+    <string name="a11y_level_xlarge">Очень крупный</string>
+    <string name="a11y_level_max">Максимальный</string>
+    <string name="a11y_level_hint">Предел зависит от экрана: на компактных телефонах текст увеличивается меньше, на планшетах и складных - больше, чтобы всё помещалось</string>
+    <string name="a11y_contrast">Высокий контраст</string>
+    <string name="a11y_contrast_hint">Серые и бледные подписи (время, статусы, подсказки) становятся чисто белыми или чёрными - в зависимости от фона</string>
+    <string name="a11y_motion">Меньше движения</string>
+    <string name="a11y_motion_hint">Без пружинок, бликов и волн по стеклу. Включается само, если в системе убраны анимации</string>
+</resources>

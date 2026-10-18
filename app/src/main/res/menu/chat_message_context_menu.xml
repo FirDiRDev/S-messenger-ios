@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/reply" android:title="@string/reply"/>
+    <item android:id="@+id/forward" android:title="@string/forward"/>
+    <item android:id="@+id/select" android:title="@string/select_messages"/>
+    <item android:id="@+id/react" android:title="@string/react"/>
+    <item android:id="@+id/edit" android:title="@string/edit_message"/>
+    <item android:id="@+id/copy" android:title="@string/copy_atox"/>
+    <item android:id="@+id/pin" android:title="@string/pin"/>
+    <item android:id="@+id/delete" android:title="@string/delete"/>
+</menu>

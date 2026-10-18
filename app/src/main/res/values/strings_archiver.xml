@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Архиватор файлового менеджера -->
+<resources>
+    <string name="arc_title">Архиватор</string>
+    <string name="arc_open">🗜 Открыть в архиваторе</string>
+    <string name="arc_add_to_archive">🗜 Добавить в архив…</string>
+    <string name="arc_opening">Открываем архив…</string>
+    <string name="arc_creating">Создаём архив…</string>
+    <string name="arc_adding">Добавляем в архив…</string>
+    <string name="arc_extracting">Извлекаем…</string>
+    <string name="arc_testing">Проверяем архив…</string>
+    <string name="arc_deleting">Удаляем из архива…</string>
+    <string name="arc_renaming">Переименовываем…</string>
+    <string name="arc_cancelled">Отменено</string>
+
+    <string name="arc_create_title">Добавить в архив ZIP</string>
+    <string name="arc_create">Создать</string>
+    <string name="arc_name">Имя архива</string>
+    <string name="arc_level">Метод сжатия</string>
+    <string name="arc_level_store">Без сжатия</string>
+    <string name="arc_level_fast">Быстрое</string>
+    <string name="arc_level_normal">Обычное</string>
+    <string name="arc_level_max">Максимальное</string>
+    <string name="arc_password_optional">Пароль (необязательно)</string>
+    <string name="arc_password_hint">Пароль</string>
+    <string name="arc_password_show">Показать пароль</string>
+    <string name="arc_password_note">Шифрование ZipCrypto: архив откроется в WinRAR, 7-Zip и проводнике Windows. Имена файлов не шифруются.</string>
+    <string name="arc_delete_sources">Удалить исходные файлы после архивации</string>
+    <string name="arc_bad_name">Недопустимое имя</string>
+    <string name="arc_bad_path">Укажите полный путь, начиная с «/»</string>
+    <string name="arc_created">Архив «%1$s» готов</string>
+    <string name="arc_exists">«%1$s» уже существует</string>
+    <string name="arc_add_into">Добавить файлы в этот архив</string>
+
+    <string name="arc_replace">Заменить</string>
+    <string name="arc_skip">Пропустить</string>
+    <string name="arc_replace_all">Заменить все</string>
+    <string name="arc_skip_all">Пропустить все</string>
+
+    <string name="arc_password_title">🔒 Пароль</string>
+    <string name="arc_password_for">Архив «%1$s» защищён паролем</string>
+
+    <string name="arc_extract">Извлечь</string>
+    <string name="arc_extract_all">Извлечь всё</string>
+    <string name="arc_extract_selected">Извлечь выбранное (%1$d)</string>
+    <string name="arc_extract_here">📂 Извлечь сюда</string>
+    <string name="arc_extract_to_folder">📁 Извлечь в папку</string>
+    <string name="arc_extract_folder">📁 Извлечь в папку «%1$s»</string>
+    <string name="arc_extract_to">📍 Извлечь в…</string>
+    <string name="arc_extracted">Извлечено файлов: %1$d → %2$s</string>
+    <string name="arc_skipped">Пропущено: %1$d</string>
+    <string name="arc_blocked">Не извлечено из соображений безопасности (путь выходит за папку назначения): %1$d</string>
+
+    <string name="arc_add">Добавить</string>
+    <string name="arc_test">Проверить</string>
+    <string name="arc_info">Информация</string>
+    <string name="arc_view">Открыть</string>
+    <string name="arc_empty">В архиве пусто</string>
+    <string name="arc_delete_confirm">Удалить из архива выбранное (%1$d)?</string>
+    <string name="arc_subtitle">Файлов: %1$d · %2$s · сжатие %3$d%%</string>
+    <string name="arc_dir_info">Файлов: %1$d · %2$s</string>
+    <string name="arc_file_info">%1$s → %2$s (%3$d%%)</string>
+
+    <string name="arc_test_ok_title">✅ Архив в порядке</string>
+    <string name="arc_test_bad_title">⚠️ Найдены ошибки</string>
+    <string name="arc_test_ok">Ошибок не обнаружено. Проверено файлов: %1$d.</string>
+    <string name="arc_test_errors">Ошибок: %1$d (проверено без ошибок: %2$d)</string>
+
+    <string name="arc_info_format">Формат: %1$s</string>
+    <string name="arc_info_files">Файлов: %1$d · папок: %2$d</string>
+    <string name="arc_info_size">Исходный размер: %1$s</string>
+    <string name="arc_info_packed">Сжатый размер: %1$s</string>
+    <string name="arc_info_ratio">Степень сжатия: %1$d%%</string>
+    <string name="arc_info_file_size">Размер архива: %1$s</string>
+    <string name="arc_info_encrypted_yes">Шифрование: да 🔒</string>
+    <string name="arc_info_encrypted_no">Шифрование: нет</string>
+    <string name="arc_info_modified">Изменён: %1$s</string>
+    <string name="arc_info_comment">Комментарий:\n%1$s</string>
+    <string name="arc_read_only">Этот формат открывается только для чтения: файлы можно извлечь, но не изменить архив.</string>
+
+    <string name="arc_error_title">Архиватор</string>
+    <string name="arc_err_password">Неверный пароль</string>
+    <string name="arc_err_crc">Ошибка контрольной суммы в «%1$s»: файл повреждён или пароль неверный</string>
+    <string name="arc_err_rar">Архивы RAR пока не поддерживаются - встроенный архиватор работает с ZIP, TAR и TAR.GZ. Откройте файл другим приложением (например, RAR или ZArchiver).</string>
+    <string name="arc_err_7z">Архивы 7z пока не поддерживаются - встроенный архиватор работает с ZIP, TAR и TAR.GZ. Откройте файл другим приложением (например, ZArchiver).</string>
+    <string name="arc_err_unsupported">Не поддерживается: %1$s. Откройте файл другим приложением.</string>
+    <string name="arc_err_bomb">Подозрительный архив («zip-бомба»): распакованные данные больше заявленных или сжатие неправдоподобно сильное. Операция остановлена.</string>
+    <string name="arc_err_space">Не хватает места: нужно %1$s, свободно %2$s</string>
+    <string name="arc_err_bad">Файл повреждён или это не архив</string>
+
+    <string name="arc_home_find">🔍 Найти архивы в памяти</string>
+    <string name="arc_home_create">➕ Создать архив…</string>
+    <string name="arc_home_about">ℹ️ Что умеет архиватор</string>
+    <string name="arc_found_title">Архивы (%1$d)</string>
+    <string name="arc_about">• Создание ZIP из файлов и папок: 4 степени сжатия, пароль, удаление исходных.\n• Просмотр архива как папки: размеры, сжатие, даты, вложенные папки.\n• Извлечь всё или выбранное: сюда, в папку с именем архива или по любому пути; вопрос о замене файлов.\n• Добавление, удаление и переименование файлов внутри ZIP.\n• Проверка целостности (CRC) и сведения об архиве.\n• Чтение ZIP, JAR, APK, CBZ, TAR, TAR.GZ (TGZ), GZ. RAR и 7z не поддерживаются.\n• Защита от путей «../» и «zip-бомб».\n\nВыделите файлы и нажмите «В ZIP» или «Ещё → Добавить в архив». Нажмите на архив, чтобы открыть его.</string>
+
+    <string name="arc_pick_title">Выберите файлы</string>
+    <string name="arc_pick_hint">Нажмите на папку, чтобы открыть; удерживайте, чтобы выбрать её целиком</string>
+    <string name="arc_pick_add">Выбрать (%1$d)</string>
+    <string name="arc_pick_nothing">Ничего не выбрано</string>
+</resources>

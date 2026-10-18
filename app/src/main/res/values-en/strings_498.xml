@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="theme_music">🎵 Theme music</string>
+    <string name="theme_music_hint">The New Year tune of the winter event (December - February) plays across the app. Autumn, spring and summer have no music. It goes quiet in the background, during calls, videos, voice messages and games with their own music</string>
+    <string name="theme_music_volume">Theme music volume</string>
+    <string name="kbgif_failed">Couldn\'t send the GIF</string>
+    <string name="runner3_skin14">🌸 Sakura</string>
+    <string name="runner3_skin14_d">Spring look: pink ponytail, scarf and a starry trail.</string>
+    <string name="runner3_skin15">☀ Surfer</string>
+    <string name="runner3_skin15_d">Summer look: bucket hat, shorts and a turquoise board.</string>
+    <string name="runner3_skin16">🍂 Pumpkin</string>
+    <string name="runner3_skin16_d">Autumn look: warm beanie, scarf and a fiery trail.</string>
+    <string name="runner3_skin17">Ninja</string>
+    <string name="runner3_skin17_d">Black suit, mask and glowing red details.</string>
+    <string name="runner3_skin18">Astronaut</string>
+    <string name="runner3_skin18_d">Space suit, helmet lamp, visor and a starry trail.</string>
+    <string name="runner3_skin19">Pirate</string>
+    <string name="runner3_skin19_d">Bandana, gold chain and a board from an old ship.</string>
+    <string name="runner3_skin20">DJ</string>
+    <string name="runner3_skin20_d">Neon headphones, mohawk and a glowing trail.</string>
+    <string name="runner3_skin21">Golden champion</string>
+    <string name="runner3_skin21_d">All gold: cap, chain, board and a starry trail.</string>
+    <string name="runner3_p_shield">🛡 Shield!</string>
+    <string name="runner3_p_coins">💰 Coins ×2!</string>
+    <string name="runner3_p_slow">⏳ Slow motion!</string>
+    <string name="runner_m_play">▶  PLAY</string>
+    <string name="runner_m_best">🏆 Best: %1$d</string>
+    <string name="runner_m_skins">Outfits</string>
+    <string name="runner_m_shop">Shop</string>
+    <string name="runner_m_season">Season</string>
+    <string name="runner_m_music">Music</string>
+    <string name="runner_m_tap">Tap</string>
+    <string name="runner_m_on">on</string>
+    <string name="runner_m_off_state">off</string>
+    <string name="runner_m_auto">auto</string>
+    <string name="runner_m_winter">winter</string>
+    <string name="runner_m_spring">spring</string>
+    <string name="runner_m_summer">summer</string>
+    <string name="runner_m_autumn">autumn</string>
+    <string name="runner_m_off">off</string>
+    <string name="runner_m_classic">🚆 Classic city</string>
+    <string name="runner_m_hint">Swipe ← → to switch lanes, ↑ jump, ↓ roll. 10 run coins = 1 🪙</string>
+    <string name="photo_original">Send photos in original quality</string>
+    <string name="photo_original_hint">Off (recommended): large photos are recompressed to 2560 px - they send 3-8× faster, and GPS coordinates and the phone model are stripped from the file. Files sent as a document are never changed.</string>
+</resources>

@@ -1,0 +1,34 @@
+<style>
+.w{text-align:center}
+.t{font-size:13px;color:#94a3b8;margin-bottom:4px}
+.n{display:flex;justify-content:center;height:72px;overflow:hidden;font:800 60px/72px ui-monospace,Roboto,monospace;font-variant-numeric:tabular-nums;letter-spacing:-2px}
+.d{position:relative;width:.62em;height:72px;overflow:hidden}
+.d div{position:absolute;left:0;right:0;top:0;transition:transform .45s cubic-bezier(.3,1.35,.5,1)}
+.d span{display:block;height:72px}
+.n.neg{color:#fb7185}.n.pos{color:#4ade80}
+.bt{display:flex;gap:8px;margin-top:10px}
+.bt button{flex:1;border:0;border-radius:14px;padding:12px 0;font:800 18px sans-serif;color:#fff;background:rgba(255,255,255,.09);transition:transform .14s cubic-bezier(.3,1.8,.5,1),background .2s}
+.bt button:active{transform:scale(.88)}
+.bt .p{background:linear-gradient(135deg,#22c55e,#15803d)}.bt .m{background:linear-gradient(135deg,#f43f5e,#be123c)}
+.rs{margin-top:8px;border:0;background:none;color:#60a5fa;font:600 12.5px sans-serif}
+.rip{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rp .5s ease-out;pointer-events:none}
+@keyframes rp{to{transform:scale(3);opacity:0}}
+</style>
+<div class=w><div class=t id=hd>Счётчик</div><div class=n id=n></div>
+<div class=bt><button class=m data-v=-1>−1</button><button data-v=-10>−10</button><button data-v=10>+10</button><button class=p data-v=1>+1</button></div>
+<button class=rs id=rs>Сбросить</button></div>
+<script>
+(function(){
+document.getElementById('hd').textContent=pv('head','Счётчик');var ST=parseInt(pv('start','0'))||0;
+var v=ST,n=document.getElementById('n'),cols=[];
+function render(){var s=String(Math.abs(v)),w=Math.max(2,s.length);s=('00000'+s).slice(-w);
+ while(cols.length<w){var d=document.createElement('div');d.className='d';var inner=document.createElement('div');for(var k=0;k<10;k++){var sp=document.createElement('span');sp.textContent=k;inner.appendChild(sp)}d.appendChild(inner);n.insertBefore(d,n.querySelector('.d'));cols.unshift(inner)}
+ while(cols.length>w){n.removeChild(n.querySelector('.d'));cols.shift()}
+ for(var i=0;i<w;i++)cols[i].style.transform='translateY('+(-72*(+s[i]))+'px)';
+ n.className='n'+(v<0?' neg':v>0?' pos':'');var sg=n.querySelector('.sg');if(v<0&&!sg){sg=document.createElement('span');sg.className='sg';sg.textContent='−';n.insertBefore(sg,n.firstChild)}if(v>=0&&sg)sg.remove()}
+[].forEach.call(document.querySelectorAll('[data-v]'),function(b){b.style.position='relative';b.style.overflow='hidden';b.onclick=function(e){v=Math.max(-9999,Math.min(9999,v+ +b.dataset.v));render();
+ var r=document.createElement('i');r.className='rip';var bb=b.getBoundingClientRect(),s=bb.width;r.style.width=r.style.height=s+'px';r.style.left=(e.clientX-bb.left-s/2)+'px';r.style.top=(e.clientY-bb.top-s/2)+'px';b.appendChild(r);setTimeout(function(){r.remove()},500)}});
+document.getElementById('rs').onclick=function(){v=ST;render()};
+render();
+})();
+</script>

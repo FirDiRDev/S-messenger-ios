@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lite_title">Low-end device mode</string>
+    <string name="lite_auto">Auto - by phone power</string>
+    <string name="lite_on">Always on</string>
+    <string name="lite_off">Off</string>
+    <string name="lite_auto_on">auto (on now)</string>
+    <string name="lite_auto_off">auto (off now)</string>
+    <string name="lite_what">What does it do?</string>
+    <string name="lite_hint">The app stays just as beautiful but runs lighter on old and budget phones</string>
+    <string name="lite_enabled_toast">Low-end device mode is on</string>
+    <string name="lite_disabled_toast">Low-end device mode is off</string>
+    <string name="lite_explain">Everything stays beautiful: season colours, gradients, artwork, smooth transitions and animations. Only what strains a weak phone changes:\n\n• live decorations (shines, sparkles, gift and coin shimmer) are drawn at about 20 frames per second instead of 60;\n• glass refreshes half as often, without the liquid-glass shimmer;\n• chat photos load slightly smaller in a compact format - half the memory, no stutter while scrolling;\n• the screen runs at the standard rate (no 90/120 Hz) - less heat;\n• games show fewer particles and sparks, Rail Run has less side scenery and no heavy glows, in Durak live effects stay only on cards in your hand;\n• animated emoji repeat fewer times, the shop coin burst is smaller.\n\nResult: less heat, longer battery, smoother scrolling and games.\n\n“Auto” turns it on by itself: on phones with little memory (under 3 GB), 4 CPU cores or fewer, or budget models; while the phone is badly overheating; and if the interface stutters noticeably (until the next launch).</string>
+    <string name="lite_tour_title">Low-end device mode</string>
+    <string name="lite_tour_text">Settings → Appearance → “Low-end device mode”. The looks stay, but live decorations are drawn less often, glass refreshes less often and games use fewer particles - the phone heats less, the battery lasts longer and everything is smoother. In “Auto” it turns on by itself on weak phones.</string>
+    <string name="arc_tour_title">Archiver</string>
+    <string name="arc_tour_text">The file manager has an archiver: create ZIPs with a password and compression level, open archives like folders, extract all or selected files, add and delete files, test integrity.</string>
+</resources>

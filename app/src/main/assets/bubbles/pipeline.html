@@ -1,0 +1,41 @@
+<style>
+.hd{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.hd b{font-size:15px;flex:1}
+.st{font:600 11.5px sans-serif;padding:3px 8px;border-radius:8px;background:rgba(250,204,21,.15);color:#facc15;transition:all .3s}
+.st.ok{background:rgba(34,197,94,.15);color:#4ade80}
+.go{border:0;border-radius:10px;padding:5px 10px;font:600 12.5px sans-serif;color:#fff;background:linear-gradient(135deg,#3b82f6,#2563eb)}
+.go:active{transform:scale(.92)}
+.s{display:flex;align-items:center;gap:10px;padding:6px 0;position:relative}
+.s:not(:last-child):after{content:"";position:absolute;left:11px;top:30px;bottom:-6px;width:2px;background:rgba(255,255,255,.08)}
+.s.done:not(:last-child):after{background:linear-gradient(#22c55e,#22c55e);animation:grow .4s ease-out}
+@keyframes grow{from{transform:scaleY(0);transform-origin:top}to{transform:scaleY(1)}}
+.ic{width:24px;height:24px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:12px;background:rgba(255,255,255,.07);color:#64748b;transition:all .3s cubic-bezier(.3,1.6,.5,1)}
+.run .ic{background:transparent;border:2.5px solid rgba(59,130,246,.25);border-top-color:#3b82f6;animation:rot .8s linear infinite}
+.done .ic{background:#22c55e;color:#fff;transform:scale(1.08)}
+@keyframes rot{to{transform:rotate(360deg)}}
+.tx{flex:1}
+.tx b{font-size:13.5px;font-weight:600;color:#e2e8f0}
+.tx small{display:block;font-size:11.5px;color:#64748b;transition:color .3s}
+.run .tx small{color:#93c5fd}
+.tm{font:11.5px ui-monospace,monospace;color:#64748b}
+.pb{height:3px;margin-top:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;opacity:0;transition:opacity .2s}
+.run .pb{opacity:1}
+.pb i{display:block;height:100%;width:0;background:#3b82f6;border-radius:2px}
+</style>
+<div class=hd><span>🚀</span><b id=hd>Деплой</b><span class=st id=st>в очереди</span><button class=go id=go>▶ Запуск</button></div>
+<div id=list></div>
+<script>
+(function(){
+document.getElementById('hd').textContent=pv('head','Деплой');
+var S=pl('steps',[['Сборка','gradle assembleRelease','1.6'],['Тесты','412 тестов','2.2'],['Подпись','apksigner v2+v3','.9'],['Загрузка','S-messenger.apk · 27 МБ','1.8'],['Выкатка','10% → 50% → 100%','2']]).slice(0,8).map(function(s){return [s[0],s[1]||'',Math.max(.3,Math.min(10,parseFloat(s[2])||1.5))]});
+var L=document.getElementById('list'),el=[];
+S.forEach(function(s){var d=document.createElement('div');d.className='s';d.innerHTML='<div class=ic></div><div class=tx><b>'+H(s[0])+'</b><small>'+H(s[1])+'</small><div class=pb><i></i></div></div><span class=tm></span>';L.appendChild(d);el.push(d)});
+var busy=false;
+function run(){if(busy)return;busy=true;var st=document.getElementById('st');st.className='st';st.textContent='идёт…';el.forEach(function(d){d.className='s';d.querySelector('.ic').textContent='';d.querySelector('.tm').textContent='';d.querySelector('.pb i').style.width='0'});
+ var i=0;function nx(){if(i>=S.length){st.className='st ok';st.textContent='✓ готово';busy=false;return}
+  var d=el[i],dur=S[i][2]*1000,t0=performance.now();d.className='s run';
+  (function f(now){var k=Math.min(1,(now-t0)/dur);d.querySelector('.pb i').style.width=(k*100)+'%';d.querySelector('.tm').textContent=((now-t0)/1000).toFixed(1)+'с';if(k<1)requestAnimationFrame(f);else{d.className='s done';d.querySelector('.ic').textContent='✓';d.querySelector('.tm').textContent=S[i][2].toFixed(1)+'с';i++;setTimeout(nx,180)}})(t0)}
+ nx()}
+document.getElementById('go').onclick=run;setTimeout(run,500);
+})();
+</script>

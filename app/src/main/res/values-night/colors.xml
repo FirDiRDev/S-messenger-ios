@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Тёмная тема: глубокий сине-фиолетовый вместо серого -->
+<resources>
+    <color name="colorSurface">#1C1A33</color>
+    <color name="colorBackground">#0F0E1F</color>
+    <color name="textPrimary">#F1F0FA</color>
+    <color name="textSecondary">#A9A6C9</color>
+    <color name="colorGray">#8E8AB5</color>
+    <color name="receivedBubble">#2C2950</color>
+    <item name="dividerColor" type="color">#2A2748</item>
+    <color name="settingsAccent">#A89DFF</color>
+    <color name="settingsIconBg">#33A89DFF</color>
+    <color name="dialogItem">#1FFFFFFF</color>
+    <color name="dialogButtonTonal">#33FFFFFF</color>
+</resources>

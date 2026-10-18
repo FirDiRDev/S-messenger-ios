@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chatcore_tr_channel">File transfers</string>
+    <string name="chatcore_tr_sending">Sending: %1$s</string>
+    <string name="chatcore_tr_receiving">Downloading: %1$s</string>
+    <string name="chatcore_tr_sending_many">Sending files: %1$d</string>
+    <string name="chatcore_tr_receiving_many">Downloading files: %1$d</string>
+    <string name="chatcore_tr_cancel">Cancel</string>
+    <string name="chatcore_tr_sent">Sent: %1$s</string>
+    <string name="chatcore_tr_received">Downloaded: %1$s</string>
+    <string name="chatcore_tr_sent_many">Files sent: %1$d</string>
+    <string name="chatcore_tr_received_many">Files downloaded: %1$d</string>
+    <string name="chatcore_tr_file">File</string>
+    <string name="chatfx_guard_menu">🛡 No screenshots</string>
+    <string name="chatfx_guard_on_title">Turn on protection?</string>
+    <string name="chatfx_guard_off_title">Turn off protection?</string>
+    <string name="chatfx_guard_on_text">Screenshots, screen recording, forwarding, copying and saving will be blocked for both of you.</string>
+    <string name="chatfx_guard_off_text">Screenshots, forwarding and copying are allowed again for both.</string>
+    <string name="chatfx_guard_enable">Turn on</string>
+    <string name="chatfx_guard_disable">Turn off</string>
+    <string name="chatfx_guard_wire_on">Screenshots blocked</string>
+    <string name="chatfx_guard_wire_off">Screenshots allowed</string>
+    <string name="chatfx_guard_you_on">🛡 You blocked screenshots</string>
+    <string name="chatfx_guard_you_off">🛡 You allowed screenshots</string>
+    <string name="chatfx_guard_peer_on">🛡 Screenshots blocked by contact</string>
+    <string name="chatfx_guard_peer_off">🛡 Screenshots allowed by contact</string>
+    <string name="chatfx_guard_blocked">Forwarding and copying are blocked</string>
+</resources>

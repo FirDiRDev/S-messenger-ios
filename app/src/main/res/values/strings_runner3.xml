@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- «Бег по рельсам» в 3D: облики, обходчик, встречные поезда, усиления -->
+<resources>
+    <string name="runner3_no_gl">На этом устройстве нет OpenGL ES 2.0 - 3D-забег недоступен.</string>
+    <string name="runner3_back">Назад</string>
+    <string name="runner3_menu">🏠 В меню</string>
+    <string name="runner3_skins">👕 Облики</string>
+    <string name="runner3_skins_title">Облики бегуна</string>
+    <string name="runner3_special">✨ особый</string>
+    <string name="runner3_buy">Купить за %1$d 🪙</string>
+    <string name="runner3_equip">Надеть</string>
+    <string name="runner3_equipped">✓ Надет</string>
+    <string name="runner3_bought">Облик «%1$s» куплен и надет!</string>
+    <string name="runner3_no_coins">Не хватает монет: ещё %1$d 🪙</string>
+    <string name="runner3_go">Вперёд!</string>
+    <string name="runner3_new_best">🏆 Новый рекорд!</string>
+    <string name="runner3_crash">Бум! Забег окончен</string>
+    <string name="runner3_caught">Обходчик поймал!</string>
+    <string name="runner3_chaser_warn">Обходчик догоняет!</string>
+    <string name="runner3_continue_for">💖 Продолжить за %1$d 🪙</string>
+    <string name="runner3_result">Очки: %1$d\nМонет собрано: %2$d 🪙 (10 = 1 🪙 на баланс)\nДистанция: %3$d м\nРекорд: %4$d</string>
+    <string name="runner3_intro">Свайп влево/вправо - путь, вверх - прыжок, вниз - кувырок. Забегай по рампам на крыши, берегись встречных поездов и не попадайся обходчику! Каждые 10 монет забега = 1 🪙 в кошелёк.\nРекорд: %1$d</string>
+    <string name="runner3_tap_on">Касание = прыжок: вкл</string>
+    <string name="runner3_tap_off">Касание = прыжок: выкл</string>
+    <string name="runner3_p_magnet">🧲 Магнит!</string>
+    <string name="runner3_p_jet">🚀 Ракетный ранец!</string>
+    <string name="runner3_p_sneakers">👟 Пружинные кеды!</string>
+    <string name="runner3_p_x2">✖2 Двойные очки!</string>
+    <string name="runner3_p_board">🛹 Парящая доска!</string>
+    <string name="runner3_rules">Бегун сам бежит вперёд по одному из трёх путей. Не врезайтесь, собирайте монеты и не дайте себя поймать.\n\nУправление:\n• свайп влево / вправо - соседний путь;\n• свайп вверх - прыжок;\n• свайп вниз - кувырок (в прыжке - быстро вниз);\n• по желанию: касание экрана = прыжок (кнопка в меню).\n\nПрепятствия:\n• красно-белый низкий барьер и конусы - перепрыгнуть; задели - споткнулись;\n• жёлто-чёрный высокий барьер - только кувырком под ним;\n• глухой барьер и поезда - только обойти соседним путём. Вбок в поезд - тоже спотыкание.\n• на стоящий поезд можно забежать по рампе и бежать по крышам вагонов;\n• 🚆 встречный поезд едет навстречу: гудок, яркие фары и «!» над его путём - уходите!\n\nОбходчик с фонарём и робопсом бежит сзади. Споткнулись - он рядом; споткнулись ещё раз, пока он близко, - поймал. Иначе он отстаёт.\n\nУсиления:\n• 🧲 магнит - монеты сами летят к вам;\n• 🚀 ракетный ранец - полёт над поездами за монетами в воздухе;\n• 👟 пружинные кеды - прыжки выше, можно запрыгнуть на вагон;\n• ✖2 - двойные очки;\n• 🛹 парящая доска - прощает одно столкновение.\n\nМножитель очков растёт с дистанцией. После аварии можно один раз продолжить за 50 🪙. Каждые 10 монет забега = 1 монета мессенджера (остаток копится между забегами). За монеты - облики бегуна (в т. ч. особые - со свечением и следом).</string>
+
+    <string name="runner3_skin0">Шустрик</string>
+    <string name="runner3_skin0_d">Синяя толстовка, красная кепка и рюкзак - всегда готов к забегу.</string>
+    <string name="runner3_skin1">Ветерок</string>
+    <string name="runner3_skin1_d">Летняя футболка, шорты и панама - лёгкий как ветер.</string>
+    <string name="runner3_skin2">Гаражный рокер</string>
+    <string name="runner3_skin2_d">Чёрная куртка, алый ирокез и цепочка.</string>
+    <string name="runner3_skin3">Следопыт</string>
+    <string name="runner3_skin3_d">Походная куртка, оранжевая шапка с помпоном и большой рюкзак.</string>
+    <string name="runner3_skin4">Механик депо</string>
+    <string name="runner3_skin4_d">Комбинезон, каска с фонариком и наушники.</string>
+    <string name="runner3_skin5">Морской волк</string>
+    <string name="runner3_skin5_d">Тельняшка, бандана и шарф по ветру.</string>
+    <string name="runner3_skin6">Кибер-курьер</string>
+    <string name="runner3_skin6_d">Неоновые полосы, светящийся визор и неоновый след.</string>
+    <string name="runner3_skin7">Ледяной вихрь</string>
+    <string name="runner3_skin7_d">Белый капюшон, маска и морозный след из снежинок.</string>
+    <string name="runner3_skin8">Звёздная пыль</string>
+    <string name="runner3_skin8_d">Фиолетовый костюм с золотом - за ним сыплются звёзды.</string>
+    <string name="runner3_skin9">Огненный рывок</string>
+    <string name="runner3_skin9_d">Пламенный костюм, светящийся визор и огненный след.</string>
+    <string name="runner3_skin10">❄ Снеговик</string>
+    <string name="runner3_skin10_d">Белый костюм, красная шапка с помпоном и шарф. След - иней.</string>
+    <string name="runner3_skin11">❄ Новогодний эльф</string>
+    <string name="runner3_skin11_d">Зелёный костюм, колпак и золотой шарф. След - искры-звёзды.</string>
+    <string name="runner3_skin12">❄ Снежная королева</string>
+    <string name="runner3_skin12_d">Голубой наряд, светлая коса и мерцающий иней.</string>
+    <string name="runner3_skin13">❄ Ледяной страж</string>
+    <string name="runner3_skin13_d">Ледяные доспехи, светящийся визор и морозный след.</string>
+</resources>

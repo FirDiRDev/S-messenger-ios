@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="vpn_ping_anim" type="id"/>
+    <item name="tag_emoji_bound" type="id"/>
+    <item name="tag_emoji_motion" type="id"/>
+    <item name="tag_buttons3d" type="id"/>
+    <item name="vpnShield" type="id"/>
+    <item name="toolbarSearch" type="id"/>
+    <item name="side_pane" type="id"/>
+    <item name="tag_btn_norm" type="id"/>
+    <item name="tag_btn_fit" type="id"/>
+    <item name="retry_ft" type="id"/>
+    <item name="tag_season" type="id"/>
+    <item name="tag_yt_id" type="id"/>
+    <item name="tag_yt_target" type="id"/>
+    <item name="tag_no_garland" type="id"/>
+    <item name="tag_sender_color" type="id"/>
+    <item name="tag_season_watch" type="id"/>
+    <item name="tag_rich_overlay" type="id"/>
+    <item name="tag_rich_rebuild" type="id"/>
+    <item name="tag_selection_menu" type="id"/>
+    <item name="tag_peek" type="id"/>
+    <item name="tag_jelly" type="id"/>
+    <item name="tag_card_sig" type="id"/>
+    <item name="tag_spoiler" type="id"/>
+    <item name="tag_gif" type="id"/>
+</resources>

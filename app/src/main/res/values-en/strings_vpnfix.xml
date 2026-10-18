@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings: reliable VPN shutdown and stopping background matching -->
+<resources>
+    <string name="bg_jobs_stopping">Stopping…</string>
+    <string name="bg_jobs_stopped">Search stopped</string>
+</resources>

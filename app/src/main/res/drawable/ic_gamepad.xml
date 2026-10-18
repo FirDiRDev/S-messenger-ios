@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Геймпад (джойстик) для пункта «Игры». -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M7.5,6h9c3.2,0 5.4,2.6 5.9,6.2l0.6,4.3c0.3,2.1 -1.3,3.9 -3.4,3.9c-1.2,0 -2.3,-0.6 -2.9,-1.6L15.4,16.5h-6.8l-1.3,2.3c-0.6,1 -1.7,1.6 -2.9,1.6c-2.1,0 -3.7,-1.8 -3.4,-3.9l0.6,-4.3C2.1,8.6 4.3,6 7.5,6zM7,9v2H5v2h2v2h2v-2h2v-2H9V9H7zM16.5,9.2a1.3,1.3 0,1 0,0 2.6a1.3,1.3 0,1 0,0 -2.6zM18.8,11.8a1.3,1.3 0,1 0,0 2.6a1.3,1.3 0,1 0,0 -2.6z"/>
+</vector>

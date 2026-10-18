@@ -1,0 +1,40 @@
+<style>
+.hd{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.av{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#22d3ee);display:flex;align-items:center;justify-content:center;font-size:15px;animation:breathe 2.4s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.07);box-shadow:0 0 16px rgba(99,102,241,.6)}}
+.hd b{font-size:15px;flex:1}
+.hd small{font-size:11.5px;color:#a5b4fc}
+.q{background:rgba(59,130,246,.18);border-radius:12px 12px 4px 12px;padding:7px 10px;margin-left:30px;font-size:13px;color:#dbeafe}
+#a{margin-top:8px;font-size:13.5px;line-height:1.5;min-height:215px;color:#e2e8f0}
+#a .w{opacity:0;display:inline;animation:fi .35s ease-out forwards}
+@keyframes fi{from{opacity:0;filter:blur(3px)}to{opacity:1;filter:none}}
+#a code{font:12px ui-monospace,monospace;background:rgba(255,255,255,.08);padding:1px 4px;border-radius:4px}
+.cur{display:inline-block;width:7px;height:15px;background:#818cf8;border-radius:2px;vertical-align:-2px;margin-left:2px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.th{display:flex;gap:4px;align-items:center;font-size:12px;color:#94a3b8;height:18px}
+.th i{width:5px;height:5px;border-radius:50%;background:#818cf8;animation:jp 1s ease-in-out infinite}
+.th i:nth-child(2){animation-delay:.15s}.th i:nth-child(3){animation-delay:.3s}
+@keyframes jp{40%{transform:translateY(-4px);opacity:1}0%,80%{opacity:.4}}
+.rp{border:0;border-radius:10px;padding:5px 10px;font:600 12px sans-serif;color:#fff;background:rgba(255,255,255,.1);margin-top:6px}
+</style>
+<div class=hd><div class=av>✦</div><b id=nm>S-AI</b><small id=state>думает…</small></div>
+<div class=q id=qq>Как работает S-messenger без серверов?</div>
+<div class=th id=th><i></i><i></i><i></i>&nbsp;размышляю</div>
+<div id=a></div>
+<button class=rp id=rp>↻ Ещё раз</button>
+<script>
+(function(){
+document.getElementById('nm').textContent=pv('name','S-AI');document.getElementById('qq').textContent=pv('q','Как работает S-messenger без серверов?');
+var TXT0='Каждый телефон - сам себе сервер. Сообщения идут **напрямую** от устройства к устройству по протоколу `Tox`, зашифрованные ключом, который есть только у вас и у собеседника.\n\nЕсли прямого пути нет, пакет передаётся через узлы сети - но они видят только шифр. Никаких аккаунтов, номеров и центральной базы: нечего взломать и нечего отключить. 🔒';
+var TXT=pv('a',TXT0);
+var A=document.getElementById('a'),timer=null;
+function md(w){return H(w).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/`(.+?)`/g,'<code>$1</code>')}
+function go(){clearTimeout(timer);A.innerHTML='';document.getElementById('th').style.visibility='visible';document.getElementById('state').textContent='думает…';
+ var words=TXT.split(/( |\n)/),i=0;var cur=document.createElement('span');cur.className='cur';
+ timer=setTimeout(function tick(){document.getElementById('th').style.visibility='hidden';document.getElementById('state').textContent='печатает…';
+  if(i>=words.length){cur.remove();document.getElementById('state').textContent='готово ✓';return}
+  var w=words[i++];if(w=='\n'){A.insertBefore(document.createElement('br'),cur.parentNode?cur:null);}else{var s=document.createElement('span');s.className='w';s.innerHTML=md(w);A.appendChild(s);}
+  A.appendChild(cur);timer=setTimeout(tick,w==' '?0:28+Math.random()*55)},900)}
+document.getElementById('rp').onclick=go;go();
+})();
+</script>

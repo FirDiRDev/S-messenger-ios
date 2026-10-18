@@ -1,0 +1,9 @@
+# Файлы, которые убраны из проекта. Распаковка архива поверх старой папки их не удаляет,
+# поэтому build_apk.bat и сборка из Android Studio (задача smCleanObsolete) удаляют их сами.
+# Пути - от корня проекта, через "/". Строки с # - комментарии.
+app/src/main/assets/music/spring_loop.ogg
+app/src/main/assets/music/spring_loop.json
+app/src/main/assets/music/summer_loop.ogg
+app/src/main/assets/music/summer_loop.json
+app/src/main/assets/music/autumn_loop.ogg
+app/src/main/assets/music/autumn_loop.json

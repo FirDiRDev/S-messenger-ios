@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Пересылка и «Поделиться»: файл проверяется перед отправкой (без «пустышек»). -->
+    <string name="forward_file_not_ready">Файл «%1$s» ещё не загружен до конца — переслать его пока нельзя</string>
+    <string name="forward_file_missing">Файл «%1$s» больше недоступен (удалён или очищен из памяти) — переслать его нельзя</string>
+    <string name="forward_file_empty">Файл «%1$s» пустой — пересылка отменена</string>
+    <string name="forward_failed_some">Не удалось переслать файлов: %1$d (пустые, недокачанные или удалённые)</string>
+    <string name="file_send_failed">Не удалось отправить «%1$s»: файл пустой или к нему нет доступа</string>
+    <string name="share_file_failed">Не удалось поделиться: файл пустой или удалён</string>
+</resources>

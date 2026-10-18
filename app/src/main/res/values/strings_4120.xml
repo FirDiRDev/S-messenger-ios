@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="runner3_skin32">🐱 Кошка Мия</string>
+    <string name="runner3_skin32_d">Ловкая девочка-кошка: ушки, хвост и мягкие лапы. Маленькая и лёгкая - прыгает выше всех.</string>
+    <string name="runner3_skin33">🤖 Робот Болт</string>
+    <string name="runner3_skin33_d">Широкий железный робот с антеннами, наплечниками и светящимся визором. Магнит в его руках держится дольше и тянет дальше.</string>
+    <string name="runner3_skin34">😈 Чертёнок Искра</string>
+    <string name="runner3_skin34_d">Озорной красный чертёнок с рожками и хвостом. Жадный до золота: монет за забег больше.</string>
+    <string name="runner3_skin35">😇 Ангел Лира</string>
+    <string name="runner3_skin35_d">Высокая и тонкая, с белыми крыльями и золотым нимбом. Удача на её стороне - бонусы действуют дольше.</string>
+    <string name="runner3_skin36">🛡 Рыцарь Гром</string>
+    <string name="runner3_skin36_d">Могучий рыцарь в стальных наплечниках и алом плаще. Всегда начинает забег под защитой щита.</string>
+    <string name="runner3_skin37">👑 Король Монетус</string>
+    <string name="runner3_skin37_d">Важный король в короне и мантии. Первые секунды забега его очки удваиваются.</string>
+    <string name="runner3_skin38">🦊 Лис Рыжик</string>
+    <string name="runner3_skin38_d">Хитрый рыжий лис с пушистым хвостом и острыми ушами. Первая запинка ему прощается - обходчик не догонит.</string>
+    <string name="runner3_skin39">🔥 Феникс Солнца</string>
+    <string name="runner3_skin39_d">ЛЕГЕНДАРНЫЙ. Огненная птица в человеческом облике: пылающие крылья, нимб и огненная аура. Один раз за забег возрождается после столкновения.</string>
+    <string name="runner3_skin40">🐉 Ледяной Дракон</string>
+    <string name="runner3_skin40_d">ЛЕГЕНДАРНЫЙ. Рогатый дракон с ледяными крыльями и хвостом, морозная аура. +50% монет и долгий магнит.</string>
+    <string name="runner3_skin41">🌑 Тёмный Властелин</string>
+    <string name="runner3_skin41_d">ЛЕГЕНДАРНЫЙ. Корона, рога, броня и тёмный плащ, фиолетовая аура. Щит и очки ×2 с первой секунды.</string>
+    <string name="runner3_skin42">⚔ Кибер-самурай</string>
+    <string name="runner3_skin42_d">ЛЕГЕНДАРНЫЙ. Неоновая броня, плащ, визор и антенны, алая аура. Бонусы на 60% дольше, первая запинка прощается.</string>
+</resources>

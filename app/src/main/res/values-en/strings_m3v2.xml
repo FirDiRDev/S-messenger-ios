@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="m3v2_win_text">Score: %1$s\nMoves bonus (%2$d): +%3$s\n+%4$d coins</string>
+    <string name="m3v2_best">Level best: %1$s</string>
+    <string name="m3v2_new_best">New level best!</string>
+    <string name="m3v2_end_bonus">Moves to points: +%1$d</string>
+    <string name="m3v2_intro_title">New on this level</string>
+    <string name="m3v2_intro_holes">Shaped board: holes have no cells, gems fall straight through them. Make matches where the cells are.</string>
+    <string name="m3v2_intro_leaf">Leaves: green cells with a leaf badge. A leaf is cleared when a gem pops on its cell.</string>
+    <string name="m3v2_intro_leaf2">Double leaves (number 2): pop a gem on the cell twice to clear them.</string>
+    <string name="m3v2_intro_ice">Ice: a frozen gem cannot move or fall. Match it or blast a bonus over it - the ice cracks.</string>
+    <string name="m3v2_intro_ice2">Double ice (with a snowflake): the first hit cracks it, the second one breaks it.</string>
+    <string name="m3v2_intro_gold">Gold deposits: stone blocks full of gold. Make a match right next to a deposit or blast a bonus over it. The number shows hits left; a broken deposit frees its cell.</string>
+    <string name="m3v2_intro_gold2">Hard deposits take 2-3 hits. Each hit adds cracks and lowers the number.</string>
+    <string name="m3v2_intro_score">Score goal: reach the target score (the star in the goals). Cascades multiply points.</string>
+    <string name="m3v2_help_gold">Gold deposits - blocks instead of gems: hit them with a match next to them or a blast. The number shows hits left</string>
+    <string name="m3v2_help_holes">Shaped boards: holes have no cells, gems fall straight through them</string>
+    <string name="m3v3_gems">💎 Gems: %1$d (+%2$d coins)</string>
+    <string name="m3v3_moves_used">Moves used: %1$d of %2$d</string>
+    <string name="m3v3_reset_note">Match3 updated: new star rules, gem rewards and new board shapes. Progress has been reset.</string>
+</resources>

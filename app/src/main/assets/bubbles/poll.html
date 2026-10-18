@@ -1,0 +1,32 @@
+<style>
+.q{font-size:15px;font-weight:700;margin-bottom:2px}
+.m{font-size:11.5px;color:#94a3b8;margin-bottom:8px}
+.o{position:relative;border-radius:12px;padding:9px 11px;margin-top:6px;background:rgba(255,255,255,.06);overflow:hidden;display:flex;align-items:center;gap:8px;font-size:13.5px;transition:transform .15s cubic-bezier(.3,1.7,.5,1)}
+.o:active{transform:scale(.97)}
+.o .f{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,rgba(59,130,246,.35),rgba(59,130,246,.18));transition:width .9s cubic-bezier(.2,1,.3,1);border-radius:12px}
+.o.me .f{background:linear-gradient(90deg,rgba(34,197,94,.45),rgba(34,197,94,.2))}
+.o span,.o b{position:relative}
+.o span{flex:1}
+.o b{font-variant-numeric:tabular-nums;opacity:0;transition:opacity .4s}
+.vt .o b{opacity:1}
+.o i{position:relative;width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.35);flex:none;font-style:normal;display:flex;align-items:center;justify-content:center;font-size:11px;transition:all .25s cubic-bezier(.3,1.7,.5,1)}
+.o.me i{background:#22c55e;border-color:#22c55e;transform:scale(1.15)}
+.ft{display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:#94a3b8}
+.ft button{border:0;background:none;color:#60a5fa;font:600 12px sans-serif;padding:0}
+</style>
+<div id=w><div class=q id=qq>Какую функцию сделать следующей?</div><div class=m>Анонимный опрос · нажмите на вариант</div><div id=os></div>
+<div class=ft><span id=tot></span><button id=rt>Переголосовать</button></div></div>
+<script>
+(function(){
+document.getElementById('qq').textContent=pv('q','Какую функцию сделать следующей?');
+var O=pl('options',[['🎥 Видеокружки','41'],['🗂 Папки чатов','27'],['🤖 Боты','19'],['🌍 Переводчик','13']]).slice(0,8).map(function(o){return ['',o[0],Math.max(0,parseInt(o[1])||0)]}),me=-1,os=document.getElementById('os');
+O.forEach(function(o,i){var d=document.createElement('div');d.className='o';d.innerHTML='<div class=f></div><i></i><span>'+H(o[1])+'</span><b>0%</b>';d.onclick=function(){vote(i)};os.appendChild(d)});
+function tot(){return Math.max(1,O.reduce(function(a,o){return a+o[2]},0))}
+function show(){var t=tot();document.getElementById('w').className=me>=0?'vt':'';[].forEach.call(os.children,function(d,i){var p=Math.round(O[i][2]/t*100);d.className='o'+(i==me?' me':'');d.querySelector('i').textContent=i==me?'✓':'';
+ d.querySelector('.f').style.width=me>=0?p+'%':'0';var b=d.querySelector('b'),from=parseInt(b.textContent)||0,t0=performance.now();(function f(now){var k=Math.min(1,(now-t0)/800);b.textContent=Math.round(from+(p-from)*(1-Math.pow(1-k,3)))+'%';if(k<1)requestAnimationFrame(f)})(t0)});
+ document.getElementById('tot').textContent=t+' голосов'}
+function vote(i){if(me==i)return;if(me>=0)O[me][2]--;me=i;O[i][2]++;show();os.children[i].animate([{transform:'scale(1)'},{transform:'scale(1.03)'},{transform:'scale(1)'}],{duration:300,easing:'ease-out'})}
+document.getElementById('rt').onclick=function(){if(me>=0){O[me][2]--;me=-1;show()}};
+show();
+})();
+</script>

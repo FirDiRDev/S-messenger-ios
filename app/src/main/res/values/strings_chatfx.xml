@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chatcore_tr_channel">Передача файлов</string>
+    <string name="chatcore_tr_sending">Отправка: %1$s</string>
+    <string name="chatcore_tr_receiving">Загрузка: %1$s</string>
+    <string name="chatcore_tr_sending_many">Отправка файлов: %1$d</string>
+    <string name="chatcore_tr_receiving_many">Загрузка файлов: %1$d</string>
+    <string name="chatcore_tr_cancel">Отменить</string>
+    <string name="chatcore_tr_sent">Отправлено: %1$s</string>
+    <string name="chatcore_tr_received">Загружено: %1$s</string>
+    <string name="chatcore_tr_sent_many">Отправлено файлов: %1$d</string>
+    <string name="chatcore_tr_received_many">Загружено файлов: %1$d</string>
+    <string name="chatcore_tr_file">Файл</string>
+    <string name="chatfx_guard_menu">🛡 Без скриншотов</string>
+    <string name="chatfx_guard_on_title">Включить запрет?</string>
+    <string name="chatfx_guard_off_title">Выключить запрет?</string>
+    <string name="chatfx_guard_on_text">Скриншоты, запись экрана, пересылка, копирование и сохранение будут запрещены у обоих.</string>
+    <string name="chatfx_guard_off_text">Скриншоты, пересылка и копирование снова доступны у обоих.</string>
+    <string name="chatfx_guard_enable">Включить</string>
+    <string name="chatfx_guard_disable">Выключить</string>
+    <string name="chatfx_guard_wire_on">Скриншоты запрещены</string>
+    <string name="chatfx_guard_wire_off">Скриншоты разрешены</string>
+    <string name="chatfx_guard_you_on">🛡 Вы запретили скриншоты</string>
+    <string name="chatfx_guard_you_off">🛡 Вы разрешили скриншоты</string>
+    <string name="chatfx_guard_peer_on">🛡 Собеседник запретил скриншоты</string>
+    <string name="chatfx_guard_peer_off">🛡 Собеседник разрешил скриншоты</string>
+    <string name="chatfx_guard_blocked">Пересылка и копирование запрещены</string>
+</resources>

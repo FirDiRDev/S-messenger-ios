@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/fileTransfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+    <LinearLayout android:id="@+id/container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:orientation="vertical">
+        <!-- Голосовое: кнопка, волна, время -->
+        <LinearLayout android:id="@+id/voiceLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="2dp"
+                android:paddingEnd="6dp"
+                android:visibility="gone">
+            <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
+                <ImageButton android:id="@+id/voicePlay"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_voice_play"
+                        android:contentDescription="@string/voice_message"
+                        android:src="@drawable/ic_play"
+                        app:tint="@color/colorPrimary"/>
+                <!-- Загрузка голосового: крутится, крестик - отменить -->
+                <com.stoyko.smessenger.ui.ProgressRingView android:id="@+id/voiceRing"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:visibility="gone"/>
+            </FrameLayout>
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+                <com.stoyko.smessenger.ui.chat.WaveformView android:id="@+id/voiceWave"
+                        android:layout_width="160dp"
+                        android:layout_height="26dp"/>
+                <TextView android:id="@+id/voiceTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#E6FFFFFF"
+                        android:textSize="12sp"
+                        tools:text="0:07"/>
+            </LinearLayout>
+            <!-- Кнопка «Расшифровать» (текст голосового) -->
+            <ImageButton android:id="@+id/voiceTranscribe"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_voice_play"
+                    android:contentDescription="@string/voice_text_menu"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_transcribe"
+                    android:visibility="gone"
+                    app:tint="@color/colorPrimary"/>
+        </LinearLayout>
+
+        <!-- «Кружок» (видеосообщение) -->
+        <FrameLayout android:id="@+id/videoNoteBox"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:visibility="gone">
+            <com.stoyko.smessenger.media.VideoNoteView android:id="@+id/videoNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            <com.stoyko.smessenger.ui.ProgressRingView android:id="@+id/videoNoteRing"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+        </FrameLayout>
+
+        <!-- Файл: круг загрузки слева, имя и размер/скорость справа -->
+        <LinearLayout android:id="@+id/fileInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+            <!-- Значок типа файла (APK, ZIP, PDF...); на время загрузки - круг прогресса -->
+            <TextView android:id="@+id/fileIcon"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:importantForAccessibility="no"/>
+            <com.stoyko.smessenger.ui.ProgressRingView android:id="@+id/fileRing"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"/>
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView android:id="@+id/fileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="middle"
+                        android:maxWidth="200dp"
+                        android:maxLines="1"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        tools:text="linux_distro.iso"/>
+                <TextView android:id="@+id/fileSize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="12sp"
+                        tools:text="1,2 / 42 МБ · 350 КБ/с"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ProgressBar android:id="@+id/progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+        <TextView android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#CCFFFFFF"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+        <LinearLayout android:id="@+id/acceptLayout"
+                style="?buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+            <Button android:id="@+id/accept"
+                    style="?buttonBarPositiveButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:text="@string/accept"/>
+            <Button android:id="@+id/reject"
+                    style="?buttonBarPositiveButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:text="@string/reject"/>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/cancelLayout"
+                style="?buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+            <Button android:id="@+id/cancel"
+                    style="?buttonBarPositiveButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="0dp"
+                    android:text="@android:string/cancel"/>
+        </LinearLayout>
+        <FrameLayout android:id="@+id/completedLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+            <ImageView android:id="@+id/imagePreview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:importantForAccessibility="no"/>
+            <!-- Анимированный стикер из встроенных наборов (поверх статичной картинки) -->
+            <ImageView android:id="@+id/stickerAnim"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"/>
+            <!-- Видео: кнопка ▶ и длительность поверх кадра -->
+            <TextView android:id="@+id/videoPlayIcon"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_video_play"
+                    android:gravity="center"
+                    android:text="▶"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:visibility="gone"/>
+            <TextView android:id="@+id/videoDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|start"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_system_line"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="11sp"
+                    android:visibility="gone"/>
+            <!-- Фото ещё отправляется: круг с процентами поверх, крестик - отменить -->
+            <com.stoyko.smessenger.ui.ProgressRingView android:id="@+id/imageRing"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+            <TextView android:id="@+id/imageInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|start"
+                    android:layout_margin="6dp"
+                    android:background="@drawable/bg_system_line"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="11sp"
+                    android:visibility="gone"/>
+        </FrameLayout>
+        <!-- Подпись к файлу: уходит вместе с фото/видео/файлом и показывается под ним -->
+        <TextView android:id="@+id/ftCaption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="280dp"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="4dp"
+                android:textColor="@color/textPrimary"
+                android:textSize="15sp"
+                android:autoLink="web"
+                android:visibility="gone"/>
+    </LinearLayout>
+    <TextView android:id="@+id/timestamp"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/container"
+            android:layout_gravity="start"
+            tools:text="2020-12-24"/>
+</RelativeLayout>

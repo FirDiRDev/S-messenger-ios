@@ -1,0 +1,112 @@
+# XcodeGen: iosApp/StoykoMessenger.xcodeproj собирается из этого файла (`cd iosApp && xcodegen generate`).
+# .xcodeproj в репозиторий не коммитим (см. iosApp/.gitignore) - он всегда генерируется заново.
+name: StoykoMessenger
+
+options:
+  bundleIdPrefix: com.stoyko
+  deploymentTarget:
+    iOS: "15.0"          # WKContentWorld (iOS 14+), Compose Multiplatform (iOS 14+), BGTaskScheduler (iOS 13+)
+  createIntermediateGroups: true
+  developmentLanguage: ru
+
+settings:
+  base:
+    MARKETING_VERSION: "4.9.8"       # versionName из update.json
+    CURRENT_PROJECT_VERSION: "88"    # versionCode
+    SWIFT_VERSION: "5.0"
+    ENABLE_BITCODE: NO
+    # Подпись делает ldid после сборки (см. workflow), Xcode ничего не подписывает.
+    CODE_SIGNING_ALLOWED: NO
+    CODE_SIGNING_REQUIRED: NO
+    CODE_SIGN_IDENTITY: ""
+
+targets:
+  StoykoMessenger:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+      # Иконка: CI делает icon-1024.png из Android ic_launcher (mipmap-xxxhdpi).
+      - path: Assets.xcassets
+      # Папка-ссылка: внутри .app будет каталог music/ (его читает LoopPlayer.ios.kt).
+      - path: Resources/music
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_NAME: StoykoMessenger
+        PRODUCT_BUNDLE_IDENTIFIER: com.stoyko.smessenger
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: NO
+        # Kotlin-фреймворк из ./gradlew :shared:linkReleaseFrameworkIosArm64
+        FRAMEWORK_SEARCH_PATHS:
+          - "$(inherited)"
+          - "$(SRCROOT)/../shared/build/bin/iosArm64/releaseFramework"
+        OTHER_LDFLAGS:
+          - "$(inherited)"
+          - "-ObjC"
+          - "-lc++"
+          - "-lz"
+        DEAD_CODE_STRIPPING: YES
+    dependencies:
+      # Статический фреймворк: линкуется в бинарник, встраивать (embed) не нужно.
+      - framework: ../shared/build/bin/iosArm64/releaseFramework/Shared.framework
+        embed: false
+        link: true
+      # Системные фреймворки, которые использует Kotlin-код (статическая линковка требует их у приложения).
+      - sdk: UIKit.framework
+      - sdk: WebKit.framework
+      - sdk: AVFoundation.framework
+      - sdk: AVFAudio.framework
+      - sdk: NetworkExtension.framework
+      - sdk: OpenGLES.framework
+      - sdk: Network.framework
+      - sdk: BackgroundTasks.framework
+      - sdk: Metal.framework
+      - sdk: QuartzCore.framework
+      - sdk: CoreText.framework
+      - sdk: CoreGraphics.framework
+      - sdk: libz.tbd
+      - sdk: libc++.tbd
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: S-messenger
+        CFBundleName: StoykoMessenger
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        CFBundlePackageType: APPL
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleDevelopmentRegion: ru
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIRequiredDeviceCapabilities: [arm64]
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIStatusBarStyle: UIStatusBarStyleLightContent
+        UIViewControllerBasedStatusBarAppearance: false
+        # Compose Multiplatform: 120 Гц на ProMotion.
+        CADisableMinimumFrameDurationOnPhone: true
+        # Фон: только «пробуждение» для короткой синхронизации (BGAppRefreshTask).
+        # Постоянный сокет в фоне iOS не разрешает - для входящих в фоне нужен APNs.
+        UIBackgroundModes:
+          - fetch
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.stoyko.smessenger.refresh
+        # Разрешения (тексты показываются пользователю).
+        NSCameraUsageDescription: "Камера нужна для видеозвонков, кружков и сканирования QR-кода контакта."
+        NSMicrophoneUsageDescription: "Микрофон нужен для звонков и голосовых сообщений."
+        NSPhotoLibraryUsageDescription: "Доступ к фото нужен, чтобы отправлять картинки и видео."
+        NSLocalNetworkUsageDescription: "Локальная сеть нужна, чтобы находить собеседников рядом (Tox LAN)."
+    entitlements:
+      path: StoykoMessenger.entitlements
+      properties: {}

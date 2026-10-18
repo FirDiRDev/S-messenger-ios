@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rail Run in 3D: outfits, inspector, oncoming trains, power-ups -->
+<resources>
+    <string name="runner3_no_gl">This device has no OpenGL ES 2.0 - the 3D run is unavailable.</string>
+    <string name="runner3_back">Back</string>
+    <string name="runner3_menu">🏠 Menu</string>
+    <string name="runner3_skins">👕 Outfits</string>
+    <string name="runner3_skins_title">Runner outfits</string>
+    <string name="runner3_special">✨ special</string>
+    <string name="runner3_buy">Buy for %1$d 🪙</string>
+    <string name="runner3_equip">Wear</string>
+    <string name="runner3_equipped">✓ Worn</string>
+    <string name="runner3_bought">Outfit “%1$s” bought and worn!</string>
+    <string name="runner3_no_coins">Not enough coins: %1$d 🪙 more</string>
+    <string name="runner3_go">Go!</string>
+    <string name="runner3_new_best">🏆 New record!</string>
+    <string name="runner3_crash">Boom! Run over</string>
+    <string name="runner3_caught">The inspector caught you!</string>
+    <string name="runner3_chaser_warn">The inspector is catching up!</string>
+    <string name="runner3_continue_for">💖 Continue for %1$d 🪙</string>
+    <string name="runner3_result">Score: %1$d\nCoins collected: %2$d 🪙 (10 = 1 🪙 to balance)\nDistance: %3$d m\nBest: %4$d</string>
+    <string name="runner3_intro">Swipe left/right to switch tracks, up to jump, down to roll. Run up ramps onto train roofs, watch out for oncoming trains and don\'t get caught by the inspector! Every 10 run coins = 1 🪙 in your wallet.\nBest: %1$d</string>
+    <string name="runner3_tap_on">Tap = jump: on</string>
+    <string name="runner3_tap_off">Tap = jump: off</string>
+    <string name="runner3_p_magnet">🧲 Magnet!</string>
+    <string name="runner3_p_jet">🚀 Rocket pack!</string>
+    <string name="runner3_p_sneakers">👟 Spring sneakers!</string>
+    <string name="runner3_p_x2">✖2 Double score!</string>
+    <string name="runner3_p_board">🛹 Hover board!</string>
+    <string name="runner3_rules">The runner keeps running along one of three tracks. Don\'t crash, collect coins and don\'t get caught.\n\nControls:\n• swipe left / right - switch track;\n• swipe up - jump;\n• swipe down - roll (in the air - drop fast);\n• optional: tap = jump (toggle in the menu).\n\nObstacles:\n• red-and-white low barrier and cones - jump over; hit them and you stumble;\n• yellow-and-black high barrier - roll under it;\n• solid barrier and trains - go around on another track. Bumping into a train\'s side is a stumble too.\n• run up a ramp onto a parked train and run along the roofs;\n• 🚆 an oncoming train drives towards you: horn, bright headlights and a “!” over its track - get out of the way!\n\nThe inspector with a flashlight and a robot dog runs behind you. Stumble once and he\'s right behind; stumble again while he\'s close and he catches you. Otherwise he falls back.\n\nPower-ups:\n• 🧲 magnet - coins fly to you;\n• 🚀 rocket pack - fly over the trains collecting coins in the air;\n• 👟 spring sneakers - higher jumps, even onto a carriage;\n• ✖2 - double score;\n• 🛹 hover board - forgives one crash.\n\nThe score multiplier grows with distance. After a crash you can continue once for 50 🪙. Every 10 coins in a run = 1 messenger coin (the remainder carries over). Spend coins on runner outfits (including special ones with glow and trails).</string>
+
+    <string name="runner3_skin0">Dasher</string>
+    <string name="runner3_skin0_d">Blue hoodie, red cap and a backpack - always ready to run.</string>
+    <string name="runner3_skin1">Breeze</string>
+    <string name="runner3_skin1_d">Summer tee, shorts and a bucket hat - light as the wind.</string>
+    <string name="runner3_skin2">Garage Rocker</string>
+    <string name="runner3_skin2_d">Black jacket, scarlet mohawk and a chain.</string>
+    <string name="runner3_skin3">Pathfinder</string>
+    <string name="runner3_skin3_d">Hiking jacket, orange bobble hat and a big backpack.</string>
+    <string name="runner3_skin4">Depot Mechanic</string>
+    <string name="runner3_skin4_d">Overalls, a helmet with a lamp and headphones.</string>
+    <string name="runner3_skin5">Old Salt</string>
+    <string name="runner3_skin5_d">Striped shirt, bandana and a scarf in the wind.</string>
+    <string name="runner3_skin6">Cyber Courier</string>
+    <string name="runner3_skin6_d">Neon stripes, a glowing visor and a neon trail.</string>
+    <string name="runner3_skin7">Frost Whirl</string>
+    <string name="runner3_skin7_d">White hood, a mask and a frosty snowflake trail.</string>
+    <string name="runner3_skin8">Stardust</string>
+    <string name="runner3_skin8_d">Purple suit with gold - stars sprinkle behind.</string>
+    <string name="runner3_skin9">Blaze Dash</string>
+    <string name="runner3_skin9_d">Flame suit, a glowing visor and a fiery trail.</string>
+    <string name="runner3_skin10">❄ Snowman</string>
+    <string name="runner3_skin10_d">A white suit, a red bobble hat and a scarf. Frost trail.</string>
+    <string name="runner3_skin11">❄ Christmas elf</string>
+    <string name="runner3_skin11_d">A green suit, a pointy hat and a golden scarf. Star sparkle trail.</string>
+    <string name="runner3_skin12">❄ Snow queen</string>
+    <string name="runner3_skin12_d">A light-blue outfit, a blond braid and shimmering frost.</string>
+    <string name="runner3_skin13">❄ Ice guardian</string>
+    <string name="runner3_skin13_d">Ice armour, a glowing visor and a frosty trail.</string>
+</resources>

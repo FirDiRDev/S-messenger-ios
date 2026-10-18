@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Строки версии 3.5.0 -->
+<resources>
+    <string name="profile_tile_gifts">Мои подарки</string>
+    <string name="gifts_showcase_title">🎁 Витрина подарков · %1$d/%2$d</string>
+    <string name="gifts_all_link">Все (%1$d) ›</string>
+    <string name="gifts_showcase_empty">Друзья видят в профиле только подарки, которые вы сами поставите на витрину (до 12).</string>
+    <string name="gifts_showcase_pick">Выбрать подарки для профиля</string>
+    <string name="gifts_gallery_empty">Подарков пока нет</string>
+    <string name="gifts_gallery_title">🎁 Мои подарки · %1$d</string>
+    <string name="gifts_gallery_on_profile">В профиле: %1$d из %2$d</string>
+    <string name="gifts_gallery_hint">Нажмите на подарок, чтобы поставить его в профиль или убрать. Удержание - то же одним касанием. 📌 - уже в профиле.</string>
+    <string name="gifts_showcase_full">В профиле уже %1$d подарков - уберите один, чтобы поставить другой</string>
+    <string name="gifts_showcase_added">Подарок теперь в профиле</string>
+    <string name="gifts_showcase_removed">Подарок убран из профиля</string>
+    <string name="gifts_showcase_pin">📌 Поставить в профиль</string>
+    <string name="gifts_showcase_unpin">Убрать из профиля</string>
+    <string name="plus_new_contact">Новый контакт</string>
+    <string name="plus_copy_my_id">Скопировать мой ID</string>
+    <string name="tour_gifts_title">Подарки в профиле</string>
+    <string name="tour_gifts_text">Меню → Мой профиль → «🎁 Мои подарки»: все подаренные вам подарки красиво выстраиваются в галерее. Нажмите на подарок - «Поставить в профиль»: друзья видят только витрину, до 12 подарков, которые вы выбрали сами. «О себе» теперь в «Изменить профиль», а «Скопировать мой ID» - в меню «+».</string>
+    <string name="call_phase_connecting">Соединение</string>
+    <string name="call_phase_securing">Подключение · защищённый канал</string>
+    <string name="call_phase_ringing">Вызов</string>
+    <string name="call_phase_active">Сквозное шифрование</string>
+    <string name="call_path_direct">напрямую</string>
+    <string name="call_path_relay">через узел</string>
+    <string name="call_tunnel_ok">канал проверен</string>
+    <string name="update_snoozed">Хорошо, напомним об обновлении через 6 часов</string>
+    <string name="update_channel_desc">Новая версия S-messenger: уведомление в шторке и на экране блокировки</string>
+    <string name="update_reminder_title">Напоминание: доступна версия %1$s</string>
+    <string name="update_later_6h">Напомнить через 6 ч</string>
+    <string name="channel_business_short">Бизнес</string>
+    <string name="channel_stats_short">Статистика</string>
+</resources>

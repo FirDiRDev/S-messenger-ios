@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Экран создания профиля StoykoMessenger -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_brand_gradient">
+
+    <!-- Плавающие «светящиеся» круги на фоне -->
+    <View android:id="@+id/glowTop"
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-120dp"
+            android:layout_marginEnd="-120dp"
+            android:background="@drawable/bg_glow_circle"/>
+    <View android:id="@+id/glowBottom"
+            android:layout_width="360dp"
+            android:layout_height="360dp"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="-150dp"
+            android:layout_marginBottom="-140dp"
+            android:background="@drawable/bg_glow_circle"/>
+
+    <ScrollView android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="32dp">
+
+            <Space android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+            <FrameLayout android:id="@+id/logoContainer"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:background="@drawable/bg_logo_circle">
+                <ImageView android:id="@+id/logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_full_name"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_launcher_foreground"/>
+            </FrameLayout>
+
+            <TextView android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/app_full_name"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"/>
+
+            <TextView android:id="@+id/slogan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/app_slogan"
+                    android:textColor="#D9FFFFFF"
+                    android:textSize="16sp"/>
+
+            <com.google.android.material.card.MaterialCardView android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="12dp">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                    <TextView android:id="@+id/profileCreationLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/create_a_tox_profile"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/create_profile_subtitle"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"/>
+
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/usernameLayout"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:hint="@string/create_profile_name_hint"
+                            app:boxCornerRadiusBottomEnd="14dp"
+                            app:boxCornerRadiusBottomStart="14dp"
+                            app:boxCornerRadiusTopEnd="14dp"
+                            app:boxCornerRadiusTopStart="14dp"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="@integer/toxMaxNameLength">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/username"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:autofillHints="username"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPersonName|textCapWords"
+                                android:maxLength="@integer/toxMaxNameLength"
+                                android:maxLines="1"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btnCreate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/create"/>
+                        <ProgressBar android:id="@+id/progress"
+                                style="?android:attr/progressBarStyleSmall"
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:layout_gravity="center"
+                                android:indeterminateTint="@android:color/white"
+                                android:translationZ="8dp"
+                                android:visibility="gone"/>
+                    </FrameLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView android:id="@+id/importLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="@string/or_import_existing_save"
+                    android:textColor="#D9FFFFFF"/>
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnImport"
+                    style="@style/Widget.Stoyko.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/import_tox_save"/>
+
+            <Space android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+            <TextView android:id="@+id/footer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="@string/developer_credit"
+                    android:textColor="#99FFFFFF"
+                    android:textSize="12sp"/>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

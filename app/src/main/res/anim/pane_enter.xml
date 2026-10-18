@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Планшет: чат справа появляется мягко - лёгкий сдвиг и проявление, без «проезда» через весь экран. -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+        android:interpolator="@android:anim/decelerate_interpolator"
+        android:duration="220">
+    <translate android:fromXDelta="6%" android:toXDelta="0%"/>
+    <alpha android:fromAlpha="0" android:toAlpha="1"/>
+</set>

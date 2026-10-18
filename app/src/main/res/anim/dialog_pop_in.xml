@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Окно «выпрыгивает» с лёгкой пружиной -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="260">
+    <scale android:interpolator="@android:anim/overshoot_interpolator"
+        android:fromXScale="0.88" android:toXScale="1.0"
+        android:fromYScale="0.88" android:toYScale="1.0"
+        android:pivotX="50%" android:pivotY="50%"/>
+    <alpha android:interpolator="@android:anim/decelerate_interpolator"
+        android:fromAlpha="0.0" android:toAlpha="1.0"/>
+</set>

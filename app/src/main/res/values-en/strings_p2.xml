@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="spoiler_media">✨ Hide as spoiler (revealed on tap)</string>
+    <string name="send_spoiler">✨ Send as spoiler</string>
+    <string name="data_export_title">Data export</string>
+    <string name="data_export_done">✅ Done and verified.
+Chats and groups: %1$d, messages: %2$d
+Files in archive: %3$d (%4$s)
+Open index.html from the archive in a browser.</string>
+    <string name="data_export_bad">⚠️ The archive failed verification: %1$s. Try again and pick another location.</string>
+    <string name="data_export_skipped">Files that could not be read: %1$d (deleted from the phone or not fully downloaded).</string>
+    <string name="profile_link_share_text">Add me on S-messenger - tap the link and the friend request is sent automatically:
+%1$s
+
+If the app is already installed, this works too: %2$s</string>
+    <string name="profile_link_share">Profile link</string>
+    <string name="profile_link_copy">🔗 Copy profile link</string>
+    <string name="profile_link_copied">Profile link copied - send it anywhere</string>
+    <string name="profile_link_self">This is a link to your own profile</string>
+    <string name="profile_link_request_sent">Friend request sent ✅</string>
+    <string name="profile_link_one_tap">Add in one tap: %1$s</string>
+    <string name="anim_each_title">Individual animations (for weak phones)</string>
+    <string name="tour_link_title">Profile link</string>
+    <string name="tour_link_text">Profile → Share: send the link anywhere. When someone taps it, S-messenger opens and the friend request is sent automatically.</string>
+    <string name="tour_spoiler_title">Spoilers</string>
+    <string name="tour_spoiler_text">Photos and videos can be hidden as a spoiler (switch in the send window), text - hold Send → Send as spoiler. The recipient sees a sparkling veil that opens on tap. Works in chats, groups and channels.</string>
+    <string name="runner_shop_btn">🛒 Shop</string>
+    <string name="runner_shop_title">🛒 Shop</string>
+    <string name="runner_shop_upgrades">⚡ Upgrades</string>
+    <string name="runner_shop_boards">🛹 Boards</string>
+    <string name="runner_shop_secs">%1$s s</string>
+    <string name="runner_shop_upgraded">%1$s: now %2$s s</string>
+    <string name="runner_fx_stars">sparkles</string>
+    <string name="runner_fx_fire">flames</string>
+    <string name="runner_fx_frost">frost</string>
+    <string name="runner_fx_neon">neon</string>
+    <string name="runner_wheels">wheels</string>
+    <string name="runner_wheels_glow">glowing wheels</string>
+    <string name="runner_winter_title">🎄 New Year run</string>
+    <string name="runner_winter_intro">❄ Snow, a winter city and festive music!</string>
+    <string name="runner_winter_auto">❄ Winter: auto (Dec-Jan)</string>
+    <string name="runner_winter_on">❄ Winter: always</string>
+    <string name="runner_winter_off">❄ Winter: off</string>
+    <string name="runner_winter_enabled">🎄 New Year mode on</string>
+    <string name="runner_winter_disabled">New Year mode off</string>
+    <string name="runner_spring_title">🌸 Spring run</string>
+    <string name="runner_spring_intro">🌸 Sakura petals, a soft sky and flower beds</string>
+    <string name="runner_summer_title">☀ Summer run</string>
+    <string name="runner_summer_intro">☀ Hot sun, palms and beach umbrellas</string>
+    <string name="runner_autumn_title">🍂 Autumn run</string>
+    <string name="runner_autumn_intro">🍂 Falling leaves, a golden sky and pumpkin lanterns</string>
+    <string name="runner_season_auto">🗓 Season: auto</string>
+    <string name="runner_season_winter">❄ Season: winter</string>
+    <string name="runner_season_spring">🌸 Season: spring</string>
+    <string name="runner_season_summer">☀ Season: summer</string>
+    <string name="runner_season_autumn">🍂 Season: autumn</string>
+    <string name="runner_season_off">Season: off</string>
+    <string name="runner_season_music_on">🎶 Season music: on</string>
+    <string name="runner_season_music_off">🎶 Season music: off</string>
+    <string name="ph_w11">Happy holidays ahead! 🎆</string>
+    <string name="ph_w12">Let the snow crunch and the heart stay warm ❄️💛</string>
+    <string name="ph_w13">Tangerines, garlands and warm words 🍊</string>
+    <string name="ph_w14">Make a wish - it will come true ✨</string>
+    <string name="ph_w15">Hot cocoa and kind messages ☕</string>
+    <string name="ph_w16">More miracles in the new year 🎇</string>
+    <string name="ph_w17">Snowflakes fly - and so do greetings 🌨</string>
+    <string name="ph_w18">Hug your loved ones tight 🤗</string>
+    <string name="ph_w19">Winter is a time of fairy tales and cosiness 🏔</string>
+    <string name="ph_w20">Let the tree sparkle and dreams come true 🎄</string>
+    <string name="ph_a11">Rustling leaves and warm meetings 🍂</string>
+    <string name="ph_a12">Autumn is the time for cosy talks ☕</string>
+    <string name="ph_a13">May every day be golden 🍁</string>
+    <string name="ph_a14">Warmth under the blanket and in the heart 🧣</string>
+    <string name="ph_a15">Apples, pumpkins and a good mood 🎃</string>
+    <string name="ph_a16">Catch the last sunny rays 🌤</string>
+    <string name="ph_a17">An inspiring autumn and new ideas 💡</string>
+    <string name="ph_a18">Let the rain wash away only the bad 🌧</string>
+    <string name="ph_a19">A forest full of mushrooms and warm tea 🍄</string>
+    <string name="ph_a20">Write to someone you miss 💌</string>
+    <string name="ph_s9">Let spring fill your heart with warmth 💐</string>
+    <string name="ph_s10">Dripping icicles, sunshine and new hopes ☀️</string>
+    <string name="ph_s11">Blooming gardens and bright thoughts 🌳</string>
+    <string name="ph_s12">Time to wake up - time for change 🌱</string>
+    <string name="ph_s13">Smile more - it\'s spring! 😊</string>
+    <string name="ph_s14">Let love bloom with the spring 🌹</string>
+    <string name="ph_s15">Warm winds and fresh ideas 🍃</string>
+    <string name="ph_s16">Spring is the best time to dream 🌈</string>
+    <string name="ph_u9">Let summer be long and bright 🌞</string>
+    <string name="ph_u10">Sea breeze and happy days 🏝</string>
+    <string name="ph_u11">Strawberries, cherries and good company 🍓</string>
+    <string name="ph_u12">Warm nights and starry skies 🌌</string>
+    <string name="ph_u13">Travels and new impressions ✈️</string>
+    <string name="ph_u14">Let the sun shine in your messages too ☀️</string>
+    <string name="ph_u15">Summer mood all year round 🌴</string>
+    <string name="ph_u16">The storm will pass, the rainbow will stay 🌈</string>
+    <string name="hol_spring_day">Happy first day of spring! 🌷</string>
+    <string name="hol_fools">Happy April Fools\' Day! 😄 Don\'t believe everything you read</string>
+    <string name="hol_summer_day">Summer has begun! ☀️ Have bright days!</string>
+    <string name="hol_winter_day">Happy first day of winter! ❄️</string>
+    <string name="hol_programmer">Happy Programmer\'s Day! 💻 Day 256 of the year</string>
+    <string name="hol_nature">Happy Earth Day! 🌍 Take care of nature</string>
+    <string name="hol_friendship">Happy Friendship Day! 🤝 Write to your friends</string>
+    <string name="hol_smile">Happy Smile Day! 😊</string>
+    <string name="gift_queued">🎁 “%1$s” is queued: your friend is offline, the gift will be sent as soon as they come online</string>
+</resources>

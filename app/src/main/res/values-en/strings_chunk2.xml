@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="send_with_buttons">🔘 Message with buttons</string>
+    <string name="group_send_schedule">⏰ Send later</string>
+    <string name="welcome_menu">👋 Welcome for newcomers</string>
+    <string name="welcome_title">Welcome to “%1$s”!</string>
+    <string name="welcome_preview_title">This is what newcomers will see</string>
+    <string name="welcome_preview_hint">Only members who joined in the last %1$d days see it. It never appears in the chat feed.</string>
+    <string name="welcome_ok">Got it</string>
+    <string name="welcome_editor_hint">Only new members see the welcome - as a separate card when they join. It never appears in the chat feed.</string>
+    <string name="welcome_emoji_hint">Illustration - an emoji (animated)</string>
+    <string name="welcome_text_hint">Welcome text: rules, what the group is about, where to start</string>
+    <string name="welcome_days">Count as newcomer: %1$d days (tap to change)</string>
+    <string name="welcome_with_buttons">🔘 Add buttons (rules, website, “Introduce yourself”…)</string>
+    <string name="welcome_off">Turn off</string>
+    <string name="welcome_too_long">The welcome is too long to send - shorten the text or buttons</string>
+    <string name="welcome_saved">Welcome saved - new members will see it</string>
+    <string name="welcome_turned_off">Welcome turned off</string>
+    <string name="gift_sign_toggle">✍ Sign the gift</string>
+    <string name="gift_sign_hint">Your signature: a name or phrase</string>
+    <string name="gift_sign_verified">✓ authentic, key %1$s</string>
+    <string name="gift_comment_add">💬 Add your own comment to this gift</string>
+    <string name="gift_comment_hint">What this gift means to you</string>
+    <string name="gift_comment_title">My comment</string>
+    <string name="send_poll">📊 Poll</string>
+    <string name="send_html">🧩 HTML bubble (buttons, product, chart)</string>
+    <string name="send_files_inline">📎 Text with files and music</string>
+    <string name="send_rich">✨ Format: headers, lists, tables, spoilers</string>
+    <string name="peek_open">💬 Open chat</string>
+    <string name="peek_profile">👤 Profile</string>
+    <string name="peek_more_unused">⋯ More</string>
+    <string name="upd3_ready_title">Update %1$s downloaded</string>
+    <string name="upd3_ready_text">The file is already on your phone - installing takes a couple of seconds, nothing to download again.</string>
+    <string name="upd3_install">Install</string>
+    <string name="upd3_later">Later</string>
+    <string name="peek_mark_read">✓ Mark as read</string>
+    <string name="peek_mute">🔕 Mute</string>
+    <string name="peek_unmute">🔔 Unmute</string>
+    <string name="live_help_btn">?</string>
+    <string name="live_help_menu">❔ Live messages “/” - help</string>
+    <string name="live_help_text">WHAT IT IS
+A live message is a tiny app right in the chat: confetti, a player, a poll, a product card, revenue charts, a boarding pass, a clock, games and more. Your contact sees it the same way you do.
+
+HOW TO SEND
+• Type “/” in the empty message field - a list appears. You can add the name right away: /poll, /product, /revenue.
+• Or hold the Send button → “🧩 HTML bubble” → “✨ Live messages”.
+• Tap one - a preview opens: “Send”, “✏️ Edit” or “Back”.
+
+HOW TO MAKE IT YOURS (✏️)
+• Headers, captions, questions, prices - just type your own text.
+• Numbers for charts (/revenue): values separated by spaces, labels by commas - bars and the total are calculated automatically.
+• Lists (tracks, steps, poll options, rings, time zones, questions): one per line, parts separated by “|”, e.g. “🎥 Video notes|41”.
+• Picture: an https://… image link (product photo, link preview). The image loads from the internet when shown - the image site will see the viewer\'s address.
+• Link: the “Buy” button or the link card opens it - after a confirmation.
+• The preview at the top updates while you type. Below - the size: a message must fit in 1300 bytes.
+
+ALREADY SENT
+• Hold the message - like any other: reactions, reply, “Edit” (the editor opens again - it updates for your contact), “Delete for everyone”.
+
+SO THE CHAT DOESN\'T LAG
+• In the chat, live messages are shown as light ▶ cards - tap to bring one to life. The newest one comes alive by itself.
+• At most two are live at once - the rest turn back into cards. Off-screen ones are paused.
+• In lite mode nothing comes alive by itself.
+
+SAFETY
+There is no access to your files or data inside; only pictures are loaded from the internet. A message can reply in the chat or copy text only after your tap.</string>
+</resources>

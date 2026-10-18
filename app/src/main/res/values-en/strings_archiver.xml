@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File manager archiver -->
+<resources>
+    <string name="arc_title">Archiver</string>
+    <string name="arc_open">🗜 Open in archiver</string>
+    <string name="arc_add_to_archive">🗜 Add to archive…</string>
+    <string name="arc_opening">Opening archive…</string>
+    <string name="arc_creating">Creating archive…</string>
+    <string name="arc_adding">Adding to archive…</string>
+    <string name="arc_extracting">Extracting…</string>
+    <string name="arc_testing">Testing archive…</string>
+    <string name="arc_deleting">Deleting from archive…</string>
+    <string name="arc_renaming">Renaming…</string>
+    <string name="arc_cancelled">Cancelled</string>
+
+    <string name="arc_create_title">Add to ZIP archive</string>
+    <string name="arc_create">Create</string>
+    <string name="arc_name">Archive name</string>
+    <string name="arc_level">Compression</string>
+    <string name="arc_level_store">Store (no compression)</string>
+    <string name="arc_level_fast">Fast</string>
+    <string name="arc_level_normal">Normal</string>
+    <string name="arc_level_max">Maximum</string>
+    <string name="arc_password_optional">Password (optional)</string>
+    <string name="arc_password_hint">Password</string>
+    <string name="arc_password_show">Show password</string>
+    <string name="arc_password_note">ZipCrypto encryption: opens in WinRAR, 7-Zip and Windows Explorer. File names are not encrypted.</string>
+    <string name="arc_delete_sources">Delete files after archiving</string>
+    <string name="arc_bad_name">Invalid name</string>
+    <string name="arc_bad_path">Enter a full path starting with “/”</string>
+    <string name="arc_created">Archive “%1$s” is ready</string>
+    <string name="arc_exists">“%1$s” already exists</string>
+    <string name="arc_add_into">Add files to this archive</string>
+
+    <string name="arc_replace">Replace</string>
+    <string name="arc_skip">Skip</string>
+    <string name="arc_replace_all">Replace all</string>
+    <string name="arc_skip_all">Skip all</string>
+
+    <string name="arc_password_title">🔒 Password</string>
+    <string name="arc_password_for">Archive “%1$s” is password protected</string>
+
+    <string name="arc_extract">Extract</string>
+    <string name="arc_extract_all">Extract all</string>
+    <string name="arc_extract_selected">Extract selected (%1$d)</string>
+    <string name="arc_extract_here">📂 Extract here</string>
+    <string name="arc_extract_to_folder">📁 Extract to folder</string>
+    <string name="arc_extract_folder">📁 Extract to “%1$s”</string>
+    <string name="arc_extract_to">📍 Extract to…</string>
+    <string name="arc_extracted">Files extracted: %1$d → %2$s</string>
+    <string name="arc_skipped">Skipped: %1$d</string>
+    <string name="arc_blocked">Not extracted for safety (path escapes the target folder): %1$d</string>
+
+    <string name="arc_add">Add</string>
+    <string name="arc_test">Test</string>
+    <string name="arc_info">Info</string>
+    <string name="arc_view">Open</string>
+    <string name="arc_empty">The archive is empty</string>
+    <string name="arc_delete_confirm">Delete the selected items (%1$d) from the archive?</string>
+    <string name="arc_subtitle">Files: %1$d · %2$s · ratio %3$d%%</string>
+    <string name="arc_dir_info">Files: %1$d · %2$s</string>
+    <string name="arc_file_info">%1$s → %2$s (%3$d%%)</string>
+
+    <string name="arc_test_ok_title">✅ Archive is OK</string>
+    <string name="arc_test_bad_title">⚠️ Errors found</string>
+    <string name="arc_test_ok">No errors found. Files tested: %1$d.</string>
+    <string name="arc_test_errors">Errors: %1$d (tested without errors: %2$d)</string>
+
+    <string name="arc_info_format">Format: %1$s</string>
+    <string name="arc_info_files">Files: %1$d · folders: %2$d</string>
+    <string name="arc_info_size">Original size: %1$s</string>
+    <string name="arc_info_packed">Compressed size: %1$s</string>
+    <string name="arc_info_ratio">Compression ratio: %1$d%%</string>
+    <string name="arc_info_file_size">Archive size: %1$s</string>
+    <string name="arc_info_encrypted_yes">Encrypted: yes 🔒</string>
+    <string name="arc_info_encrypted_no">Encrypted: no</string>
+    <string name="arc_info_modified">Modified: %1$s</string>
+    <string name="arc_info_comment">Comment:\n%1$s</string>
+    <string name="arc_read_only">This format is read-only: you can extract files but not modify the archive.</string>
+
+    <string name="arc_error_title">Archiver</string>
+    <string name="arc_err_password">Wrong password</string>
+    <string name="arc_err_crc">Checksum error in “%1$s”: the file is damaged or the password is wrong</string>
+    <string name="arc_err_rar">RAR archives are not supported yet - the built-in archiver works with ZIP, TAR and TAR.GZ. Open the file with another app (e.g. RAR or ZArchiver).</string>
+    <string name="arc_err_7z">7z archives are not supported yet - the built-in archiver works with ZIP, TAR and TAR.GZ. Open the file with another app (e.g. ZArchiver).</string>
+    <string name="arc_err_unsupported">Not supported: %1$s. Open the file with another app.</string>
+    <string name="arc_err_bomb">Suspicious archive (“zip bomb”): unpacked data exceeds the declared size or the compression ratio is implausible. Operation stopped.</string>
+    <string name="arc_err_space">Not enough space: %1$s needed, %2$s free</string>
+    <string name="arc_err_bad">The file is damaged or is not an archive</string>
+
+    <string name="arc_home_find">🔍 Find archives on device</string>
+    <string name="arc_home_create">➕ Create archive…</string>
+    <string name="arc_home_about">ℹ️ What the archiver can do</string>
+    <string name="arc_found_title">Archives (%1$d)</string>
+    <string name="arc_about">• Create ZIP from files and folders: 4 compression levels, password, delete originals.\n• Browse an archive like a folder: sizes, compression, dates, subfolders.\n• Extract all or selected: here, to a folder named after the archive or to any path; asks before replacing files.\n• Add, delete and rename files inside ZIP.\n• Integrity test (CRC) and archive info.\n• Reads ZIP, JAR, APK, CBZ, TAR, TAR.GZ (TGZ), GZ. RAR and 7z are not supported.\n• Protection against “../” paths and zip bombs.\n\nSelect files and tap “To ZIP” or “More → Add to archive”. Tap an archive to open it.</string>
+
+    <string name="arc_pick_title">Choose files</string>
+    <string name="arc_pick_hint">Tap a folder to open it; long-press to select the whole folder</string>
+    <string name="arc_pick_add">Select (%1$d)</string>
+    <string name="arc_pick_nothing">Nothing selected</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Profile export and import (.smsave) -->
+<resources>
+    <string name="smsave_progress_export">Export profile</string>
+    <string name="smsave_progress_import">Import profile</string>
+    <string name="smsave_stage_prepare">Taking a snapshot of messages and settings…</string>
+    <string name="smsave_stage_write">Writing the file…</string>
+    <string name="smsave_stage_verify">Verifying the written file…</string>
+    <string name="smsave_stage_read">Reading and verifying the file…</string>
+    <string name="smsave_export_done">Profile saved and verified: %1$d files (%2$s). Keys, messages, gifts, coins, purchases, games, network, VPN and settings.</string>
+    <string name="smsave_export_skipped">Could not read %1$d files (they changed during export).</string>
+    <string name="smsave_export_bad">The profile file was written with an error: %1$s. Save it again, preferably to another place.</string>
+    <string name="smsave_err_title">Profile not imported</string>
+    <string name="smsave_err_read">Could not open the profile file.</string>
+    <string name="smsave_err_corrupt">The profile file is damaged or incomplete (%1$s). Your data was not changed.</string>
+    <string name="smsave_err_damaged">The profile file is damaged: “%1$s” does not match its checksum. Your data was not changed.</string>
+    <string name="smsave_err_missing">The profile file is incomplete: “%1$s” is missing. Your data was not changed.</string>
+    <string name="smsave_err_truncated">The profile file is incomplete (no content list). Your data was not changed.</string>
+    <string name="smsave_err_no_keys">The file contains no profile keys.</string>
+    <string name="smsave_err_newer">The profile was saved by a newer app version (%1$s). Update S-messenger and import again.</string>
+    <string name="smsave_err_space">Not enough storage: free up %1$s more.</string>
+    <string name="smsave_err_interrupted">restoring was interrupted several times</string>
+    <string name="smsave_restore_done">Profile fully restored: %1$d files</string>
+    <string name="smsave_restore_failed">Could not restore the profile (%1$s) - everything was put back as it was. Import the file again.</string>
+    <string name="smsave_percent">%1$d%%</string>
+</resources>

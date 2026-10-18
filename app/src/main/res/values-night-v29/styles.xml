@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccentDark</item>
+        <item name="colorOnSecondary">@color/colorOnPrimary</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="materialButtonStyle">@style/Widget.Stoyko.Button</item>
+        <item name="shapeAppearanceSmallComponent">@style/Shape.Stoyko.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/Shape.Stoyko.Medium</item>
+        <item name="android:windowAnimationStyle">@style/Stoyko.WindowAnimations</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="cardViewStyle">@style/Stoyko.Card</item>
+        <item name="alertDialogTheme">@style/Stoyko.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/Stoyko.Dialog</item>
+        <item name="popupMenuStyle">@style/Stoyko.PopupMenu</item>
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecondary</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Dark"/>
+</resources>

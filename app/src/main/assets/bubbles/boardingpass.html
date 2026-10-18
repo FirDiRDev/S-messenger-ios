@@ -1,0 +1,41 @@
+<style>
+.sc{perspective:900px}
+.card{position:relative;height:236px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.3,1.25,.4,1)}
+.card.fl{transform:rotateY(180deg)}
+.f,.b{position:absolute;inset:0;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.f{background:linear-gradient(150deg,#1d4ed8,#4338ca 60%,#6d28d9);padding:12px 14px}
+.b{transform:rotateY(180deg);background:#f8fafc;color:#0f172a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.top{display:flex;justify-content:space-between;font-size:11.5px;opacity:.85}
+.rt{display:flex;align-items:center;justify-content:space-between;margin:12px 0 4px}
+.rt div b{display:block;font:800 32px/1 sans-serif;letter-spacing:-1px}
+.rt div small{font-size:11.5px;opacity:.8}
+.pl{flex:1;position:relative;height:30px;margin:0 8px}
+.pl:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed rgba(255,255,255,.35)}
+.pl span{position:absolute;top:50%;left:0;font-size:20px;transform:translate(-50%,-55%);animation:fly 3.2s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes fly{0%{left:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{left:100%;opacity:0}}
+.gr{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:14px;padding-top:10px;border-top:1px dashed rgba(255,255,255,.3)}
+.gr small{display:block;font-size:10px;opacity:.7;text-transform:uppercase;letter-spacing:.5px}
+.gr b{font-size:15px}
+.nt{position:absolute;left:-9px;top:150px;width:18px;height:18px;border-radius:50%;background:#1b1930}.nt.r{left:auto;right:-9px}
+.hint{text-align:center;font-size:11.5px;color:#94a3b8;margin-top:6px}
+.bc{display:flex;gap:2px;height:64px;align-items:stretch}
+.bc i{background:#0f172a;border-radius:1px}
+.b small{font:11px ui-monospace,monospace;color:#475569}
+.b b{font-size:14px}
+.sh{position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.18) 50%,transparent 60%);transform:translateX(-100%);animation:shn 4s ease-in-out infinite}
+@keyframes shn{0%,60%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+</style>
+<div class=sc><div class=card id=cd>
+<div class=f><div class=sh></div><div class=top><span id=al>✈ S-AIR · Посадочный</span><span id=dt>11 окт · 21:40</span></div>
+<div class=rt><div><b id=fr>SVO</b><small id=frc>Москва</small></div><div class=pl><span>✈</span></div><div style="text-align:right"><b id=to>DXB</b><small id=toc>Дубай</small></div></div>
+<div class=gr><div><small>Рейс</small><b id=fl>SA 214</b></div><div><small>Выход</small><b id=gt>B 17</b></div><div><small>Место</small><b id=st>12A</b></div><div><small>Посадка</small><b id=bd>21:05</b></div></div>
+<div class=nt></div><div class="nt r"></div></div>
+<div class=b><b id=nm>ИВАНОВ ИВАН</b><div class=bc id=bc></div><small id=sq>SA214 · 12A · SEQ 087</small></div>
+</div></div>
+<div class=hint id=h>Нажмите на билет - на обороте штрихкод</div>
+<script>
+(function(){[['al','airline'],['dt','date'],['fr','from'],['frc','fromCity'],['to','to'],['toc','toCity'],['fl','flight'],['gt','gate'],['st','seat'],['bd','boarding'],['nm','name']].forEach(function(k){var v=pv(k[1],'');if(v)document.getElementById(k[0]).textContent=v});
+document.getElementById('sq').textContent=(document.getElementById('fl').textContent+' · '+document.getElementById('st').textContent+' · SEQ 087').replace(/ (?=\d)/,'');
+var bc=document.getElementById('bc'),seed=7;for(var i=0;i<46;i++){seed=(seed*9301+49297)%233280;var e=document.createElement('i');e.style.width=(1+seed%4)+'px';if(seed%5==0)e.style.background='transparent';bc.appendChild(e)}
+var cd=document.getElementById('cd');cd.onclick=function(){cd.classList.toggle('fl');document.getElementById('h').textContent=cd.classList.contains('fl')?'Нажмите - вернуть лицевую сторону':'Нажмите на билет - на обороте штрихкод'}})();
+</script>

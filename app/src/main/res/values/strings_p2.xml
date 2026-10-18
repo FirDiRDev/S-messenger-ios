@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="spoiler_media">✨ Скрыть под спойлер (откроется по нажатию)</string>
+    <string name="send_spoiler">✨ Отправить как спойлер</string>
+    <string name="data_export_title">Экспорт данных</string>
+    <string name="data_export_done">✅ Готово и проверено.
+Чатов и групп: %1$d, сообщений: %2$d
+Файлов в архиве: %3$d (%4$s)
+Откройте index.html из архива в браузере.</string>
+    <string name="data_export_bad">⚠️ Архив не прошёл проверку: %1$s. Попробуйте ещё раз и выберите другое место сохранения.</string>
+    <string name="data_export_skipped">Не удалось прочитать файлов: %1$d (удалены с телефона или недокачаны).</string>
+    <string name="profile_link_share_text">Добавь меня в S-messenger - нажми на ссылку, и заявка в друзья отправится сама:
+%1$s
+
+Если приложение уже стоит, можно и так: %2$s</string>
+    <string name="profile_link_share">Ссылка на профиль</string>
+    <string name="profile_link_copy">🔗 Скопировать ссылку на профиль</string>
+    <string name="profile_link_copied">Ссылка на профиль скопирована - отправьте её куда угодно</string>
+    <string name="profile_link_self">Это ссылка на ваш собственный профиль</string>
+    <string name="profile_link_request_sent">Заявка в друзья отправлена ✅</string>
+    <string name="profile_link_one_tap">Добавить в один клик: %1$s</string>
+    <string name="anim_each_title">Анимации по отдельности (для слабых телефонов)</string>
+    <string name="tour_link_title">Ссылка на профиль</string>
+    <string name="tour_link_text">Профиль → «Поделиться»: ссылку можно отправить куда угодно. Человек нажимает - открывается S-messenger, и заявка в друзья уходит сама.</string>
+    <string name="tour_spoiler_title">Спойлеры</string>
+    <string name="tour_spoiler_text">Фото и видео можно скрыть под спойлер (переключатель в окне отправки), текст - удержанием «Отправить» → «Отправить как спойлер». У получателя - мерцающая пелена, открывается по нажатию. Работает в чатах, группах и каналах.</string>
+    <string name="runner_shop_btn">🛒 Магазин</string>
+    <string name="runner_shop_title">🛒 Магазин</string>
+    <string name="runner_shop_upgrades">⚡ Улучшения</string>
+    <string name="runner_shop_boards">🛹 Доски</string>
+    <string name="runner_shop_secs">%1$s с</string>
+    <string name="runner_shop_upgraded">%1$s: теперь %2$s с</string>
+    <string name="runner_fx_stars">искры</string>
+    <string name="runner_fx_fire">пламя</string>
+    <string name="runner_fx_frost">иней</string>
+    <string name="runner_fx_neon">неон</string>
+    <string name="runner_wheels">колёса</string>
+    <string name="runner_wheels_glow">светящиеся колёса</string>
+    <string name="runner_winter_title">🎄 Новогодний забег</string>
+    <string name="runner_winter_intro">❄ Снег, зимний город и праздничная музыка!</string>
+    <string name="runner_winter_auto">❄ Зима: авто (дек-янв)</string>
+    <string name="runner_winter_on">❄ Зима: всегда</string>
+    <string name="runner_winter_off">❄ Зима: выключена</string>
+    <string name="runner_winter_enabled">🎄 Новогодний режим включён</string>
+    <string name="runner_winter_disabled">Новогодний режим выключен</string>
+    <string name="runner_spring_title">🌸 Весенний забег</string>
+    <string name="runner_spring_intro">🌸 Лепестки сакуры, нежное небо и цветущие клумбы</string>
+    <string name="runner_summer_title">☀ Летний забег</string>
+    <string name="runner_summer_intro">☀ Жаркое солнце, пальмы и пляжные зонтики</string>
+    <string name="runner_autumn_title">🍂 Осенний забег</string>
+    <string name="runner_autumn_intro">🍂 Листопад, золотое небо и тыквы-фонари</string>
+    <string name="runner_season_auto">🗓 Сезон: авто</string>
+    <string name="runner_season_winter">❄ Сезон: зима</string>
+    <string name="runner_season_spring">🌸 Сезон: весна</string>
+    <string name="runner_season_summer">☀ Сезон: лето</string>
+    <string name="runner_season_autumn">🍂 Сезон: осень</string>
+    <string name="runner_season_off">Сезон: выключен</string>
+    <string name="runner_season_music_on">🎶 Музыка сезона: вкл</string>
+    <string name="runner_season_music_off">🎶 Музыка сезона: выкл</string>
+    <string name="ph_w11">С наступающим праздником! 🎆</string>
+    <string name="ph_w12">Пусть снег скрипит, а сердце греется ❄️💛</string>
+    <string name="ph_w13">Мандарины, гирлянды и тёплые слова 🍊</string>
+    <string name="ph_w14">Загадайте желание - оно сбудется ✨</string>
+    <string name="ph_w15">Горячего какао и добрых сообщений ☕</string>
+    <string name="ph_w16">Пусть в новом году будет больше чудес 🎇</string>
+    <string name="ph_w17">Снежинки летят - и поздравления тоже 🌨</string>
+    <string name="ph_w18">Обнимите близких покрепче 🤗</string>
+    <string name="ph_w19">Зима - время сказок и уюта 🏔</string>
+    <string name="ph_w20">Пусть ёлка сверкает, а мечты сбываются 🎄</string>
+    <string name="ph_a11">Шуршащих листьев и тёплых встреч 🍂</string>
+    <string name="ph_a12">Осень - время уютных разговоров ☕</string>
+    <string name="ph_a13">Пусть каждый день будет золотым 🍁</string>
+    <string name="ph_a14">Тепла под пледом и в сердце 🧣</string>
+    <string name="ph_a15">Яблоки, тыквы и хорошее настроение 🎃</string>
+    <string name="ph_a16">Ловите последние солнечные лучи 🌤</string>
+    <string name="ph_a17">Вдохновляющей осени и новых идей 💡</string>
+    <string name="ph_a18">Пусть дождь смывает только плохое 🌧</string>
+    <string name="ph_a19">Грибного леса и тёплого чая 🍄</string>
+    <string name="ph_a20">Напишите тому, по кому скучаете 💌</string>
+    <string name="ph_s9">Пусть весна наполнит сердце теплом 💐</string>
+    <string name="ph_s10">Капель, солнце и новые надежды ☀️</string>
+    <string name="ph_s11">Цветущих садов и светлых мыслей 🌳</string>
+    <string name="ph_s12">Время пробуждения - время перемен 🌱</string>
+    <string name="ph_s13">Улыбайтесь чаще - весна же! 😊</string>
+    <string name="ph_s14">Пусть любовь расцветает вместе с весной 🌹</string>
+    <string name="ph_s15">Тёплого ветра и свежих идей 🍃</string>
+    <string name="ph_s16">Весна - лучшее время для мечты 🌈</string>
+    <string name="ph_u9">Пусть лето будет долгим и ярким 🌞</string>
+    <string name="ph_u10">Морского бриза и счастливых дней 🏝</string>
+    <string name="ph_u11">Клубники, черешни и хорошей компании 🍓</string>
+    <string name="ph_u12">Тёплых ночей и звёздного неба 🌌</string>
+    <string name="ph_u13">Путешествий и новых впечатлений ✈️</string>
+    <string name="ph_u14">Пусть солнце светит и в сообщениях ☀️</string>
+    <string name="ph_u15">Летнего настроения круглый год 🌴</string>
+    <string name="ph_u16">Гроза пройдёт, а радуга останется 🌈</string>
+    <string name="hol_spring_day">С первым днём весны! 🌷</string>
+    <string name="hol_fools">С Днём смеха! 😄 Не верьте всему, что пишут</string>
+    <string name="hol_summer_day">Лето началось! ☀️ Ярких дней!</string>
+    <string name="hol_winter_day">С первым днём зимы! ❄️</string>
+    <string name="hol_programmer">С Днём программиста! 💻 256-й день года</string>
+    <string name="hol_nature">С Днём Земли! 🌍 Берегите природу</string>
+    <string name="hol_friendship">С Днём дружбы! 🤝 Напишите друзьям</string>
+    <string name="hol_smile">С Днём улыбки! 😊</string>
+    <string name="gift_queued">🎁 «%1$s» в очереди: друг не в сети, подарок уйдёт сам, как только он появится</string>
+</resources>

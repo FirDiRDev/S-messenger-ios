@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet"
+        android:orientation="vertical"
+        android:paddingTop="0dp">
+    <!-- Ручка: потяните вниз или нажмите - панель закроется и вы вернётесь в чат. -->
+    <FrameLayout android:id="@+id/stickerHandle"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:background="?attr/selectableItemBackground">
+        <View android:id="@+id/stickerHandleBar"
+                android:layout_width="40dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center"
+                android:alpha="0.35"
+                android:background="@drawable/bg_handle"/>
+    </FrameLayout>
+    <com.google.android.material.tabs.TabLayout android:id="@+id/stickerTabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorFullWidth="false"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextColor="@color/textSecondary"/>
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="360dp">
+        <GridView android:id="@+id/stickerGrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:columnWidth="72dp"
+                android:gravity="center"
+                android:numColumns="auto_fit"
+                android:padding="8dp"
+                android:stretchMode="spacingWidthUniform"/>
+        <TextView android:id="@+id/stickerEmpty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:padding="24dp"
+                android:text="@string/stickers_empty"
+                android:textColor="@color/textSecondary"
+                android:visibility="gone"/>
+    </FrameLayout>
+</LinearLayout>

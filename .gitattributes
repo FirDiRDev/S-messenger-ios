@@ -1,0 +1,34 @@
+* text eol=lf
+
+# Windows wants .bat-files to use CRLF.
+*.bat text eol=crlf
+
+*.jpg binary
+*.png binary
+*.jar binary
+*.zip binary
+*.gz binary
+*.webp binary
+*.so binary
+*.aar binary
+*.keystore binary
+*.jks binary
+*.so binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.mp3 binary
+*.ogg binary
+*.mp4 binary
+*.ttf binary
+*.otf binary
+*.apk binary
+*.wav binary
+*.mp3 binary
+*.ogg binary
+*.webp binary
+*.so binary
+*.aar binary
+*.png binary
+*.jpg binary
+*.jar binary

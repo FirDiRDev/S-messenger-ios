@@ -1,0 +1,35 @@
+<style>
+.st{position:relative;height:190px;border-radius:14px;overflow:hidden;background:linear-gradient(160deg,#111827,#1e1b4b 60%,#3b0764)}
+.live{position:absolute;left:10px;top:10px;font:700 11px sans-serif;background:#ef4444;color:#fff;padding:2px 7px;border-radius:6px;z-index:2}
+.live:before{content:"● ";animation:bl 1s infinite}
+@keyframes bl{50%{opacity:.3}}
+.vw{position:absolute;right:10px;top:10px;font-size:11.5px;color:#cbd5e1;z-index:2}
+.tt{position:absolute;left:12px;bottom:10px;z-index:2}
+.tt b{font-size:15px;display:block}.tt small{color:#a5b4fc;font-size:12px}
+.e{position:absolute;bottom:0;font-size:26px;will-change:transform,opacity;pointer-events:none;z-index:1}
+.bt{display:flex;gap:6px;margin-top:8px}
+.bt button{flex:1;border:0;border-radius:12px;padding:7px 0;font-size:19px;background:rgba(255,255,255,.08);transition:transform .15s cubic-bezier(.3,1.8,.5,1)}
+.bt button:active{transform:scale(.82)}
+.cn{display:flex;justify-content:space-around;margin-top:5px;font:600 11.5px sans-serif;color:#94a3b8}
+.cn span{transition:transform .2s cubic-bezier(.3,1.8,.5,1),color .2s}
+.cn span.hit{transform:scale(1.35);color:#fff}
+</style>
+<div class=st id=st><span class=live>LIVE</span><span class=vw>👁 <b id=v>1 284</b></span><div class=tt><b id=ti>Запуск S-messenger 5.0</b><small id=su>Реакции зрителей в реальном времени</small></div></div>
+<div class=bt id=bt></div><div class=cn id=cn></div>
+<script>
+(function(){
+document.getElementById('ti').textContent=pv('title','Запуск S-messenger 5.0');document.getElementById('su').textContent=pv('sub','Реакции зрителей в реальном времени');
+var R=pv('emoji','❤️ 🔥 😂 👏 😮 🎉').trim().split(/\s+/).slice(0,6),N=R.map(function(_,i){return [312,248,97,180,41,133][i]||50}),st=document.getElementById('st'),bt=document.getElementById('bt'),cn=document.getElementById('cn'),live=[];
+R.forEach(function(r,i){var b=document.createElement('button');b.textContent=r;b.onclick=function(){for(var k=0;k<5;k++)setTimeout(function(){fly(i,true)},k*70);N[i]+=5;upd(i)};bt.appendChild(b);var s=document.createElement('span');s.textContent=N[i];cn.appendChild(s)});
+function upd(i){var s=cn.children[i];s.textContent=N[i];s.classList.add('hit');setTimeout(function(){s.classList.remove('hit')},200)}
+function fly(i,mine){if(live.length>(SBL?12:36))return;var e=document.createElement('span');e.className='e';e.textContent=R[i];var W=st.clientWidth,H=st.clientHeight;
+ var o={el:e,x:mine?W*(i+.5)/R.length:W*(.55+Math.random()*.4),y:H,vx:(Math.random()-.5)*.6,ph:Math.random()*6,t0:performance.now(),dur:2200+Math.random()*1200,s:mine?1.15:.75+Math.random()*.4};
+ st.appendChild(e);live.push(o)}
+function step(now){for(var k=live.length-1;k>=0;k--){var o=live[k],t=(now-o.t0)/o.dur;if(t>=1){o.el.remove();live.splice(k,1);continue}
+ var y=o.y-t*(st.clientHeight+30),x=o.x+Math.sin(o.ph+t*7)*14+o.vx*t*60,sc=o.s*(t<.12?t/.12*1.2:1.2-.2*Math.min(1,(t-.12)/.2)),a=t>.7?(1-t)/.3:1;
+ o.el.style.transform='translate('+(x-14)+'px,'+(y-30)+'px) scale('+sc+')';o.el.style.opacity=a}
+ requestAnimationFrame(step)}
+requestAnimationFrame(step);
+setInterval(function(){var i=Math.random()<.5?0:Math.floor(Math.random()*R.length);fly(i,false);N[i]++;if(Math.random()<.3)upd(i);var v=document.getElementById('v');v.textContent=(1284+Math.floor(performance.now()/900)%300).toLocaleString('ru')},SBL?900:380);
+})();
+</script>

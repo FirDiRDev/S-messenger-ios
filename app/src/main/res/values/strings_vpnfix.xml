@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Строки: надёжное отключение VPN и остановка фонового подбора -->
+<resources>
+    <string name="bg_jobs_stopping">Останавливается…</string>
+    <string name="bg_jobs_stopped">Подбор остановлен</string>
+</resources>

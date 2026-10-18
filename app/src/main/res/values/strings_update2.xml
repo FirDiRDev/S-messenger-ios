@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="upd2_apk_broken">Скачанный файл - не APK или повреждён</string>
+    <string name="upd2_apk_other">В релизе APK другого приложения (%1$s)</string>
+    <string name="upd2_apk_old">В релизе лежит APK старой версии (%1$s), а у вас уже %2$s. Загрузите в релиз APK новой сборки</string>
+    <string name="upd2_apk_sign">APK подписан другим ключом - Android не даст обновиться поверх. Соберите APK тем же ключом подписи</string>
+    <string name="upd2_channel">Загрузка обновления</string>
+    <string name="upd2_progress_title">Скачивается обновление %1$s</string>
+    <string name="upd2_installing">Скачано - устанавливаю…</string>
+    <string name="upd2_failed_title">Обновление %1$s не скачалось</string>
+    <string name="upd2_failed_tap">Нажмите, чтобы скачать и установить вручную</string>
+    <string name="upd2_connecting">Подключение…</string>
+    <string name="upd2_eta">осталось %1$d:%2$02d</string>
+    <string name="upd2_retry">Повторить</string>
+    <string name="upd2_browser">В браузере</string>
+    <string name="upd2_in_background">В фоне</string>
+</resources>

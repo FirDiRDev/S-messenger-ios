@@ -1,0 +1,45 @@
+<style>
+.hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hd b{font-size:15px}.hd span{font:700 13px sans-serif;color:#fde047}
+.m{background:linear-gradient(180deg,#7f1d1d,#450a0a);border-radius:16px;padding:10px;box-shadow:inset 0 0 0 2px #fbbf24,inset 0 0 18px rgba(0,0,0,.6)}
+.rs{display:flex;gap:6px}
+.r{flex:1;height:84px;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,#e5e7eb,#fff 40%,#fff 60%,#d1d5db);position:relative;box-shadow:inset 0 3px 8px rgba(0,0,0,.35)}
+.r:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 30%,transparent 70%,rgba(0,0,0,.35));pointer-events:none}
+.strip{position:absolute;left:0;right:0;top:0;will-change:transform}
+.strip div{height:84px;display:flex;align-items:center;justify-content:center;font-size:44px}
+.r.win{animation:wn .5s ease-in-out 3}
+@keyframes wn{50%{box-shadow:inset 0 3px 8px rgba(0,0,0,.35),0 0 0 3px #fde047,0 0 18px #fde047}}
+.ln{height:2px;background:rgba(253,224,71,.5);margin:-44px 4px 42px;position:relative;z-index:2;pointer-events:none}
+.sp{display:block;width:100%;margin-top:10px;border:0;border-radius:12px;padding:11px;font:800 15px sans-serif;letter-spacing:.5px;color:#451a03;background:linear-gradient(180deg,#fde047,#f59e0b);box-shadow:0 4px 0 #b45309;transition:transform .1s,box-shadow .1s}
+.sp:active{transform:translateY(3px);box-shadow:0 1px 0 #b45309}
+.sp:disabled{opacity:.6}
+.msg{text-align:center;font:700 13px sans-serif;height:18px;margin-top:6px;color:#fde047}
+</style>
+<div class=hd><b id=hd>🎰 Слоты</b><span>🪙 <span id=bal>100</span></span></div>
+<div class=m><div class=rs id=rs></div><div class=ln></div></div>
+<button class=sp id=sp>КРУТИТЬ · 5 🪙</button>
+<div class=msg id=msg></div>
+<script>
+(function(){
+document.getElementById('hd').textContent=pv('head','🎰 Слоты');
+var S=pv('symbols','🍒 🍋 🔔 💎 7️⃣ 🍀 ⭐').trim().split(/\s+/).slice(0,9),H=84,reels=[],bal=100,busy=false;
+var rs=document.getElementById('rs');
+for(var i=0;i<3;i++){var r=document.createElement('div');r.className='r';var s=document.createElement('div');s.className='strip';r.appendChild(s);rs.appendChild(r);reels.push({r:r,s:s,pos:0,cur:Math.floor(Math.random()*S.length)});fill(reels[i],[reels[i].cur])}
+function fill(re,list){re.s.innerHTML='';list.forEach(function(k){var d=document.createElement('div');d.textContent=S[k];re.s.appendChild(d)});re.s.style.transform='translateY(0)'}
+function spin(){if(busy)return;if(bal<5){document.getElementById('msg').textContent='Монеты кончились - держите ещё 50 🪙';bal+=50;upd();return}
+ busy=true;bal-=5;upd();document.getElementById('msg').textContent='';document.getElementById('sp').disabled=true;
+ var res=[0,1,2].map(function(){return Math.random()<.22?-1:Math.floor(Math.random()*S.length)});var lucky=Math.floor(Math.random()*S.length);res=res.map(function(v){return v<0?lucky:v});
+ var done=0;reels.forEach(function(re,i){re.r.classList.remove('win');var n=18+i*7,list=[re.cur];for(var k=1;k<n;k++)list.push(Math.floor(Math.random()*S.length));list.push(res[i]);fill(re,list);
+  var dist=(list.length-1)*H,dur=1300+i*450,t0=performance.now();
+  (function f(now){var t=Math.min(1,(now-t0)/dur);var e=t<1?1-Math.pow(1-t,4)+Math.sin(t*Math.PI)*0:1;var y=dist*e;if(t>.92){var u=(t-.92)/.08;y=dist+Math.sin(u*Math.PI)*8}
+   re.s.style.transform='translateY('+(-y)+'px)';if(t<1)requestAnimationFrame(f);else{re.cur=res[i];fill(re,[res[i]]);done++;if(done==3)finish(res)}})(t0)})}
+function finish(r){var m=document.getElementById('msg'),w=0;
+ if(r[0]==r[1]&&r[1]==r[2]){w=r[0]==4?100:r[0]==3?60:30;reels.forEach(function(re){re.r.classList.add('win')});m.textContent='ДЖЕКПОТ! +'+w+' 🪙'}
+ else if(r[0]==r[1]||r[1]==r[2]||r[0]==r[2]){w=8;m.textContent='Пара! +8 🪙';reels.forEach(function(re,i){var o=r.filter(function(v){return v==r[i]}).length;if(o>1)re.r.classList.add('win')})}
+ else m.textContent='Мимо - ещё разок?';
+ if(w){bal+=w;var b=document.getElementById('bal');var from=bal-w,t0=performance.now();(function f(now){var k=Math.min(1,(now-t0)/700);b.textContent=Math.round(from+w*k);if(k<1)requestAnimationFrame(f)})(t0)}
+ busy=false;document.getElementById('sp').disabled=false}
+function upd(){document.getElementById('bal').textContent=bal}
+document.getElementById('sp').onclick=spin;
+})();
+</script>

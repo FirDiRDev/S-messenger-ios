@@ -1,0 +1,50 @@
+<style>
+.pic{position:relative;height:150px;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:center;transition:background .5s}
+.pic span{font-size:84px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.4));transition:transform .5s cubic-bezier(.3,1.5,.5,1)}
+.pic.sw span{transform:scale(.6) rotate(-20deg)}
+.tag{position:absolute;left:10px;top:10px;font:800 11.5px sans-serif;background:#f43f5e;color:#fff;padding:3px 8px;border-radius:8px;animation:pl 1.8s ease-in-out infinite}
+@keyframes pl{50%{transform:scale(1.08)}}
+.fav{position:absolute;right:10px;top:8px;border:0;background:rgba(0,0,0,.25);border-radius:50%;width:32px;height:32px;font-size:16px;transition:transform .2s cubic-bezier(.3,1.8,.5,1)}
+.fav.on{transform:scale(1.2)}
+.t{display:flex;align-items:baseline;justify-content:space-between;margin-top:10px}
+.t b{font-size:16px}
+.st{font-size:12px;color:#fbbf24}
+.d{font-size:12.5px;color:#94a3b8;margin-top:2px}
+.cl{display:flex;gap:8px;margin-top:9px;align-items:center}
+.cl i{width:24px;height:24px;border-radius:50%;box-shadow:0 0 0 2px #1c1a33;transition:box-shadow .2s,transform .2s cubic-bezier(.3,1.8,.5,1)}
+.cl i.on{box-shadow:0 0 0 2px #1c1a33,0 0 0 4px #fff;transform:scale(1.08)}
+.cl small{margin-left:auto;font-size:12px;color:#cbd5e1}
+.sz{display:flex;gap:6px;margin-top:8px}
+.sz b{flex:1;text-align:center;border-radius:9px;padding:5px 0;font-size:12.5px;background:rgba(255,255,255,.07);transition:all .2s;font-weight:600}
+.sz b.on{background:#fff;color:#0f172a}
+.by{display:flex;align-items:center;gap:10px;margin-top:10px}
+.pr b{font-size:20px;color:#a7f3d0}.pr s{font-size:12.5px;color:#64748b;margin-left:4px}
+.cart{flex:1;position:relative;border:0;border-radius:12px;padding:11px 0;font:700 14px sans-serif;color:#fff;background:linear-gradient(135deg,#22c55e,#15803d);overflow:hidden;transition:transform .15s}
+.cart:active{transform:scale(.95)}
+.cart.ok{background:linear-gradient(135deg,#3b82f6,#1d4ed8)}
+.fly{position:fixed;font-size:26px;pointer-events:none;z-index:9}
+</style>
+<div class=pic id=pic><span id=em>👟</span><div class=tag id=tg>−30%</div><button class=fav id=fav>🤍</button></div>
+<div class=t><b id=nm>Кроссовки Air Run</b><span class=st id=rt>★ 4.9 · 1.2k</span></div>
+<div class=d id=ds>Лёгкие, дышащие, для бега и города</div>
+<div class=cl id=cl><small id=cn>Синий</small></div>
+<div class=sz id=sz></div>
+<div class=by><div class=pr><b id=pr>2 990 ₽</b><s id=op>4 290 ₽</s></div><button class=cart id=cart>В корзину</button></div>
+<script>
+(function(){
+[['em','emoji'],['nm','name'],['ds','desc'],['pr','price'],['rt','rating']].forEach(function(k){var v=pv(k[1],'');if(v)document.getElementById(k[0]).textContent=v});
+if(P.old!=null){document.getElementById('op').textContent=P.old}if(P.badge!=null){var tg=document.getElementById('tg');tg.textContent=P.badge;if(!P.badge)tg.style.display='none'}
+var IMG=pv('img','');var LINK=pv('link','');
+var C=[['Синий','#3b82f6','linear-gradient(135deg,#1e3a8a,#3b82f6)'],['Коралл','#f43f5e','linear-gradient(135deg,#881337,#fb7185)'],['Лайм','#84cc16','linear-gradient(135deg,#365314,#a3e635)'],['Графит','#64748b','linear-gradient(135deg,#0f172a,#64748b)']];
+var cl=document.getElementById('cl'),pic=document.getElementById('pic'),cs=[];
+C.forEach(function(c,i){var e=document.createElement('i');e.style.background=c[1];e.onclick=function(){pick(i)};cl.insertBefore(e,document.getElementById('cn'));cs.push(e)});
+function pick(i){cs.forEach(function(e,k){e.className=k==i?'on':''});document.getElementById('cn').textContent=C[i][0];pic.classList.add('sw');setTimeout(function(){pic.style.background=/^https:\/\//.test(IMG)?C[i][2]+',center/cover no-repeat url("'+IMG.replace(/["()\\]/g,'')+'")':C[i][2];if(/^https:\/\//.test(IMG))pic.style.background='center/cover no-repeat url("'+IMG.replace(/["()\\]/g,'')+'"),'+C[i][2];pic.classList.remove('sw')},180)}
+if(/^https:\/\//.test(IMG))document.getElementById('em').style.display='none';
+var sz=document.getElementById('sz');String(pv('sizes','40 41 42 43 44')).trim().split(/\s+/).slice(0,6).forEach(function(s,i){var b=document.createElement('b');b.textContent=s;b.onclick=function(){[].forEach.call(sz.children,function(o){o.className=''});b.className='on'};if(i==2)b.className='on';sz.appendChild(b)});
+document.getElementById('fav').onclick=function(){var f=this;f.classList.toggle('on');f.textContent=f.classList.contains('on')?'❤️':'🤍'};
+var n=0;if(LINK)document.getElementById('cart').textContent='Купить';document.getElementById('cart').onclick=function(e){var b=this;if(LINK){go(LINK);return}n++;var r=pic.getBoundingClientRect(),fl=document.createElement('span');fl.className='fly';fl.textContent=document.getElementById('em').textContent;document.body.appendChild(fl);
+ var bb=b.getBoundingClientRect(),sx=r.left+r.width/2-13,sy=r.top+r.height/2-16,ex=bb.left+bb.width/2-13,ey=bb.top-4;
+ fl.animate([{transform:'translate('+sx+'px,'+sy+'px) scale(1.4)'},{transform:'translate('+((sx+ex)/2)+'px,'+(Math.min(sy,ey)-40)+'px) scale(.9)',offset:.5},{transform:'translate('+ex+'px,'+ey+'px) scale(.3)',opacity:.2}],{duration:650,easing:'cubic-bezier(.4,0,.2,1)'}).onfinish=function(){fl.remove();b.classList.add('ok');b.textContent='✓ В корзине · '+n;b.animate([{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:260,easing:'cubic-bezier(.3,1.6,.5,1)'})}};
+pick(0);
+})();
+</script>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Кнопки звонков в шапке чата -->
+    <item android:id="@+id/video_call" android:icon="@drawable/ic_videocam" android:title="@string/video_call"
+            app:showAsAction="always"/>
+    <item android:id="@+id/call" android:icon="@drawable/ic_call" android:title="@string/call"
+            app:showAsAction="always"/>
+    <item android:id="@+id/e2e_check" android:title="@string/e2e_menu"/>
+    <item android:id="@+id/search" android:title="@string/search_in_chat"/>
+    <item android:id="@+id/mute_chat" android:title="@string/mute_title"/>
+    <item android:id="@+id/chat_wallpaper" android:title="@string/chat_wallpaper"/>
+    <item android:id="@+id/scheduled" android:title="@string/scheduled_messages"/>
+    <item android:id="@+id/auto_delete" android:title="@string/autodelete"/>
+    <!-- «?» - как отправлять и менять живые сообщения (набор «/») -->
+    <item android:id="@+id/live_help" android:title="@string/live_help_menu"/>
+    <item android:id="@+id/backup_history" android:title="@string/export_history"/>
+    <item android:id="@+id/clear_history" android:title="@string/clear_history"/>
+</menu>

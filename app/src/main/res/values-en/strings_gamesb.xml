@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4.7.0: chess resign, declining invitations, Snake skins, game stats in the profile. -->
+<resources>
+    <!-- Chess and invitations -->
+    <string name="gamesb_chess_cancel_invite">Your opponent hasn\'t answered yet. Cancel the invitation? No coins were charged.</string>
+    <string name="gamesb_chess_cancel_invite_yes">Cancel invitation</string>
+    <string name="gamesb_invite_declined_me">You declined the invitation</string>
+
+    <!-- Snake skins -->
+    <string name="gamesb_skin_neonglow">Neon Glow</string>
+    <string name="gamesb_skin_flametail">Flame Tail</string>
+    <string name="gamesb_skin_stardust">Stardust</string>
+    <string name="gamesb_skin_pearl">Pearl</string>
+    <string name="gamesb_skin_milkyway">Milky Way</string>
+    <string name="gamesb_skin_basilisk">Basilisk</string>
+    <string name="gamesb_skin_festive">Festive</string>
+    <string name="gamesb_skin_koi">Koi</string>
+    <string name="gamesb_skin_matrix">Matrix</string>
+    <string name="gamesb_skin_sunrise">Sunrise</string>
+    <string name="gamesb_skin_ember">Embers</string>
+    <string name="gamesb_skin_frost">Frost</string>
+    <string name="gamesb_skin_venom">Venom</string>
+    <string name="gamesb_skin_sapphire">Sapphire</string>
+    <string name="gamesb_skin_electro">Electro</string>
+    <string name="gamesb_skin_rosegold">Rose Gold</string>
+    <string name="gamesb_skin_twilight">Twilight</string>
+    <string name="gamesb_skin_neonzebra">Neon Zebra</string>
+    <string name="gamesb_skin_honeycomb">Honeycomb</string>
+
+    <!-- Game stats -->
+    <string name="gamesb_stats_button">📊 Game stats</string>
+    <string name="gamesb_stats_title">📊 Game stats</string>
+    <string name="gamesb_stats_mine">My wins, records and games across all games</string>
+    <string name="gamesb_stats_of">Stats: %1$s</string>
+    <string name="gamesb_stats_note">Losses, draws and games played are counted since version 4.7.0. Friends see your stats and showcase if \"Show to friends\" is on in Games.</string>
+    <string name="gamesb_stats_note_peer">\"—\" means your friend hasn\'t sent this yet (older app version or stats hidden).</string>
+    <string name="gamesb_stat_na">—</string>
+    <string name="gamesb_stat_w">Wins</string>
+    <string name="gamesb_stat_l">Losses</string>
+    <string name="gamesb_stat_d">Draws</string>
+    <string name="gamesb_stat_record">Record</string>
+    <string name="gamesb_stat_played">Games</string>
+    <string name="gamesb_stat_level">Level</string>
+    <string name="gamesb_stat_levels">Levels</string>
+    <string name="gamesb_stat_stars">Stars</string>
+    <string name="gamesb_stat_hands">Hands</string>
+    <string name="gamesb_stat_best_win">Best win</string>
+    <string name="gamesb_stat_runs">Runs</string>
+    <string name="gamesb_stat_distance">Distance</string>
+    <string name="gamesb_stat_meters">%1$s m</string>
+    <string name="gamesb_stat_games">played in total</string>
+    <string name="gamesb_stat_wins">wins in total</string>
+    <string name="gamesb_stat_winrate">Win rate: %1$d%%</string>
+    <string name="gamesb_stat_winrate_short">wins</string>
+    <string name="gamesb_game_chess">Chess with friends</string>
+    <string name="gamesb_game_chess_bot">Chess vs bot</string>
+
+    <!-- Achievements showcase -->
+    <string name="gamesb_showcase_header">🏅 Achievements showcase</string>
+    <string name="gamesb_showcase_button">✎ Choose achievements</string>
+    <string name="gamesb_showcase_title">Achievements showcase (up to %1$d)</string>
+    <string name="gamesb_showcase_count">Selected: %1$d of %2$d. Friends will see them in your profile.</string>
+    <string name="gamesb_showcase_max">The showcase holds up to %1$d achievements</string>
+    <string name="gamesb_showcase_save">Save</string>
+    <string name="gamesb_ach_snake">Snake record</string>
+    <string name="gamesb_ach_bot">wins vs bot</string>
+    <string name="gamesb_ach_bj">blackjack wins</string>
+    <string name="gamesb_ach_bjbest">best win</string>
+    <string name="gamesb_ach_m3level">Match-3 levels</string>
+    <string name="gamesb_ach_m3stars">Match-3 stars</string>
+    <string name="gamesb_ach_m3best">Match-3 record</string>
+    <string name="gamesb_ach_runbest">run record</string>
+    <string name="gamesb_ach_rundist">m - best run</string>
+    <string name="gamesb_ach_total_wins">wins in all games</string>
+    <string name="gamesb_ach_total_games">games played</string>
+</resources>

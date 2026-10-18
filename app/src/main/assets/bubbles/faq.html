@@ -1,0 +1,33 @@
+<style>
+.t{font-size:15px;font-weight:700;margin-bottom:6px}
+#l{min-height:236px}
+.q{border-radius:12px;background:rgba(255,255,255,.05);margin-top:6px;overflow:hidden;transition:background .25s}
+.q.on{background:rgba(99,102,241,.14)}
+.h{display:flex;align-items:center;gap:8px;padding:10px 11px;font-size:13.5px;font-weight:600}
+.h span{flex:1}
+.h i{font-style:normal;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:12px;transition:transform .35s cubic-bezier(.3,1.5,.5,1),background .25s}
+.on .h i{transform:rotate(45deg);background:#6366f1}
+.a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.3,.9,.3,1)}
+.on .a{grid-template-rows:1fr}
+.a div{overflow:hidden;font-size:12.5px;line-height:1.45;color:#cbd5e1;padding:0 11px}
+.a p{margin:0 0 10px;opacity:0;transform:translateY(-4px);transition:opacity .3s .05s,transform .3s .05s}
+.on .a p{opacity:1;transform:none}
+.ok{display:flex;gap:6px;margin-top:8px;align-items:center;font-size:12px;color:#94a3b8}
+.ok button{border:0;border-radius:9px;padding:4px 9px;background:rgba(255,255,255,.08);color:#fff;font-size:13px;transition:transform .15s cubic-bezier(.3,1.8,.5,1)}
+.ok button:active{transform:scale(.85)}
+</style>
+<div class=t id=hd>❓ Частые вопросы</div><div id=l></div>
+<div class=ok><span id=thx>Ответ помог?</span><button data-r="👍">👍</button><button data-r="👎">👎</button></div>
+<script>
+(function(){
+document.getElementById('hd').textContent=pv('head','❓ Частые вопросы');
+var Q0=[['Нужен ли номер телефона?','Нет. Ваш адрес - это ключ из 76 символов (Tox ID). Его можно показать QR-кодом или ссылкой.'],
+['Где хранятся сообщения?','Только на ваших устройствах. Серверов нет - сообщение идёт прямо собеседнику и шифруется по пути.'],
+['Что если собеседник не в сети?','Сообщение подождёт у вас и уйдёт само, когда он появится. В группах - через участников онлайн.'],
+['Работает при блокировках?','Да: приложение само ищет быстрые узлы, умеет TCP через порт 443 и встроенный VPN.']];
+var Q=pl('items',Q0).slice(0,8).map(function(q){return [q[0],q[1]||'']});
+var l=document.getElementById('l');
+Q.forEach(function(q,i){var d=document.createElement('div');d.className='q'+(i==0?' on':'');d.innerHTML='<div class=h><span>'+H(q[0])+'</span><i>+</i></div><div class=a><div><p>'+H(q[1])+'</p></div></div>';d.querySelector('.h').onclick=function(){var on=d.classList.contains('on');[].forEach.call(l.children,function(o){o.classList.remove('on')});if(!on)d.classList.add('on')};l.appendChild(d)});
+[].forEach.call(document.querySelectorAll('[data-r]'),function(b){b.onclick=function(){document.getElementById('thx').textContent='Спасибо за отзыв '+b.dataset.r}});
+})();
+</script>

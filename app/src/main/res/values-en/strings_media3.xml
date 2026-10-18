@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="forward_file_not_ready">The file “%1$s” hasn\'t finished downloading yet — it can\'t be forwarded</string>
+    <string name="forward_file_missing">The file “%1$s” is no longer available (deleted or cleaned from storage) — it can\'t be forwarded</string>
+    <string name="forward_file_empty">The file “%1$s” is empty — forwarding cancelled</string>
+    <string name="forward_failed_some">Couldn\'t forward %1$d file(s) (empty, incomplete or deleted)</string>
+    <string name="file_send_failed">Couldn\'t send “%1$s”: the file is empty or not accessible</string>
+    <string name="share_file_failed">Couldn\'t share: the file is empty or deleted</string>
+</resources>

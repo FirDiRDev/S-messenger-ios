@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a11y_level">Text size</string>
+    <string name="a11y_level_large">Large</string>
+    <string name="a11y_level_xlarge">Extra large</string>
+    <string name="a11y_level_max">Maximum</string>
+    <string name="a11y_level_hint">The limit depends on the screen: compact phones grow text less, tablets and foldables more, so everything still fits</string>
+    <string name="a11y_contrast">High contrast</string>
+    <string name="a11y_contrast_hint">Grey and faint labels (time, statuses, hints) become pure white or black depending on the background</string>
+    <string name="a11y_motion">Reduce motion</string>
+    <string name="a11y_motion_hint">No springs, shines or glass ripples. Turns on by itself when animations are removed in system settings</string>
+</resources>

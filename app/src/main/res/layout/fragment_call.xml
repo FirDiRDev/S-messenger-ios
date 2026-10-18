@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Экран звонка во весь экран -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/callRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_call_screen"
+        android:keepScreenOn="true">
+
+    <!-- Видео собеседника во весь экран -->
+    <ImageView android:id="@+id/remoteVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:visibility="gone"/>
+
+    <View android:id="@+id/glow"
+            android:layout_width="420dp"
+            android:layout_height="420dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_glow_circle"/>
+
+    <LinearLayout android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="24dp">
+
+        <ImageButton android:id="@+id/back_to_chat"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/return_to_chat"
+                android:src="@drawable/ic_back"
+                app:tint="@android:color/white"/>
+
+        <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="24dp">
+            <View android:id="@+id/ring"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_logo_circle"/>
+            <com.stoyko.smessenger.ui.AvatarImageView
+                    android:id="@+id/avatarImageView"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_gravity="center"
+                    app:shapeAppearanceOverlay="@style/CircleImageView"
+                    app:statusIndicatorVisible="false"
+                    app:strokeColor="@null"/>
+        </FrameLayout>
+
+        <TextView android:id="@+id/callName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingHorizontal="24dp"
+                android:textColor="@android:color/white"
+                android:textSize="28sp"
+                android:textStyle="bold"/>
+
+        <TextView android:id="@+id/callStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/call_encrypted"
+                android:textColor="#CCFFFFFF"
+                android:textSize="15sp"/>
+
+        <Chronometer android:id="@+id/callTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- Своё видео в углу -->
+    <com.google.android.material.card.MaterialCardView android:id="@+id/localVideoCard"
+            android:layout_width="108dp"
+            android:layout_height="144dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="gone"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp">
+        <ImageView android:id="@+id/localVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"/>
+        <ImageButton android:id="@+id/switchCamera"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_call_button"
+                android:contentDescription="@string/switch_camera"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_switch_camera"
+                app:tint="@android:color/white"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Кнопки внизу: подпись под каждой круглой кнопкой -->
+    <!-- «Жидкое стекло» под кнопками, как в iOS: видно размытое видео собеседника. -->
+    <com.stoyko.smessenger.ui.GlassFrameLayout android:id="@+id/control_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:clipToPadding="false"
+            android:paddingBottom="32dp">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp">
+
+        <LinearLayout style="@style/CallButtonColumn">
+            <ImageButton android:id="@+id/speakerphone"
+                    style="@style/CallButton"
+                    android:contentDescription="@string/speakerphone_toggle"
+                    android:src="@drawable/ic_speakerphone"/>
+            <TextView style="@style/CallButtonLabel" android:text="@string/call_speaker"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/CallButtonColumn">
+            <ImageButton android:id="@+id/video_toggle"
+                    style="@style/CallButton"
+                    android:contentDescription="@string/video_call"
+                    android:src="@drawable/ic_videocam"/>
+            <TextView style="@style/CallButtonLabel" android:text="@string/call_video"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/CallButtonColumn">
+            <ImageButton android:id="@+id/microphone_control"
+                    style="@style/CallButton"
+                    android:contentDescription="@string/microphone_control"
+                    android:src="@drawable/ic_mic"/>
+            <TextView style="@style/CallButtonLabel" android:text="@string/call_mute"/>
+        </LinearLayout>
+
+        <LinearLayout style="@style/CallButtonColumn">
+            <ImageButton android:id="@+id/end_call"
+                    style="@style/CallButton"
+                    android:background="@drawable/bg_call_button_end"
+                    android:contentDescription="@string/end_call"
+                    android:src="@drawable/ic_call_end"/>
+            <TextView style="@style/CallButtonLabel" android:text="@string/call_end"/>
+        </LinearLayout>
+    </LinearLayout>
+    </com.stoyko.smessenger.ui.GlassFrameLayout>
+</FrameLayout>

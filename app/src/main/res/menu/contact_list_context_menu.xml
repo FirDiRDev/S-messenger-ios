@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/select_chats" android:title="@string/select_chats"/>
+    <item android:id="@+id/profile" android:title="@string/profile"/>
+    <item android:id="@+id/copy_full_id" android:title="@string/contact_copy_full_id"/>
+    <item android:id="@+id/share_contact" android:title="@string/card_share_contact"/>
+    <item android:id="@+id/pin_chat" android:title="@string/pin_chat"/>
+    <item android:id="@+id/mute_chat" android:title="@string/mute_title"/>
+    <item android:id="@+id/archive" android:title="@string/archive_add"/>
+    <item android:id="@+id/hide_chat" android:title="@string/hide_chat"/>
+    <item android:id="@+id/delete" android:title="@string/delete_contact"/>
+</menu>

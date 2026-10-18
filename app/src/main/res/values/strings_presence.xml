@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- «Был(а) в сети …» в шапке чата и профиле контакта. -->
+    <string name="presence_last_seen_just_now">был(а) в сети только что</string>
+    <string name="presence_last_seen_minutes">был(а) в сети %1$d мин. назад</string>
+    <string name="presence_last_seen_today">был(а) в сети сегодня в %1$s</string>
+    <string name="presence_last_seen_yesterday">был(а) в сети вчера в %1$s</string>
+    <string name="presence_last_seen_date">был(а) в сети %1$s</string>
+</resources>

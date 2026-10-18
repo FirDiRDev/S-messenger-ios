@@ -1,0 +1,11 @@
+# Генерируется XcodeGen и xcodebuild
+*.xcodeproj/
+*.xcworkspace/
+Info.plist
+StoykoMessenger.entitlements
+build/
+DerivedData/
+# Аудио для iOS делает scripts/ios/convert_audio.sh из app/src/main/assets/music
+Resources/music/*.caf
+Resources/music/*.m4a
+Assets.xcassets/AppIcon.appiconset/icon-1024.png

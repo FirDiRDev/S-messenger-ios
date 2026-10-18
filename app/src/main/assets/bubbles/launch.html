@@ -1,0 +1,57 @@
+<style>
+.w{position:relative}
+.hd{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.hd b{font-size:16px;flex:1}
+.pill{border:0;border-radius:14px;padding:6px 11px;font:600 13px sans-serif;color:#fff;background:rgba(255,255,255,.1);transition:transform .15s cubic-bezier(.3,1.7,.5,1)}
+.pill:active{transform:scale(.9)}
+.pill.a{background:linear-gradient(135deg,#3b82f6,#2563eb)}
+.stage{position:relative;height:170px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#2a1859,#4a1f6e 55%,#5b1a4f)}
+.stage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 18px,transparent 18px 36px);animation:sl 6s linear infinite}
+@keyframes sl{to{background-position:200px 0}}
+.ttl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:1}
+.ttl h1{margin:0;font-size:25px;letter-spacing:-.3px;animation:pop .7s cubic-bezier(.2,1.6,.4,1)}
+.ttl p{margin:4px 0 0;opacity:.75;font-size:12.5px;transition:opacity .3s}
+@keyframes pop{0%{transform:scale(.4);opacity:0}100%{transform:none;opacity:1}}
+canvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.ft{display:flex;gap:6px;margin-top:8px;align-items:center}
+.ft .pill{flex:1;padding:6px 4px;font-size:12px;white-space:nowrap}
+.sel{background:linear-gradient(135deg,#7c3aed,#6d28d9)!important}
+.ft i{flex:1;text-align:right;font-style:normal;color:#60a5fa;font-size:12px}
+</style>
+<div class=w>
+<div class=hd><span>🚀</span><b id=hd>Release party</b><button class=pill id=cheer>🙌 <span id=n>0</span></button><button class="pill a" id=again>🎉 Ещё</button></div>
+<div class=stage id=st><div class=ttl><h1 id=h>v2.0 вышла!</h1><p id=sub>42 PR · 9 авторов · 0 регрессий</p></div><canvas id=cv></canvas></div>
+<div class=ft><button class="pill sel" data-m=0>🎆 Пушки</button><button class=pill data-m=1>🌧 Дождь</button><button class=pill data-m=2>🎇 Салют</button></div>
+</div>
+<script>
+(function(){
+var cv=document.getElementById('cv'),x=cv.getContext('2d'),W,H,P=[],mode=0,rounds=0,cheers=0,run=false;
+var C=['#f43f5e','#f59e0b','#22c55e','#3b82f6','#a855f7','#facc15','#fff'];
+function size(){var r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;x.setTransform(d,0,0,d,0,0)}
+function part(px,py,vx,vy,c,s,g,life,kind){P.push({x:px,y:py,vx:vx,vy:vy,c:c,s:s,g:g,l:life,t:0,r:Math.random()*6,vr:(Math.random()-.5)*.3,k:kind})}
+var lite=SBL;
+function burst(){
+ var n=lite?40:110;
+ if(mode==0){for(var i=0;i<n;i++){var L=i%2,ang=(50+Math.random()*28)*Math.PI/180,sp=6.5+Math.random()*6;part(L?W:0,H,(L?-1:1)*Math.cos(ang)*sp,-Math.sin(ang)*sp,C[i%7],4+Math.random()*4,.16,130+Math.random()*60,0)}}
+ else if(mode==1){for(var i=0;i<n;i++)part(Math.random()*W,-10-Math.random()*H,(Math.random()-.5)*.6,1+Math.random()*2,C[i%7],4+Math.random()*4,.02,200,0)}
+ else{for(var k=0;k<3;k++)(function(k){setTimeout(function(){var cx=W*(.25+.25*k),cy=H*(.3+.15*(k%2));for(var i=0;i<(lite?24:60);i++){var a=Math.PI*2*i/60,sp=2+Math.random()*2.6;part(cx,cy,Math.cos(a)*sp,Math.sin(a)*sp,C[(i+k*2)%7],2.4,.04,70+Math.random()*30,1)}},k*380)})(k)}
+ if(!run){run=true;requestAnimationFrame(step)}
+}
+function step(){
+ x.clearRect(0,0,W,H);
+ for(var i=P.length-1;i>=0;i--){var p=P[i];p.t++;p.vy+=p.g;p.vx*=.992;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;
+  var a=Math.max(0,1-p.t/p.l);if(a<=0||p.y>H+20){P.splice(i,1);continue}
+  x.globalAlpha=a;x.fillStyle=p.c;
+  if(p.k){x.beginPath();x.arc(p.x,p.y,p.s,0,7);x.fill()}else{x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);x.restore()}}
+ x.globalAlpha=1;
+ if(P.length)requestAnimationFrame(step);else run=false;
+}
+var SUB=pv('sub','42 PR · 9 авторов · 0 регрессий');document.getElementById('hd').textContent=pv('head','Release party');document.getElementById('h').textContent=pv('title','v2.0 вышла!');document.getElementById('sub').textContent=SUB;
+function go(){rounds++;document.getElementById('sub').textContent=rounds>1?rounds+' раунда конфетти 🥳':SUB;var h=document.getElementById('h');h.style.animation='none';h.offsetWidth;h.style.animation='';burst()}
+document.getElementById('again').onclick=go;
+document.getElementById('cheer').onclick=function(){cheers++;var n=document.getElementById('n');n.textContent=cheers;n.parentNode.animate([{transform:'scale(1.25)'},{transform:'scale(1)'}],{duration:260,easing:'cubic-bezier(.3,1.6,.5,1)'});var m=mode;mode=0;for(var i=0;i<14;i++)part(W/2,H,(Math.random()-.5)*6,-6-Math.random()*4,C[i%7],5,.2,90,0);mode=m;if(!run){run=true;requestAnimationFrame(step)}};
+[].forEach.call(document.querySelectorAll('[data-m]'),function(b){b.onclick=function(){[].forEach.call(document.querySelectorAll('[data-m]'),function(o){o.classList.remove('sel')});b.classList.add('sel');mode=+b.dataset.m;burst()}});
+function start(){size();if(!W){setTimeout(start,100);return}setTimeout(go,250)}
+window.addEventListener('resize',size);start();
+})();
+</script>

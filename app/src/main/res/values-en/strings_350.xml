@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Строки версии 3.5.0 -->
+<resources>
+    <string name="profile_tile_gifts">My gifts</string>
+    <string name="gifts_showcase_title">🎁 Gift showcase · %1$d/%2$d</string>
+    <string name="gifts_all_link">All (%1$d) ›</string>
+    <string name="gifts_showcase_empty">Friends see only the gifts you put on your showcase (up to 12).</string>
+    <string name="gifts_showcase_pick">Choose gifts for the profile</string>
+    <string name="gifts_gallery_empty">No gifts yet</string>
+    <string name="gifts_gallery_title">🎁 My gifts · %1$d</string>
+    <string name="gifts_gallery_on_profile">On profile: %1$d of %2$d</string>
+    <string name="gifts_gallery_hint">Tap a gift to put it on your profile or remove it. Long press does it in one touch. 📌 - already on the profile.</string>
+    <string name="gifts_showcase_full">Your profile already shows %1$d gifts - remove one to add another</string>
+    <string name="gifts_showcase_added">Gift added to your profile</string>
+    <string name="gifts_showcase_removed">Gift removed from your profile</string>
+    <string name="gifts_showcase_pin">📌 Show on profile</string>
+    <string name="gifts_showcase_unpin">Remove from profile</string>
+    <string name="plus_new_contact">New contact</string>
+    <string name="plus_copy_my_id">Copy my ID</string>
+    <string name="tour_gifts_title">Gifts on your profile</string>
+    <string name="tour_gifts_text">Menu → My profile → «🎁 My gifts»: all the gifts you received line up in a gallery. Tap a gift - «Show on profile»: friends see only your showcase, up to 12 gifts you chose yourself. «About me» is now in «Edit profile», and «Copy my ID» is in the «+» menu.</string>
+    <string name="call_phase_connecting">Connecting</string>
+    <string name="call_phase_securing">Connecting · secure channel</string>
+    <string name="call_phase_ringing">Calling</string>
+    <string name="call_phase_active">End-to-end encrypted</string>
+    <string name="call_path_direct">direct</string>
+    <string name="call_path_relay">via relay</string>
+    <string name="call_tunnel_ok">channel verified</string>
+    <string name="update_snoozed">OK, we will remind you about the update in 6 hours</string>
+    <string name="update_channel_desc">New S-messenger version: notification in the shade and on the lock screen</string>
+    <string name="update_reminder_title">Reminder: version %1$s is available</string>
+    <string name="update_later_6h">Remind in 6 h</string>
+    <string name="channel_business_short">Business</string>
+    <string name="channel_stats_short">Statistics</string>
+</resources>

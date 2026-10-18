@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Online game saves: "delete for both". -->
+<resources>
+    <string name="gamesave_deleted_title">Game save deleted</string>
+    <string name="gamesave_deleted_text">%1$s deleted the save of the game “%2$s”. Delete it on your side too?</string>
+    <string name="gamesave_delete">Delete</string>
+    <string name="gamesave_keep">Keep</string>
+    <string name="gamesave_deleted_mark">🗑 deleted by opponent</string>
+    <string name="gamesave_deleted_done">Save deleted</string>
+    <string name="gamesave_left">%1$s left the game</string>
+</resources>

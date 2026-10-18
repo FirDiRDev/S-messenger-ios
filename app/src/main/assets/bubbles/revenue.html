@@ -1,0 +1,44 @@
+<style>
+.hd{display:flex;justify-content:space-between;align-items:flex-start}
+.hd small{display:block;font-size:12px;color:#94a3b8}
+.hd b{font:800 26px/1.1 sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+.up{font:700 12px sans-serif;color:#4ade80;background:rgba(34,197,94,.14);padding:3px 7px;border-radius:8px;margin-top:4px;display:inline-block}
+.tb{display:flex;gap:2px;background:rgba(255,255,255,.06);border-radius:9px;padding:2px}
+.tb button{border:0;background:none;color:#94a3b8;font:600 11.5px sans-serif;padding:4px 8px;border-radius:7px;transition:all .2s}
+.tb button.on{background:rgba(255,255,255,.14);color:#fff}
+canvas{width:100%;height:150px;display:block;margin-top:8px}
+.kp{display:flex;gap:8px;margin-top:6px}
+.kp div{flex:1;background:rgba(255,255,255,.05);border-radius:10px;padding:6px 8px}
+.kp small{display:block;font-size:10.5px;color:#94a3b8}
+.kp b{font-size:14px;font-variant-numeric:tabular-nums}
+</style>
+<div class=hd><div><small id=hd>Выручка</small><b id=tot>0 ₽</b><span class=up id=up>▲ 0%</span></div><div class=tb id=tb><button class=on>Неделя</button><button>Месяц</button><button>Год</button></div></div>
+<canvas id=c></canvas>
+<div class=kp><div><small>Заказы</small><b id=k1>0</b></div><div><small>Ср. чек</small><b id=k2>0 ₽</b></div><div><small>Конверсия</small><b id=k3>0%</b></div></div>
+<script>
+(function(){
+var D=[{l:['пн','вт','ср','чт','пт','сб','вс'],v:[42,58,51,73,69,94,88],u:18,o:312,cv:3.4},{l:['1','5','10','15','20','25','30'],v:[180,240,210,320,290,380,430],u:27,o:1480,cv:3.9},{l:['янв','мар','май','июл','сен','ноя','дек'],v:[1.9,2.4,2.2,3.1,3.6,4.2,4.9],u:64,o:17200,cv:4.6}];
+var UN=pv('unit','₽'),CUSTOM=P.values!=null&&String(P.values).trim()!=='';document.getElementById('hd').textContent=pv('head','Выручка');
+if(CUSTOM){var vv=pn('values',[1,2,3]).slice(0,12),ll=String(pv('labels','')).split(',').map(function(s){return s.trim()});D=[{l:vv.map(function(_,i){return ll[i]||''}),v:vv,u:parseFloat(pv('growth','18'))||0,o:parseInt(pv('orders','312'))||0,cv:parseFloat(pv('conv','3.4'))||0,raw:1}];document.getElementById('tb').style.display='none'}
+var c=document.getElementById('c'),x=c.getContext('2d'),cur=0,from=null,t0=0,dur=900;
+function fmt(n){return Math.round(n).toLocaleString('ru')}
+function vals(i){var m=D[i].raw?1:i==2?1e6:i==1?1e4:1e3;return D[i].v.map(function(v){return v*m})}
+function count(el,to,suf,ms,dec){var f=parseFloat(el.dataset.v||0),s=performance.now();el.dataset.v=to;(function g(now){var k=Math.min(1,(now-s)/ms);k=1-Math.pow(1-k,3);var v=f+(to-f)*k;el.textContent=(dec?v.toFixed(1):fmt(v))+suf;if(k<1)requestAnimationFrame(g)})(s)}
+function draw(now){var d=window.devicePixelRatio||1,W=c.clientWidth,H=c.clientHeight;if(c.width!=W*d){c.width=W*d;c.height=H*d}x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,W,H);
+ var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3),to=vals(cur),fr=from||to.map(function(){return 0}),v=to.map(function(t,i){var kk=Math.max(0,Math.min(1,e*1.4-i*.06));return fr[i]+(t-fr[i])*kk});
+ var mx=Math.max.apply(0,to)*1.15,P=8,bw=(W-2*P)/v.length;
+ x.font='10.5px sans-serif';x.textAlign='center';
+ for(var i=0;i<v.length;i++){var h=(H-24)*v[i]/mx,X=P+bw*i+bw*.18,Y=H-18-h,w=bw*.64,last=i==v.length-1;
+  var g=x.createLinearGradient(0,Y,0,H-18);g.addColorStop(0,last?'#34d399':'#818cf8');g.addColorStop(1,last?'rgba(52,211,153,.15)':'rgba(129,140,248,.12)');x.fillStyle=g;
+  var r=Math.min(6,w/2,h);x.beginPath();x.moveTo(X,H-18);x.lineTo(X,Y+r);x.quadraticCurveTo(X,Y,X+r,Y);x.lineTo(X+w-r,Y);x.quadraticCurveTo(X+w,Y,X+w,Y+r);x.lineTo(X+w,H-18);x.fill();
+  x.fillStyle='rgba(255,255,255,.5)';x.fillText(D[cur].l[i],X+w/2,H-4)}
+ // линия тренда поверх
+ x.strokeStyle='rgba(255,255,255,.55)';x.lineWidth=1.6;x.setLineDash([4,4]);x.beginPath();for(var i=0;i<v.length;i++){var X=P+bw*(i+.5),Y=H-18-(H-24)*v[i]/mx-8;if(!i)x.moveTo(X,Y);else x.lineTo(X,Y)}x.stroke();x.setLineDash([]);
+ if(k<1)requestAnimationFrame(draw)}
+function show(i){from=cur==i&&from?null:vals(cur);if(t0==0)from=null;cur=i;t0=performance.now();requestAnimationFrame(draw);
+ var s=vals(i).reduce(function(a,b){return a+b},0);count(document.getElementById('tot'),s,' '+UN,900);count(document.getElementById('k1'),D[i].o,'',900);count(document.getElementById('k2'),D[i].o?s/D[i].o:0,' '+UN,900);count(document.getElementById('k3'),D[i].cv,'%',900,1);
+ document.getElementById('up').textContent='▲ '+D[i].u+'%';[].forEach.call(document.getElementById('tb').children,function(b,k){b.className=k==i?'on':''})}
+[].forEach.call(document.getElementById('tb').children,function(b,i){b.onclick=function(){show(i)}});
+function st(){if(!c.clientWidth){setTimeout(st,100);return}show(0)}st();
+})();
+</script>

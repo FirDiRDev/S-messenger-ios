@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Кнопка-плитка в окнах «Информация» (группы, каналы) -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="#335B4BDB">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/dialogItem"/>
+            <corners android:radius="14dp"/>
+        </shape>
+    </item>
+</ripple>

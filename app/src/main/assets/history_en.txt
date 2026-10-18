@@ -1,0 +1,634 @@
+4.13.1
+• The “+” button in the reaction bar is now bright and alive: it shimmers and pulses - tap it to open all emoji.
+• The app intro and the tour now explain how to add and remove reactions and what “+” does.
+• The developer's profile has a nice channel button under the gold badge.
+• Fixed crashes on Android 5 and 6 (VPN, DPI bypass, node check) and other small bugs.
+
+4.13.0
+• Reactions: 400+ emoji - smileys, gestures, hearts, animals, food, celebration - in a scrollable list by section, with Recent on top.
+• The quick reaction bar above a message is longer and scrolls; it shows your recent reactions.
+• Reactions can now be removed: the ✖ button in the bar, “Your reactions - tap to remove” in the list, or just tap the reactions under a message.
+• A one-time intro to the built-in VPN: what it does and how to turn it on for the whole phone in three steps, right from the messenger.
+
+4.12.1
+• Weak phones: animations stay on in a lighter form (~30 fps)
+• Message appear animation on weak phones is lively but light
+• Shop: runner outfit tiles animate only while visible
+• Chat: instant file transfer lookup, no false 'Unable to find ft' errors
+• Error log: entries older than 7 days removed; header shows phone class and lite mode reason
+• Network: shorter DNS retry after network switch; throttled overrun warnings
+• Updates: mirrors with 404 skipped for 12 h; error bodies closed
+
+4.12.0
+• Developer channel button is now live: a looping video instead of the icon
+• Appearance → Chat wallpaper: one wallpaper for all chats - built-in live «Rainy night», own photo or video
+• Runner: 7 real characters with their own bodies, parts and in-run abilities
+• Runner: 4 legendary outfits with an aura and the strongest abilities; buy with coins or top up coins with rubles
+• Shop: Legendary and Characters rows with ability descriptions
+
+4.11.2
+• Friend request: nickname and avatar instead of the long ID; notification with photo and Accept / Reject buttons
+• Request screen redesigned: avatar, nickname, message, big buttons
+• Accepted contact gets the nickname and avatar right away
+
+4.11.1
+• Update dialog shows real release notes; stale old-APK error removed; APK searched in the exact version release first
+• VPN: subscriptions - Pozor smart YAML first, PZD and BostNet
+• VPN: YAML proxy-providers are expanded with filters; bundled Pozor v11.56 copy as fallback
+• Chat long-press menu: Hide chat (PIN) / Unhide
+• Cards: Cyber neon and Dark runes labelled as author's decks
+
+4.11.0
+• VPN: Clash / Mihomo (YAML) import - servers, WireGuard/AmneziaWG to WARP, provider subscriptions; YAML subscriptions supported
+• VPN: import from a file (.yaml .conf .ovpn .json .txt)
+• VPN: OpenVPN (.ovpn) profiles - stored, pinged, opened in the OpenVPN app
+• VPN: 17 ready WARP MIFA PRO configs and the MIFA subscription
+• VPN: faster ping - closed ports cut in 2.5 s, retry on transient errors, parallelism by CPU, ICMP for Hysteria2/WireGuard
+• VPN: faster connect - a dead server is replaced 9 s after connecting
+• VPN: two-column layout on tablets/landscape, compact on small screens and large fonts
+• VPN: ALPN, mode and XHTTP extra taken from Xray configs
+
+4.10.3
+• VPN screen fully redesigned: new hero panel with a glowing power orb, timer, current server card with flag and ping, Mode · Ping · Scope summary
+• Overview: mode cards with descriptions, quick action icons, top 5 servers, automation
+• Servers & modes: server list with country flags, compact header on small screens
+• New ready WARP (AmneziaWG) configs: FIX, AMFITON, OMSK, SHARP, with a picker
+• New built-in ProxyNova servers from 14.10
+
+4.10.2
+• VPN: ping no longer blinks dots forever - 12 s limit per check, repeated checks don't pile up
+• VPN: the connected server is pinged through the running tunnel, so its ping is visible while you use the VPN
+• Subway runner: fixed crash on Play in winter mode
+
+4.10.1
+• Fixed Subway runner crash in winter (index=-2 in garland colors)
+• "Hide chat (PIN)" dialog: smaller hint that fits, big PIN digits, small warning below - fits on narrow screens
+• Shop: new "🏃 Runner outfits" section with live previews
+• Shop: "🔥 Deal of the day" - a new runner outfit at −40% every day
+• Shop: ⚡ 4 exclusive outfits available only in the shop
+
+4.10.0
+• VPN: when no server answers, the app finds out why (wrong phone clock, blocked servers, DPI) and tells you; servers aren't deleted as dead in that case
+• Tecno Spark 6/7/8 (KE, KF, KG…) are detected as budget phones: lite mode and font size from the start
+• Fixed leaked windows when the screen is recreated with VPN, games or other full-screen windows open
+• VPN: server ping shows again on Android 11 and firmwares where the check engine can't resolve addresses (fallbacks with Android-resolved address, own DNS, then TCP reachability)
+• Log: removed MIUI hidden-API and Huawei badge provider errors, false Tox overrun warnings during file transfers, unclosed video resources
+• Fixed errors from the log: node addresses are resolved via Yandex, Cloudflare, Google and AdGuard DNS (UDP 53 and DNS-over-HTTPS on port 443) instead of 9.9.9.9:5053 which mobile networks block; found addresses are remembered for 6 hours, a dead DNS server no longer slows down every node
+• Removed a node-list source that answered "HTTP 301"; https redirects are followed
+• If there is no connection for 90 s on mobile data, the app checks for carrier whitelists and tells you a VPN is needed
+• Third-party VPN apps: the messenger works through them; turning a VPN on/off reconnects within seconds; the built-in VPN asks before taking over
+• Hidden chats (PIN) reworked: no more bypassing the PIN via notifications, "next unread", forwarding or profile; PIN entered twice; "Hide chat" in the chat menu; PBKDF2 storage; 30 s pause after 5 wrong tries; hidden-chat notifications have no name or Reply button
+• Device sync: after moving your profile, both phones on the same Wi-Fi exchange messages and contacts - encrypted and direct (Settings → Device sync)
+• Golden "🧪 S-messenger tester" badge for testers
+• "Developer's channel" button in Settings and About
+• New animated card decks for Durak and Blackjack: Cyber neon and Dark runes
+• Subway runner: fixed the giant coin that stuck to the runner after a magnet
+• Subway runner New Year event: trains with garlands, wreaths and a star; lights on stations, bridges and in tunnels
+• Subway runner: 6 new outfits
+• Auto-update: all sources are checked at once, relative redirects fixed, backup mirrors for the APK (signature is verified)
+• Adaptive UI: button labels that didn't fit on narrow screens shrink instead of being cut with "…"
+• Weak phones (Galaxy J8 and similar): fewer node-check threads, no false "Tox thread overran" at startup
+
+4.9.11
+• Legendary gift animations are back to how they were before 4.9.9: the emoji turns in 3D, floats and flashes, with sparkles and a power wave
+
+4.9.10
+• Two VPN engines in one app: the Nova engine joins Xray and runs in its own process, so switching between servers and WARP no longer restarts the app
+• WARP: choose the engine - built-in AmneziaWG, Nova WG (same config, AmneziaWG 3.x masking) or MASQUE
+• New Cloudflare MASQUE transport (HTTP/3): looks like a regular website to the carrier and gets through where WireGuard is blocked. The key is issued automatically on first connect; if Cloudflare is blocked, registration goes through an enabled server; the engine tries Cloudflare addresses and ports
+• MASQUE registration also gives you your own WARP account - it becomes the WARP config if you didn't have one
+• The VPN watchdog reconnects the Nova tunnel without restarting the service and rotates addresses for MASQUE
+• The build removes files dropped from the project (old spring, summer and autumn tunes) by itself: unpacking the archive over the folder didn't delete them
+
+4.9.9
+• Fixed a Subway run crash when picking up the new power-ups (shield, coins ×2, slow motion)
+• Music is kept only for the winter event - in the messenger and in the game; the autumn, spring and summer tunes are removed
+• Legendary gifts move according to what they are: the owl and eagle fly with feathers and clouds, the dragon breathes fire, the sword gleams and slashes with a trail, the hammer strikes with lightning, the potion bubbles and steams, the rocket launches with fire, the jellyfish pulses, coins burst out of the chest, the die rolls, instruments play notes, the volcano erupts, the dragon egg cracks and glows - 87 different scenes
+• VPN: the best of Nova - 50 ready verified WARP configs (no generators needed), a RuStore-verified list of Russian apps, sharing the VPN with a laptop or TV over the hotspot (SOCKS5/HTTP with a password and QR), Direct sites (.ru, .su, .рф and your own domains), detection of the carrier's whitelist mode
+• VPN: tunnel watchdog - a live check every 40 s and after a network change, automatic reconnect and switching to another server or config when the link drops
+• VPN: new Apps in VPN window - whole phone / only selected / all except, Browsers & social and Games presets, system apps, search and a counter
+• VPN: new settings in one list, ad-free AdGuard DNS, subscription manager marking dead ones, dead servers are removed only after two failures in a row, dead built-in servers cleaned up
+• Photos are recompressed to 2560 px before sending - 3-8× faster, no GPS in the file (can be turned off: Send photos in original quality)
+• Tablets: more columns for gifts, chat photos no longer stretch across the screen, the VPN screen is centred
+• Fixed: WARP didn't start on cores without the new masking parameters; more autostart screens for Honor, OnePlus, OPPO, iQOO, Meizu, Tecno/Infinix
+
+4.9.8
+• Seasonal theme music across the whole app: autumn, winter, spring and summer each have their own seamless tune. It goes quiet in the background, during calls, videos, voice messages, music, recording and games with their own music; switch and volume in Settings → Appearance
+• Legendary gifts: each has its own unique complex animation - aurora, magic circle, galaxy, portal, lightning, flames, crystals, warp stars, kaleidoscope, fireworks, fireflies, coin rain, petal vortex and more; the gift slowly turns in 3D and bursts with power every few seconds
+• Your own GIFs and stickers from the keyboard (Gboard, SwiftKey, Samsung) - in chats, groups and channels; they loop big and without a bubble, like live emoji
+• Gift picker: the All/images/emoji/drawn filter is gone (categories stay), the search bar slides away while scrolling, a compact «Give» button with the price and no empty space below
+• Subway run: new main menu - a big «Play» button, best score and tiles (outfits, shop, season, music, controls)
+• Subway run: map decorations for every season - sakura and flower beds in spring, palms and beach umbrellas in summer, maples, pumpkin lanterns and hay in autumn
+• Subway run: 8 new characters (Sakura, Surfer, Pumpkin, Ninja, Astronaut, Pirate, DJ, Golden champion) and 3 new power-ups - 🛡 shield, 💰 coins ×2, ⏳ slow motion; 8 upgrades in the shop
+• Subway run: rolling on a board - the runner lies down on it; while you fly on the jetpack, the board and sneakers don't run down
+• Subway run: new animations - board kickflip in a jump, a flip in sneakers, jetpack sway, warm-up in the menu, a puff of dust on landing
+• All coin prices doubled: gifts, outfits, boards, upgrades, run continue, Match-3 boosters, snake skins
+• Fixed: Back in the Subway run shop closed the whole game; the long shop list didn't fit the screen
+
+4.9.7
+• 66 new picture gifts: alchemy, stained glass, mechanisms, creatures, sea and space
+• Every gift has its own animation: its own motion (breathing, swaying, floating, heartbeat, tilt) and a category signature - hearts, notes, bubbles, stars, sparks, leaves, snowflakes, confetti
+• Gifts are split into categories: love, magic, treasures, creatures, nature, space, sea, winter, tech, art, food, travel, style, fun, symbols, flags; a category strip with counts in the picker
+• You can send a gift even when your friend is offline - it will be delivered when they come online
+• Subway runner: seasonal themes with their own music - winter, spring, summer, autumn (auto by date or manual); season music can be turned off in the game menu
+• In winter the guard is Santa and the robodog is a red-nosed reindeer; Christmas trees and garlands by the tracks, 4 winter outfits
+• Snow, leaves and petals stay in the world and no longer move with the runner
+• A new bright coin sound
+• Seasonal chats: a seasonal colour haze and a scene at the bottom - snowdrifts, leaves, grass with flowers, waves
+• More greetings and holidays on the splash screen
+
+4.9.6
+• Subway runner: New Year event - snowfall, snow on train roofs and the ground, a winter sky and festive music during the run. The music loops seamlessly: the intro plays once, then the melody repeats with no ending
+• Switch in the game menu: "Winter: auto" (Dec 1 - Jan 31), "always" or "off"
+• Snake on tablets: a full-screen board with big cells, a large joystick and buttons; in landscape the boost is left of the board and the joystick on the right
+
+4.9.5
+• Subway runner: new graphics - per-pixel lighting (soft light, sun highlights, rim light), smoother characters
+• The guard and his dog run exactly along your path: they jump where you jumped, duck under the same barriers and no longer pass through trains and obstacles
+• In-game shop: upgrades - the jetpack, hoverboard and magnet last longer (5 levels); boards with spinning wheels, glowing wheels and effects - sparkles, flames, frost, neon
+• More threads: files are received in parallel (2-4 writer threads), sending reads further ahead on fast phones, images load in 4-6 threads
+• Calls: the microphone is read in a separate thread from sending - the voice no longer breaks up when the network is busy
+
+4.9.4
+• Spoilers: photos and videos can be hidden under a sparkling veil (switch in the send window), text - hold Send → Send as spoiler. Opens on tap, works in chats, groups and channels
+• New data export: an animated menu, full transfer (.smsave) or a readable archive (.zip) with a choice - messages, media and files, contacts, groups and channels, gifts, skins, coins, stats, connections. The archive is verified by checksums, chats open in a browser (index.html)
+• Profile link: Share in your profile gives a regular link - tapping it opens S-messenger and sends the friend request automatically
+• Appearance and Personalization merged; proxies moved from the side menu to Settings → Network and nodes
+• Individual animations: message appear, transitions, lists, live message autoplay, spoiler sparkles - can be turned off on weak phones
+• More reliable tour: the menu opens and closes by itself for each item, new steps about spoilers and the profile link
+• Better detection of POCO (F3-F8, X3-X8 Pro) and OnePlus (from Android 8 to 15R)
+
+4.9.3
+• Reactions no longer disappear after editing a message (for you and your contact)
+• Tapping a reply smoothly jumps to the original message and highlights it
+• Gifts: identical gifts stack with a “×2” badge, tap to see all; categories switch and filter reliably; the gift dialog adapts to small screens (“Sign” no longer covers gifts)
+• Long-press on a chat always shows the preview (incl. HUAWEI) plus “Delete contact”
+• Live messages “?” moved into the chat “⋮” menu
+• Warning when setting a PIN or password: they cannot be recovered - the messenger is anonymous (no servers, phone or email)
+• Removed mentions of third-party messengers; “Message the developer” keeps only its icon
+• Fixed freezes (ANR): large VPN server lists are parsed once and saved in the background
+• Match3: stars for saving moves, more points and bonuses (hammers, bombs…) for collected gems, new board shapes from level 20; old progress reset for the new rules
+
+4.9.2
+• Live messages ("/") no longer slow the chat down: in the chat they are light ▶ cards that come alive on tap (the newest one by itself), at most two are live at once, and off-screen ones are paused
+• Live messages can be customised: "✏️ Edit" - your own text, headers, prices, chart numbers, poll options, tracks, steps, time zones, your own picture (https link) and your own button link. The preview updates while you type
+• An already sent live message: hold it - reactions, reply, "Edit" (the editor opens and it updates for your contact) and "Delete for everyone", like regular messages. In groups and channels too
+• A "?" button in the personal chat header - a detailed guide: how to send live messages, how to edit them and how they work
+
+4.9.1
+• Crash protection: if a message decoration (buttons, a poll, an HTML bubble, a live message, an animation) fails to show, the chat no longer closes - the message is shown without it and the error goes to the report
+• The crash when scrolling a chat with HTML bubbles (versions 4.8.8-4.8.9) was already fixed in 4.9.0
+
+4.9.0
+• Fixed a crash when opening a chat with an HTML bubble, a live message, a poll or message buttons
+
+4.8.9
+• Live messages: 17 app-like messages with smooth animations - a release party with confetti (cannons, rain, fireworks), an easing gallery, a player with an equalizer and a synth, a step-by-step deploy, a streaming reply, a live clock, a link preview, floating reactions, activity rings, a slot machine, a rolling counter, tic-tac-toe against a bot, a poll, a boarding pass, a product card, revenue, an FAQ
+• How to send: type "/" in the empty message field - a list appears (you can type the name, e.g. /slots). Or hold Send → "🧩 HTML bubble" → "✨ Live messages" - with a preview before sending
+• Bubbles expand smoothly, and their animations pause off screen (saves battery)
+• Tour: new steps about live messages and interface animations
+• Shorter, tidier screenshot-protection texts - no longer cut off
+• Network nodes update themselves every 5 hours: fresh lists from all sources (in parallel, faster), a speed check and reconnecting to the fastest ones
+• Calls: background node checks no longer disturb the audio during a call; on a bad connection the call doesn't drop (quality goes down to 12 kbps); a call started offline triggers reconnecting right away
+
+4.8.8
+• Fixed: after holding a chat (preview) the whole list smeared and left trails - the window background got broken. The background is no longer touched
+• Subway run: every 10 collected coins = 1 coin to your balance (the remainder carries over between runs)
+• Online blackjack: a 15-second turn timer - a bar and countdown for everyone; when time runs out the turn moves on
+• Blackjack: the dealer plays step by step - "Reveal card", "Draw a card", "Stand - settle" or "Finish now"
+• Blackjack: new dealer buttons - "Hurry up" (5 seconds left), "Shuffle", "Table bet limit", quick phrases
+• Blackjack: players get "Surrender" (half the bet back) and quick phrases
+
+4.8.7
+• HTML bubbles: a message becomes a mini app right in the chat - quick-reply buttons, a product card, a live chart (tap to see a value). To send: hold the Send button → "🧩 HTML bubble". You can also write your own HTML; it works offline in a safe sandbox
+• Fixed: after holding a chat and cancelling the preview, the list "floated" and animations broke (the avatar flight landed in another row, and the app turned on lite mode by mistake)
+• Neater animations: the chat preview slides out of the row straight, without skew; jelly scrolling is softer and without tilt; rows no longer stay stretched
+• Match-3: ice is a transparent glass tile with the gem visible through it; leaves look like the design, without frames, with a leaf badge in the corner; gems are calmer, without swaying or skewing
+• VPN: fresh ProxyNova servers (Bulgaria, Finland, Russia, Armenia, Romania, Germany, Europe) and the auto-updating "ProxyNova · Manual choice" subscription
+
+4.8.6
+• Match-3: the original gems are back (as in the original design), now alive - they breathe, sway, stretch while falling and swapping, bounce on landing and shimmer
+• Match-3: while you think, a soft wave rolls across the board every few seconds; popping gems flash white
+• "What's new" after an update now shows the changes of the installed version, not an old one
+• New messages appear beautifully: yours flies up from the input field on a spring, incoming ones inflate from the bubble corner, a batch appears as a staircase
+• App updates download in several streams at once - 2-4x faster; if the server can't do that, it downloads as before, with resume
+
+4.8.5
+• Match-3: new faceted gems with a distinct shape per colour
+• Match-3: living gems - they breathe and sway, stretch while falling, squash and bounce on landing, stretch along a swap, the selected gem wobbles like jelly, a shine runs across the stones
+• Chat preview (long press): the background blurs gradually while you hold, the row stays sharp and sinks in; the preview pops out of the row with a spring
+• Preview: instead of "More" - the actions themselves: Mark as read, Pin, Mute / Unmute, Archive, Profile (and Leave in groups)
+• Jelly scroll is more visible: bubbles stretch and tilt with the scroll direction
+• Network: without internet the app no longer retries the nodes non-stop - pauses grow up to a minute, and it reconnects right away when the network returns; channels are checked less often while the connection is fine
+
+4.8.4
+• Match-3: new ice - a solid ice cube over the whole tile with bevels, frost and a glossy shine; double ice is thicker, with a snowflake and "2"
+• Match-3: leaves look like real leaves and no longer blend with the board
+• Match-3: ice and leaf goals always match what can be cleared on the board; ice no longer vanishes after boosters
+• Match-3: smooth animations - falling is timed by real frame time (even on 60/90/120 Hz), soft landing, the board no longer shakes on every cascade
+• Groups and channels: long-press preview and reveal-from-tap, like personal chats
+
+4.8.3
+• Fixed the 4.8.2 build
+• Updates: if the new version is already downloaded, an "Update downloaded → Install" window appears right away, without downloading again
+• Updates: while the version downloads in the background, the "Update" window no longer offers to download it again - you are asked to install when it finishes
+• Updates: "Install" opens the system installer and works on the first tap; if you close the confirmation, the app offers to install again
+
+4.8.2
+• Personal chats: the connection channel icon no longer overlaps the avatar in the header
+
+4.8.1
+• Chat preview by long press (Peek & Pop) with a spring and staggered action buttons
+• Avatar and name fly from the list into the chat header; the chat background unfolds from the tap point
+• Swipe back with an elastic pull; the chat list shows through underneath
+• Jelly scrolling of messages
+
+4.8.0
+• Formatting editor for posts and messages: headers, lists, tables, spoilers, quotes and collapsible quotes, bold, italic, strikethrough - with a live preview
+• Spoiler with sparkles that dissolve on tap; collapsible quote that expands smoothly
+• Live emoji right inside the text line
+• Liquid-glass menu above selected text: Bold / Italic / Spoiler / Strikethrough / Copy / Cut
+• The document can be viewed as a JSON block schema ("{ } JSON" in the editor)
+
+4.7.5
+• Files and music right inside the text, as link buttons with an icon and progress
+• Several tracks in one message make a playlist
+
+4.7.4
+• Smart polls in chats, groups and channels: covers and emoji per option, single or multiple answers, anonymous or public
+• Poll limits: deadline, vote limit, no re-voting, selected countries only (by SIM/phone region)
+• "Votes over time" chart
+
+4.7.3
+• Buttons inside messages: coloured buttons with emoji - quick reply, link or call, copy, mini-game, channel catalog
+• Signed gifts with an authenticity mark; your own comment on a received gift
+• Welcome message for new group and channel members - only they see it
+• Update server addresses are stored encrypted in the code
+
+4.7.2
+• Dark theme by default
+• Low-vision mode: three text sizes adapted to the screen, high contrast, reduce motion
+• Low-end device mode: lighter images and glass, also turns on automatically when overheating or stuttering
+• Smoothness: 90/120/144 Hz screens run at the highest refresh rate
+
+4.7.1
+• Fixed the 4.7.0 build (build.gradle.kts error when adding built-in Tor)
+• Sending and downloading progress for files, photos, videos and voice messages in the notification shade: percent, size, speed, time left and a "Cancel" button; "Sent" / "Downloaded" when done
+• Bigger reactions in chats, groups and channels: pills with emoji, count and the avatars of who reacted
+• Forwarding: bigger, bolder recipient picker and "↪ Forwarded" header in messages
+• Private chats: "🛡 Block screenshots and forwarding" in the chat menu - applies to both people: no screenshots or screen recording, no forwarding, copying or saving; 🛡 badge in the header
+
+4.7.0
+• Chess: "Resign" reliably ends the game for both players even if the opponent was offline; stakes are settled exactly once; the prize for beating the bot is paid exactly once
+• Declining an invitation (chess, Durak, Blackjack) no longer opens the lobby: the game is removed and the host is notified
+• Online Blackjack: invite friends and be the dealer - "Place bet", "Accept bets", "Deal"; the dealer's bank is reserved for payouts, a dealer win takes the bets, a loss pays the winner; table chat, saves and rejoining
+• New S-coin-style chips (5/10/25/50/100), a "Buy chips" button; Blackjack chip packs in the shop
+• Snake: 19 new skins with live effects - neon glow, flame tail, stardust, scales, Milky Way, lightning, frost and more
+• Profile: one "📊 Game stats" button - wins, losses, draws and records for all games; a showcase of up to 6 achievements that friends see
+• New "Communication channels" section: Auto / Tox / Tor / No internet. If Tox is blocked the app switches to built-in Tor (obfs4, meek, Snowflake bridges); with no internet - Wi-Fi Direct and Bluetooth
+• Bluetooth messages without internet, end-to-end encrypted (X25519 + AES-GCM, keys pinned in advance via Tox); current channel badge in the header (🌐 / 🧅 / 📶 / 🔵)
+• Faster file transfers: disk reads and writes run in the background so the network never waits on storage, calls stay smoother during transfers; files only go through the encrypted channel
+
+4.6.0
+• Build: R8 decompilation protection - shrinking, optimization, meaningless class and method names, single package, no debug logs; the output is a single S-messenger-universal-release.apk with all architectures; build_apk.bat builds release only, retries downloads only on network failures (max 3) and shows the exact cause on error
+• Match-3: ice, leaves and gold deposits render correctly on all levels (ice holds its gem in place, cracks and layers visible), goal counters match the board exactly
+• Match-3: exact score (each move left +250, level best saved), buying gives +10 moves instead of 5, stars rebalanced - 2 and 3 stars are reachable; old levels are more beatable
+• Match-3: 45 new levels (101-145) - shaped boards, gold deposits, mixed and score goals, new blockers explained on first appearance
+• Rail Run in real 3D (OpenGL): tunnels, bridges, stations, graffiti, day-night cycle, running on train roofs, oncoming trains with horn and headlights
+• Rail Run: an inspector with a flashlight and a robot dog chases you - stumble twice in a row and you're caught; rocket pack, spring sneakers, hover board; 10 runner outfits for coins with a live 3D preview, continue a run for 50 🪙
+• Durak: bots play like people - they think, lift the chosen card and toss it along a smooth arc with a soft landing; take, discard and dealing cascade
+• Durak: swipe to play - drag a card to the table or flick it up; when defending drop it on the card you beat (valid targets highlight)
+• Fixed: photos and videos no longer duplicate in chats (double tap on Send, re-sending after a disconnect or restart)
+• Fixed: forwarding and sharing files (archives, APK, photos, videos) sends the real file with its original name instead of an empty white file; a clear error if the file is missing or not fully downloaded
+• Online status is accurate: re-checked at start, reconnect and when returning to the app, no flicker on short drops; “last seen …” in chat and profile
+• Coin purchases are more reliable: payment is awaited up to 30 minutes even in background and after restart, coins are never lost or credited twice; “Didn't arrive? Check again” and “Restore purchases” buttons
+• Shop: exclusive and deal cards are equal size and aligned
+• Profile: “🛒 Shop” button next to Snake; Match-3 and Rail Run records as neat tiles (visible to friends)
+• Metro map opens faster and runs smoother: static map cached, trains redrawn only when moving, faster routing; fixed missing transfers at route ends and faded line badges
+
+4.5.0
+• Updates: background download now shows a progress bar in the notification shade; there is always a single download - the Update window and the background update no longer write the same file at once (that corrupted the APK); interrupted downloads resume
+• Updates: before installing, the APK is checked - it's S-messenger, newer than installed, same signature. If the release has an old APK, the app no longer pretends to update and re-download in a loop - it shows the reason; after a failure background updating pauses for 6 hours and the window shows what went wrong
+• Updates: the manual install window with a progress bar, speed and time left is back; on screen choose “Update and install” or “In background”; on error - Retry or In browser
+• VPN always turns off with the button (screen, shade, tile) - even while connecting - and no longer turns itself back on; no freeze when turning off
+• Background search (server for nodes and DPI strategy) stops immediately by its button; Ping all no longer lags the VPN screen
+• Match-3: combinations fixed - rainbow no longer clears an extra colour, the bonus always appears at the move cell, no ready rows remain after a reshuffle
+• Match-3: leaves are clearly visible (green cells, leaf badge and frame over gems); boosters and extra moves cost half as much
+• Cards (Durak, Blackjack): smoother dealing and bot moves - ease-in/out, card art prepared in background, lighter live effects
+• Rail Run is now 3D: real train carriages with roofs, sides, glowing windows, headlights and wheels, 3D barriers and coins, trees, houses and a city in sunset haze; the runner really runs, jumps, rolls and leans
+• Rail Run: cheerful background music (🎵 button in the top bar)
+• New Low-end device mode (Settings → Appearance): everything stays beautiful, but live decorations are drawn less often, glass refreshes less often, games use fewer particles; Auto turns it on for weak phones. Described in the tour
+• Settings: the Theme row is aligned like the other rows
+• Online games: if the opponent deletes a save (chess, Durak) you get a notification “Delete for you too?”, and the game list marks it “🗑 deleted by opponent”; saves are written atomically with a backup copy
+• Profile export (.smsave) is more reliable: consistent chat snapshot, all settings, games, purchases and files, SHA-256 manifest and verification right after saving, progress window
+• Profile import verifies the whole file first and rejects a damaged one, file paths are adapted to the new phone, everything rolls back on failure; old .smsave files still import
+• File manager: archiver - ZIP with compression level and password, browse archives like folders (ZIP, APK, JAR, CBZ, TAR, TAR.GZ), extract all or selected, add/delete/rename inside ZIP, integrity test, protection from malicious archives, progress with cancel
+
+4.4.0
+• Auto-update fixed: the app again downloads and installs the new version from the latest GitHub release by itself. If the link in update.json is wrong (file missing), the APK is found automatically: this version's file in the release, the latest release file (S-messenger-universal-release.apk) and the APK the GitHub API sees; the latest release is always checked even if update.json wasn't updated; if the VPN route fails, the download goes direct
+• Durak: choose a game mode - throw-in, transfer (pass the attack with a card of the same rank, “↪ Transfer” button, bots transfer too) and simple (only the attacker throws in); available with bots and with friends online
+• Durak: cards are much bigger - hand, table, deck and discard; the artwork deck is never stretched beyond its original size and is downscaled in steps, so it stays sharp; table cards adapt so everything fits
+• New game “Blackjack”: a green felt table with the same deck as Durak; 5-100 coin chips (or play without a bet), Hit, Stand, Double, Split; smooth dealing from the shoe, dealer card reveal, sounds and coin winnings (blackjack pays 6 to 5); hand and win stats
+
+4.3.0
+• Coin payments work right away: the working shop settings are built into the app, and a fresh update.json loads in the background from the latest GitHub release (releases/latest/download/update.json, with the releases API, branches and CDN as fallbacks); the "Payment setup" window no longer gets in the way, packs are available at once
+• Shop: ⚡ "Exclusive" - rare Snake skins and ✦ gifts that aren't in the regular choice appear for 3 hours with a timer and then vanish; they're expensive - save up or buy coins
+• Shop: a Snake skin catalogue with live preview and purchase, gifts for your collection; live pack icons - hands, bag, chest and crown move and sparkle; purchase sounds
+• 8 exclusive skins (Phoenix, Hologram, Chameleon, Demon, Angel, Jade, Nebula, Royal) and 18 exclusive ✦ gifts
+• New game "Rail Run": run along three tracks - swipe left/right to change track, up to jump a low barrier, down to roll under a high one, dodge trains by moving to a free track. Every coin collected = 1 🪙 to your wallet. Power-ups: magnet, board (forgives a crash), ✖2 score, super jump; speed grows, the best score is saved
+• Message colours in chats and groups always follow the season: your bubbles get the season gradient, others get a border in its colour (while scrolling too)
+• Durak: dealing and moves are smooth (time-based flight instead of per-frame), the deal sound plays exactly when a card leaves the deck; the last played card glows gold with the name of who played it; bots wait for cards to land - you can see their move; less load with 3-4 players
+
+4.2.0
+• Full payment system: packs Starter pack (99 ₽ → 250), Handful (150 ₽ → 300), Bag (300 ₽ → 600), Chest (500 ₽ → 1500, hit) and Royal treasure (1000 ₽ → 3500) with the value shown; a free coin server on Cloudflare Workers (folder server/coins-worker, step-by-step guide) and a Python server; payments turn on for everyone without a new build - with a coinShop block in update.json
+• "💛 Support the project": 100/300/500/1000 ₽ straight to the YooMoney wallet (card or wallet) and a fundraiser link
+• Coin deals, new every day: skin of the day −40%, 3 skins for the price of 2, Match 3 booster bundle −30%, legendary gift of the day −35%
+• Another ×2 on all coin prices: gifts (20-40, 40-80, 80-120), Snake skins, boosters and +5 moves
+• Snake: rules (❓ button) describing every item - coins, treasures, power-ups and hazards; power-up timers now count real seconds and stop on pause; a ring timer around each bonus
+• Snake: 💊 6 seconds of invincibility (through walls, yourself and the edges), 🧲 magnet; hazards - ☠ poison (faster) and 🌀 confusion (reversed controls)
+• Snake: 12 new skins (mint, sunset, ocean, lemonade, berry, midnight, pharaoh, peacock, lightning, pixel, unicorn, obsidian); the field draws faster
+• S-messenger designer: everyone sees a lilac «🎨 S-messenger designer» plate above the showcase in the profile; in groups the name is lilac
+• About: «Developers - Стойко Андрей and Стойко Эрена», nicely styled, each name on its own line
+• Seasonal look: spring (pink sakura and swirling petals) and summer (turquoise sea, butterflies and sun sparkles) are added; «Auto» - a season all year round
+• Fixed: seasonal colours were applied selectively and «jumped» - now everything is recoloured at once, before drawing: lists, messages, bubbles, dialogs, menus and bottom sheets
+• Buttons in one row no longer «sink» when one has a two-line caption (e.g. «Support the project» next to «Shop» on POCO X7 Pro)
+• Cards: «Take» is active only while there is an unbeaten card on the table - all beaten and waiting for «Bito» - the button is inactive
+• Gifts are no longer stretched: pictures and live emoji always keep their proportions and stay centred
+• Match 3: a map of 100 levels (always +20 ahead), every 10th level - a chest with +50 coins
+• Optimisation for different phones: fewer particles and 30 fps gifts on weak phones, gift animations don't waste battery on 90-144 Hz screens
+
+4.1.0
+• Coin shop: packs Handful of coins (150 ₽ → 300), Bag of coins (300 ₽ → 600) and Chest of coins (500 ₽ → 1500) - pay by card or YooMoney wallet; coins are credited automatically by a signed receipt (can't be faked), with a coin-rain animation and your real balance. Purchases are kept in a protected database and move with your exported profile
+• "💛 Support the project" button - in Games, About and settings
+• 69 new gifts from original artwork - animated by rarity (common, rare, legendary); bought with coins
+• Prices ×2: gifts (common 10-20, rare 20-40, legendary 40-60 coins), Snake skins, Match 3 boosters and +5 moves
+• Give coins: preset amounts 10/50/100/250/500 or your own amount from 1 to 500 per transfer
+• S-messenger developer: a big gold plate right above the gift showcase - visible to all of his contacts; in groups the developer's name is gold with a 🛠 badge
+• TV and movie player: previous / next channel and film buttons; controls in the notification shade (pause, next, close) - sound plays in the background and stops with one tap; fixed: only one channel opened, reopening showed a blank screen; closing picture-in-picture no longer leaves the sound playing
+• Metro: trains move on the map again - live map (sped up), real time or hidden (🚇 button)
+• Falling leaves and snow no longer freeze in power saving - just fewer frames; coins and other animations don't use battery when they're not visible
+• Chess in a new style - like the cards and gifts: gold frame, ivory and amethyst squares, gold and obsidian pieces, cosmic background, sparks on captures, move sounds
+• Game sounds are now soft and pleasant (warm tones, no harsh clicks or loudness)
+• Match 3: board shake and shock waves from bombs and rainbows, shimmering board edges on cascades, sparkles on gems; a x4 cascade gives +1 move, three stars give a free booster, every 5th level - another booster
+• Snake: new bonuses - ⏳ slow-mo, ×2 coins and 🛡 shield (one crash is forgiven)
+• Entertainment: the sheet scrolls - TV and Movies are no longer squeezed and can be tapped on any screen; the Download button in the video downloader is no longer cut off
+• Screen tuning for TECNO, Infinix, itel, Honor, realme, OPPO, OnePlus, vivo/iQOO, Motorola, Google Pixel, Nokia, ZTE/nubia, Meizu and Sony (in addition to Xiaomi, POCO, Huawei and Samsung)
+• Updates download and install themselves in the background if installing from this source is allowed (Settings → "Install updates automatically")
+• .apks and .xapk from chats install right in the messenger: the archive is unpacked and all parts are installed with one tap
+• AI browser: the paperclip on websites works - attach photos, videos and files
+• A message deleted for everyone is unpinned immediately
+• Forwarding: recipients on Chats, Groups and Channels tabs - switch by swiping
+• VPN: "📱 Whole phone / 💬 Messenger only" choice right on the main VPN screen
+• After a theme change and other restarts the app reopens by itself (on all phones)
+• More accurate voice transcription: hum is removed, volume is levelled, silence is trimmed, a second attempt through the recognition service if needed; punctuation and capital letters
+• Files and media transfer faster (still over the encrypted channel): writing in large blocks and more network passes during transfers
+• The intro and the tour in settings now cover TV and movies, Match 3, the coin shop, tabbed forwarding, the metro, moving your profile and background updates
+
+4.0.3
+• Coin protection: incoming transfers are limited to 500 coins a day from one person and 2000 from everyone (anything over the limit is declined and returned to the sender); a stake in someone's game invite is at most 100. Coins from home-made builds of the app can't spread to other phones
+
+4.0.2
+• The S-messenger developer's profile shows a gold «🛠 S-messenger developer» badge to everyone (checked by the account key - can't be faked)
+
+4.0.1
+• Game sounds: Match 3 (swaps, crystal chimes - higher with every cascade, lines, blasts, rainbow, ice, falls, stars, win and loss), cards (shuffle, deal, playing a card, take, «bito», win) and Snake (nom, bonuses, level up, boost, game over). Turn them off with 🔊 in Match 3 or ⚙ in cards and Snake
+• Match 3: a bonus (bomb, line) now fires when you simply swap it with any neighbouring crystal or double-tap it - before, a bomb next to crystals «did nothing»
+• Match 3: new shapes - a 2×2 square gives a bomb, a big 2×3 square (6 or more) gives a rainbow orb; shapes give extra points and «Square!», «Corner!», «Line!» captions
+• Match 3: harder levels - fewer moves, more goals, double leaves and a new obstacle - ice on crystals (a frozen crystal can't move; break the ice nearby or by matching it)
+• Match 3: «How to play» - the «?» button with rules, shapes, bonuses, obstacles and boosters (also shown on first launch)
+
+4.0.0
+• New game «Match 3»: a fairy-tale forest, crystals from the signature design, a wooden board frame, level goals (crystals of a colour and leaves on cells), moves, score and three stars. Specials: a line for 4 in a row, a bomb for an L/T shape, a rainbow orb for 5 in a row and their combos; boosters - hammer, shuffle, magic wand and bomb (buy them with coins). Animations: swaps, pops with shards and sparks, beams and shock waves, falls with a bounce, move hints, praise for cascades. Wins give coins (more for stars and the first clear); level map, unfinished level is saved
+• Durak: the signature cosmic deck (default) with a matching new card back. The cards come alive: a light sheen runs across them, sparkles twinkle, aces and face cards glow in their suit colour, cards in hand «breathe», lift and sway in flight and spark when played. Deck style in ⚙ (signature, light, dark with glow)
+• Snake: 4 control styles (⚙) - round joystick, square D-pad, four arrows or gestures (turns right during the swipe); bonuses on the board - a diamond (+5) and a chest (+4…8 coins); new obstacles - boulders, ice crystals and cacti; 8 new unique skins (bee, sakura, toxic, chrome, cyber, aurora, dragon, cosmos)
+• Games: saves can be deleted - chess and Durak games (🗑 button), the Snake game, games with bots, the unfinished Match 3 level
+• When your opponent opens a chess or Durak game to continue, you get a notification and a «back in the game» card in the chat with «Join and continue»
+• Voice messages: reactions work on voice messages too (long press or double tap on the waveform); a proper «Transcribe» button instead of the 📝 icon
+• Video notes grow to almost the full screen width while playing and shrink back afterwards
+• Chats open right at the last message
+• Autumn and winter: screens open in the season colours at once (they used to recolour a second later); leaves and snow fall from the header into the chat as one stream; in profiles snow and leaves are behind the avatar, the garland no longer covers the photo
+• Photos and videos in chats load faster: a bigger cache and more threads, video frames are decoded at the needed size and cached on disk
+
+3.8.3
+• App icons: 8 to choose from in Personalization - Auto (follows the season), default, winter (in a Santa hat), autumn, dark, neon, gold and ocean. The icon goes together with the theme, and the app restarts by itself after you pick an icon or change the seasonal theme. Note: after the update the home-screen icon may move - just put it back
+• Autumn and winter recolour the whole messenger: headers, buttons, switches, menus and settings in warm or cold tones; snow, garlands and falling leaves in chat, group and channel headers
+• The «S-messenger» title in the main header: red-and-white candy with blinking lights in winter, gold with swirling leaves in autumn
+• Launch screen: the hat now sits neatly on the logo, icicles with highlights and snowdrifts in the screen corners replace the fir trees; in autumn - a real leaf fall (drawn maple and oval leaves with veins). Holiday calendar - on a holiday the launch screen congratulates you, on other days it shows one of 10 winter or 10 autumn phrases in large, clear text
+• Birthday: the date in your profile can be changed once a year; on your birthday you get 500 coins (once a year), and your friends are invited to congratulate you and pick a gift
+• Entertainment: new «TV channels» - free live channels by country and topic (news, movies, kids, music, sports) with search, and «Movies» - free films from an open collection with search and picks. Everything plays in the built-in player
+• Players: the video and audio players take the theme colours, smooth panel fades, a loading indicator, buffer on the seek bar and «● LIVE» mode for streams. The built-in player opens MP4, MKV, AVI, MOV, WEBM, 3GP, FLV, WMV, TS, M2TS, VOB, RMVB, DIVX and more, audio MP3, AAC, FLAC, WAV, OGG, OPUS, M4A, AMR, AIFF, MIDI, WMA and more; if the phone lacks the codec it offers another app
+• Video calls: higher quality - HD 720p at ~25 fps on Wi-Fi, 540p at ~20 fps on mobile data; fixed every second frame being dropped
+• VPN: new built-in servers and subscriptions with auto-update (every 6 hours); list filter - Regular, WL, BL and sorting by ping
+• S-AI: a hint to turn on VPN for users in Russia and a VPN button right in the chat
+• Snake: a cute face instead of paws - big shiny eyes, blush, a smile and a «nom» in front of a coin; dark or light boards (⚙); Start/Pause, skins and shop moved to the top so they are no longer hit while steering, boost on the left, joystick on the right
+• Chess: play against a bot - easy, medium and hard (coins for a win); insufficient-material draws are detected more precisely
+• Durak: fair deck shuffling (cryptographic generator), smarter bots - they defend with a plan, save trumps, lead pairs and throw in wisely
+• Metro: real trains made of cars with windows and headlights run smoothly along the lines; the map draws faster
+• Menu: the Games item has a gamepad icon
+
+3.8.2
+• The «leaked window» issue is fixed for every window of the app: when a screen closes or is recreated, all its dialogs, menus and popups are closed, wherever they were opened
+• Progress is saved when you minimize the app, turn off the screen, switch away or close it from recents: Snake (pause and save), chess, Durak with bots, the S-AI chat and an unsent question, drafts in groups and channels. Game saves are written to disk immediately
+
+3.8.1
+• Profile export (.smsave) now keeps everything in one file: keys and contacts, messages, gifts (yours, the showcase and who sent them), coins, achievements and game saves (chess, Durak, Snake), VPN and your servers, network, nodes, proxies and all settings; chat files optionally. Import restores the whole profile (the app restarts once). Old .smsave files open as before
+• Tablets: the left and right panes are level - the Chats / Groups / Channels tabs in the left pane moved to the bottom; the chat on the right opens with a soft animation and the «Pick a chat» placeholder no longer flashes when switching chats
+• Snake: a bigger board (fits the screen); the snake has a mouth that opens in front of a coin and snaps when it eats, plus little paws; spikes and live fire instead of grey squares; 16 skins (new: coral, ice, python, candy, emerald, ghost, galaxy, lava) with a live preview before buying
+• Durak: card settings ⚙ - light (default) or dark cards with a neon glow of your choice: violet, gold, emerald, crimson or ice
+• The seasonal look is now automatic: the app checks the date (autumn - September to November, New Year - 15 December to 15 January); change it manually in Personalization. Buttons take the season colours
+• New launch screens: for New Year - the logo in a Santa hat, snow, a garland and little fir trees with lights; in autumn - an orange screen with falling leaves
+• Winter header: icicles, a snowdrift and twinkling stars along with the garland and snow
+• Profile achievements (coins, Snake, chess, Durak) - neat equal tiles instead of one line that wrapped randomly
+• Long messages can now be edited in groups and channels too
+• Gifts: 13 blurry pictures replaced with sharp ones from the new set (royal crown, amethyst, steam locomotive, night express, elixir, terrarium, star hourglass, stealth drone, waterfall bonsai, emerald dreamcatcher, spellbook, vintage car, wizard's chalice)
+• Low-end devices (Redmi A, POCO C, nova Y, Galaxy A0x and others) get lighter animations on first launch - turn them back on in settings
+
+3.8.0
+• Durak card game (throw-in) for 2-4 players: with bots on one phone (+2 🪙 per win) or with friends from your contacts for a stake - the durak loses the stake, the others share the pot. Live hand-drawn cards in the messenger style: dealing from the deck, flipping, flying to the table and the discard pile; trump under the deck, hints, player chat, rules under «?». The game is saved for everyone in SavePlayer.save
+• Chess and Durak invitations arrive as a card right in the chat with your opponent: «Accept» / «Decline», then «Open the game» and the result
+• Coins are given as a card in the chat: your friend taps «Accept» - a metal coin chime and the coins fly into the wallet; if declined, the coins come back
+• Snake: a big round joystick (reacts instantly on touch and while sliding - no more missed presses), bright light boards without darkening, 8 snake skins (fire, tiger, zebra, neon, golden, rainbow and more) for coins, a compact daily reward - more room for the board
+• S-AI recognizes photos: the 📷 button - text in the picture and what it shows
+• Metro: MCD-1, MCD-2, MCD-3 and MCD-4 added with all stations and transfers to the metro and the MCC, routes use the diameters
+• Long messages can now be edited (the edit is sent in parts and assembled into one message for your contact)
+• A small avatar of who reacted now appears next to each reaction
+• Files: a half-finished transfer no longer hangs «will be sent when the contact is online» - a watchdog restarts a stuck transfer from where it stopped; «⟳ Retry» on the file and «Retry the transfer» in the menu; faster file transfer
+• «Share» from other apps: hold to pick several recipients at once
+• Seasonal look (Personalization): autumn - an orange header and falling leaves 🍁🍂🌿, New Year - cold colours, a blinking garland and snow in the header, chat backgrounds and profile; «Auto» by date
+• The interface adapts to the device model: Xiaomi, Redmi, POCO, Huawei, Samsung Galaxy (S, A, M, Z Fold, Z Flip), Xiaomi Pad, Redmi Pad, POCO Pad, MatePad, Galaxy Tab tablets - fonts, buttons and screen density. Tablet mode: Auto / Always / Off
+• Profile: coins, records and wins (Snake, chess, Durak) update right away - friends get fresh data, and a friend's data is requested again when you open their profile
+• Fixed: in Games and a friend's profile one tap pressed two buttons at once («Give coins» and «All gifts»)
+• Fixed: the chess chat disappeared after the game updated
+• App introduction: the text no longer runs under «Skip» and «Next» on any screen (it scrolls); new «Entertainment» and «Coins» pages. Tour: more about entertainment, games and coins
+• The update dialog explains how to allow installing from unknown sources and what to do if Play Protect complains
+• Fixed log warnings: missing avatar files, «leaked window» when a screen closes, tab alignment
+
+3.7.0
+• New “Games” section in the main menu (next to Entertainment): coins, daily reward, Snake and Chess, your games list
+• Online chess with friends from your contacts for coins: both stake the same, the winner takes both stakes, a draw returns them. Full rules (castling, en passant, promotion, mate, stalemate, draws), move and check highlights, opponent chat, “Connecting → Connected, encrypted”. Invitations arrive as notifications (Accept / Decline), the game is saved on both phones in a SavePlayer.save file and resumes from the same spot; two players on one phone too
+• Daily reward: a “ding” sound and coins flying into the wallet; the coin looks better
+• Snake: hold ⚡ to boost, 50 levels with changing board colours, the snake bursts into sparks when it crashes
+• A friend's profile shows their coins and records (Snake, chess wins); hide yours in Games. “All gifts” (the friend's full gift list) and “Give coins” buttons
+• YouTube in chats is one bubble: the cover with ▶ right in the message above the link, and you can react to such messages (long-press, double tap)
+• A hidden chat can be moved back to regular chats: “Move back to regular chats” in the chat menu and in PIN search
+• Updates are checked as soon as the messenger connects to the network
+• Gifts: 15 gifts redrawn in high quality, 25 new ones (grand piano, amethyst geode, silver eagle, jellyfish lamp, chess set, ballerina and more) - 176 in total
+• App introduction and tour: a new “Games and coins” page
+
+3.6.6
+• Snake moves smoothly: the snake glides between cells instead of jumping; the body is one smooth line with a colour gradient
+• New joystick like the arrow keys on a computer keyboard: ▲ on top, ◀ ▼ ▶ below - big 3D keys that react the moment you touch them; a real keyboard/gamepad works too (arrows, WASD, space - pause)
+• Fixed the gift window: the “Gift” and “Buy for me” buttons no longer slide under the phone buttons or stretch - the gift grid takes the free space, the button is always visible
+• S-AI replies in the background: send a question and leave the chat - the answer finishes by itself, is saved in the chat and arrives as an “S-AI replied” notification; tapping it opens the chat
+
+3.6.5
+• Snake is now a full game: levels (every 8 coins - a new level, +1 bonus coin, faster speed, walls from level 3), best score and best level
+• Snake progress is saved: close the game, minimize the app or let the system unload it - the game continues from the same spot
+• Snake controls work like clockwork: quick turns are queued, the snake no longer crashes into itself on a sharp U-turn; the tail is not an obstacle when it moves away
+• Daily reward in Snake: day 1 - 1 coin, day 2 - 2 … day 7 - 7, then it starts again; miss a day and the streak restarts from 1
+• Coins in your profile: a live spinning gold coin with the “S” logo on both sides, your coin count and a Snake button; a reminder when the daily reward is waiting
+
+3.6.4
+• Optimization: gifts in grids and live avatars draw at 30 fps instead of 60 - half the load and battery use, the animation is just as smooth
+• Gifts scroll more smoothly: all pictures fit in memory and are not decoded again while scrolling
+• Fixed: “recording audio / sending a photo” statuses no longer double up after reopening a screen
+• Fixed: a possible crash when the video avatar updated right after the chat list closed
+• Fixed: exporting a file from a chat (“Save as”) did not work for files from the gallery
+• English and Russian checked: every string is translated, number and name placeholders match; the VPN tuning diagram labels are translated too
+
+3.6.3
+• Gifts: 39 new ones (gramophone, galaxy orb, dragon egg, samurai armor, thunder hammer, clockwork owl, cyber heart, golden scarab and more), 29 gifts redrawn in high quality, blurry and stretched ones removed - 151 gifts with no repeats
+• Coins 🪙 and the Snake mini-game: collect coins (gold = +3) and buy gifts for a friend or yourself: common 5-10, rare 10-20, legendary 20-30 coins. Snake is in the side menu and your profile, “Gift for me” is in your profile
+• VPN tuning for nodes no longer disconnects the messenger: servers are checked separately, the best one becomes the default but is not turned on - you get a notification and turn VPN on yourself
+• VPN guide: three new pages about “Server for nodes” with live diagrams - why it is needed, how tuning works and what to do next
+• VPN menu: buttons are the same size, text always fits (up to two lines)
+• Groups and channels: nice 3D buttons without emoji; “Write to the developer” is a separate nice button in settings
+• In your profile gifts are at the very top, above the caption and encryption key
+• Cleanup in the file manager and settings removes copies of sent files, photos, videos and voice notes when checked (before only the cache was cleared)
+• Updating is a single “Update and install” button
+• S-AI runs on Vireonix: free, no key, the auto model adapts to the question
+
+3.6.2
+• VPN servers right from the chat: tap a message with vless, vmess, trojan, ss, hysteria2, socks5 links or open a received TXT/JSON file - add them to the built-in VPN or open with another app (v2rayNG, Hiddify, etc.)
+• VPN understands more formats: links anywhere in text, Xray and sing-box configs (JSON), base64 subscriptions, SOCKS5 lists “host:port” and “host:port:user:pass”
+• Voice transcription in groups and channels: hold a voice message → “📝 Transcribe”; in any chat you can simply tap the duration “0:12 📝”
+• Wi-Fi calls: lower audio delay (the buffer adapts to a steady network), better sound (48 kbps, 32 on mobile), Wi-Fi does not doze during a call with the screen off (Android 10-13)
+• Network: if the router changes your address or you move to another access point of the same Wi-Fi - reconnect immediately instead of after a minute
+
+3.6.1
+• Fixed the VPN crash when switching to WARP and back: two Go-based VPN engines can't share one process - now the app restarts for a second on an engine switch and turns the chosen mode on by itself
+• The Criminal Code opens reliably: it's fully inside the app (offline); if anything goes wrong you get a clear message instead of nothing
+• Voice transcription: hold a voice message → “📝 Transcribe” - the text appears under it; with a free Groq key in S-AI it uses accurate Whisper, without a key - the phone's speech recognition (Android 13+)
+• Human-friendly file notifications: “Sent a photo”, “Sent a video”, “Sent an archive …”, “Sent an app”, “Sent a document” instead of “Incoming file transfer”
+• Channel catalog: a showcase of product cards (price, discount, availability, description, promo code, “Order”) with search; “➕ Product card” in the ⋮ menu, in Info and in the catalog; an admin's long press on “Send” now works with an empty field
+• Gifts: 53 picture gifts redrawn in new high quality and 19 new ones - fire phoenix, diamond and gold bar (legendary), Saturn, golden chalice, spell book, golden key, flaming heart (rare), rose, tulips, pizza and more
+• VPN: a guide to every mode - servers, DPI bypass and WARP: why, how to get it and whether it helps against “whitelists”; a free ProxyNova “Whitelist bypass (Test)” subscription is added by default
+• Battery tip for everyone: “Balance” or “Maximum stability” mode in one tap
+• “✉️ Message the developer” in the side menu and settings; an offer to add the developer to contacts (at most twice)
+• Select several chats: hold a chat → “☑️ Select”, tick the ones you need - delete them or clear their history at once
+
+3.6.0
+• Calls: clean audio on Wi-Fi and LTE - an adaptive buffer smooths network jitter, lost bits of audio are concealed (no crackles or clicks), built-in echo suppression (stronger on speakerphone) and noise suppression, hum filter; during a call the core receives audio every 10 ms instead of 50 ms bursts; whoever answers is heard at once (the first 2.5 s used to be lost)
+• Resumable downloads like in big messengers: if the network drops, the contact goes offline or the app restarts, files, photos and videos continue from where they stopped instead of starting over; your gallery files are resent too
+• Node watchdog: every 1.5 minutes it checks the working nodes and keeps fresh spares; if the connection slows down or nodes stop answering, fresh ones are connected in advance; the node list refreshes from sources every 6 hours, with more sources
+• VPN: two views - “🙂 Simple” (one button, “Auto” picks a server or blocking bypass by itself, tiles, automation switches) and “🛠 Advanced” (all modes and settings); picking a server for nodes now tests ALL servers (it used to be 5): first pings all, then each live one for real; server and DPI strategy tuning run in the background with a progress bar in the shade and a “Stop” button (the best found so far is applied)
+• Chat: reply with a photo, video, file, voice note, video message or sticker - the quote shows under the file; tapping a reply to a file (APK etc.) jumps to the original; file names no longer turn into “links”; forwarding a file always forwards the file itself
+• Gifts: all the previous ones are back - phoenixes, stars, hearts, gems, crystals, planets, crowns, butterflies… (3,369 gifts together with pictures); “Pictures / Emoji / Drawn” filter; drawn gifts are now 3D - light, gloss, shadow, double outline, gem facets, jewels on the crown, shimmer and orbiting sparkles; emoji gifts sit on a glowing medallion and “breathe”
+• Channels: a “How to run a channel” guide right after creation (7 pages, with a focus on business); new business tools - old price and “-N%” discount, promo code (copied on tap), availability, “Ask when available”, post templates (sale, new arrival, price list, giveaway, delivery, review, opening hours), “🛍 Catalog” of all products; post text can be edited in the builder
+• Group and channel settings - an even grid of equal tiles: slow mode, media, rules, pinned, signatures, comments, business, stats, guide; equal-sized tiles in “Info”
+• Video avatar: perfectly round and centered, no distortion, respects video rotation, doesn't cover the photo frame; the online dot now sits next to the circle everywhere and no longer covers photos or videos
+• More detailed error log: every error comes with the version, phone, memory, network, VPN, connection state and screen; an “Events” tab (what happened before the error, including the previous run); screen freezes with where it got stuck; system reports about crashes, “not responding” (with a trace) and low memory
+• Russian Criminal Code offline (in the menu next to “Metro”): the current 2026 edition with amendments, 537 articles - parts, sections, chapters; search by number and words, bookmarks, recent, swipe between articles, font size, amendment notes, copy and share
+
+3.5.0
+• Calls: the conversation starts only after the other person answers (it used to start at once). Stages on screen: “Connecting…” → “Securing…” (checking the end-to-end encrypted channel, on Wi-Fi and mobile) → “Calling…” with pleasant ringback tones → talk; the timer starts on answer, with a soft chime
+• Channels for business: product and service posts with a price and an “Order” button, posts with a link button, silent posts, scheduled posts (hold “Send”); “👁 N” views under posts; author signatures; comments on/off; business info (site, phone, address, hours, “Message the owner”); channel statistics - subscribers, reach, views, reactions, top posts
+• “+” menu in the corner: new contact, group, channel, join by ID, Saved messages and “Copy my ID”; these items left the side menu
+• Gifts: every received gift lives in the “🎁 My gifts” gallery (opens smoothly, gifts line up in rows); your profile shows only a showcase of up to 12 gifts you pick; gift pictures are twice as sharp and no longer squashed; a bright “ding” when you accept one
+• Video avatars are visible to everyone in shared chats: next to group members' messages and in the member list - even for people not in your contacts
+• Emoji and stickers: messages of 2-3 emoji come alive; each emoji has its own animation (a heart beats, laughter shakes, fire flickers, a hand waves…); new stickers appear with their own motion, tap a sticker for a burst; hold a sticker in the panel for a live preview; 4 new packs: Nature, Sports & hobby, Travel, Work & business
+• Updates: checked in the background even when the app is closed; a new-version notification in the shade and on the lock screen with “Install” and “Remind in 6 h”
+• Connection: nodes are checked automatically in the background (at start, every 30 minutes and on network change) - the app connects to live, fast nodes and reconnects faster
+• Smooth Chats / Groups / Channels swiping with no jerks; a new live Archive icon - a box a letter flies into
+• Profile: the online dot no longer overlaps the avatar; “About” moved into “Edit profile”; the tour is updated
+
+3.4.1
+• Video avatar is live: loops silently in your profile, the side menu, friends' profiles and the chat header; set it by tapping your profile photo (“🎞 Video avatar”). Fixed: the video was hidden under the photo
+• Profiles now show only gifts from the new picture set; old emoji and drawn gifts from earlier builds are removed from profiles
+• Fixed the 3.4.0 build error (metro map)
+
+3.4.0
+• Global search across the whole messenger: message text in chats, groups and channels, links, chat names and files by name and extension (TXT, PDF, PNG, JPG, APK, ISO, RAR, ZIP, 7Z, JS, CSS, HTML, JSON, DLL, EXE, MP3, M4A, MP4, MKV); matches are highlighted; tap opens the chat, long-press shows which chat and actions; hidden chat PIN works too
+• Profile video up to 10 seconds: for a longer video, pick a clip with a slider and live preview; it loops silently for you and your friends - in the profile and the chat header
+• Metro: trains move on the map (timetable model: interval by time of day, closed at night), arrows show direction; station card shows minutes to the next train each way; the 🚇 button hides trains
+• Video downloader: 3x more YouTube mirrors, a fresh mirror list from the catalog, the last working mirror first; quality choice (best, 720p, 480p, 360p) and Audio only to Music; falls back to direct if VPN fails
+• Live statuses in the chat list too: recording audio, sending a photo, typing - with an icon and colour
+
+3.3.4
+• QR code now contains only the contact ID (76 characters) - no “smessenger:” or other text; the scanner accepts only QR codes with an ID and takes just the ID
+• Live peer statuses: “typing” - a writing hand moves; “recording audio” - a pulsing mic; “sending a photo / video / file” - a bouncing icon; sent as invisible packets, never as chat messages
+• Instead of “Available” - a live “Connecting…” with a spinning icon; once connected, “✓ Connected” for a moment, then just S-messenger
+• Smooth Chats / Groups / Channels switcher: the selected tab is a light pill that flows elastically to the next one
+• Live avatars: Saved - a star with shine and sparkles; Archive - a strapped stack of books
+• VPN: the notification shows data sent and received and the current speed (is the connection alive); uptime no longer resets
+
+3.3.3
+• New gift design: 143 picture gifts (24 legendary, 45 rare) with no repeats; cards breathe and shimmer, rare and legendary ones sparkle with a shining frame
+• Accepting a gift: the screen dims, rays spin behind the gift, confetti bursts - “The gift is yours!”; when sending, the gift flies off to your friend and appears in their profile only after they accept
+• Stories turn like a real book page: the page curls under your finger, showing the back of the paper and a shadow on the next page
+• “What's new in each version” opens again (STRING_TOO_LARGE error fixed)
+• About: buttons in even rows, only the pressed one goes down; the developer signature is no longer clipped
+• Updates are found even when GitHub is unreachable or a VPN gets in the way - via mirrors
+• Chat search: the hint no longer runs off the line; proxy menu buttons are the same size
+• App introduction: a new page about low-vision mode
+
+3.3.2
+• Gifts look the way they were given again: the phoenix is a bird again 🐦‍🔥, and all gifts from earlier versions show their original emoji and colour (in chat, your profile and friends' profiles)
+• New gifts: 🐦‍🔥 Phoenix, 🪽 Angel wing, 🪼 Jellyfish, ⛓️‍💥 Broken chain, 🩷 🩵 🩶 hearts, moose, raven, goose, hyacinth, fan, maracas, flute and more - 26 new emoji
+• New drawn gifts: lightning (flashes), drop, clover, honeycomb and butterfly (flaps its wings) - 200 in every palette
+• New gifts are shown first in the picker
+• Friends see your gifts as they really are - the emoji is sent with the number in your profile
+• Calls: a voice call always starts on the earpiece; you turn on the loudspeaker yourself; if the phone switches sound to the loudspeaker on its own, the messenger moves it back. Video calls use the loudspeaker, as in regular messengers
+• Fixed: the gift picker can no longer crash if the catalog failed to load
+
+3.3.1
+• Fixed: opening a chat with a drawn gift (gem, planet, rune…) froze the app and blocked restarting; same when scrolling gifts
+• If an error still happens while drawing, the screen recreates itself instead of freezing
+• Low-vision mode reworked: larger, bolder font, but the screen no longer bloats - profile, chat buttons and menu items fit; turning it off restores everything
+• Stories turn like a book page: the page follows your finger around the spine; a short swipe or quick flick is enough; no jerks
+• Metro: the whole map is visible on open and via ◎; transfer stations are labelled right away
+• About: live backdrop (drifting auroras and stars), live icon with ring and orbiting lights, shimmering version and developer signature with sparkles; all sections are 3D buttons that greet you
+• Gifts: an unopened gift wiggles in chat, cards no longer rebuild while scrolling; 🎲 Random and a bigger grid in the picker; tap a gift in a profile to see it large (from, when, note), rare/legendary counters, All gifts
+• Updates are found even when update.json is on the master branch
+• Minor fixes: QR scanner and sticker windows close without errors, tabs without log warnings
+
+3.3.0
+• The three-dot menu always opens at the top, with your profile photo
+• Gifts: 3000 different gifts with no repeats - every emoji plus 1151 gifts drawn by the app (gems, crystals, planets, runes, crowns…); your profile shows who sent each gift; after you accept one, friends see the updated profile right away
+• DPI bypass: while strategies are tested, YouTube, Pinterest, AI and Tox nodes light up green (working) or red (blocked); testing can continue in the background - you get a notification and the best strategy is applied automatically
+• Stories swipe smoothly without jerks; neighbouring stories are preloaded
+• Updates: “Later” can be pressed 3 times - on the 4th the messenger closes and requires the update on next launch; an older version can no longer be installed over a newer one; after updating, what's new is shown once
+• Groups and channels: pinned message for everyone, slow mode, admin-only media, group rules, mute a member, message search
+• File manager: storage analysis (what takes space, largest files), recent files, favourite folders, cleanup (cache, sent copies, old APKs, thumbnails), copy path
+• English: DPI strategies, S-AI services and their errors, sticker packs and player hints are now translated
+• Fixed crashes: closing dialogs after leaving a screen and thumbnails in the file manager
+
+3.2.0 - 3000 animated gifts (common/rare/legendary) with accept/decline cards in chat; channel invitations with description and avatar; story upload progress, captions, 1-minute videos and swipe navigation; reactions everywhere including groups and channels, several per person; DPI strategies from open sources and a Servers + DPI combined mode; new metro line 17 and planned extensions; file manager; YouTube/Pinterest video downloader; low-vision mode; button fixes
+
+3.1.1 - tour: separate step for the Search magnifier in the menu, chat features shown on the first chat; even softer typing
+
+3.1.0 - VPN split into tabs (Servers, DPI bypass, Fragments, WARP) with exactly one active mode; WARP now tunnels the built-in browser; VPN help moved inside the VPN screen; Entertainment always goes through the VPN with retry; redesigned metro map and route card; profile actions as uniform tiles; consistent buttons everywhere; more animations; chat no longer jumps when the keyboard is hidden
+
+3.0.0 - serverless VPN modes (DPI bypass with 30 strategies and auto-pick, TLS fragmentation, WARP), split tunneling, auto-removal of dead servers; captions travel with files; offline Moscow metro map with routes; Entertainment menu; RU/EN language switch; contact and group invite cards; several profile photos; reactions on media; tablet two-pane mode; water ripple effect; lock-screen notifications; restart prompts; new About sections; more frequent update checks; error log layout fix
+
+2.8.1 - fixed empty selection circles always visible in chats
+
+2.8.0 - full guided tour with auto-scrolling menu, one-tap VPN shield in the top bar, full contact name in chat header, emoji status in the side menu, one “Edit profile” button, optional 3D buttons, lower battery use, more reliable connection and auto-update, better error log
+
+2.5.0 - vector player buttons, lock-screen message previews, unread badge, instant animated emoji, smoother typing, interface scale, new About, intro and tour, better connectivity.
+
+2.4.0 - splash screen, typing and erasing effects, liquid glass, spring animations, news feed, group descriptions.
+
+2.3.0 - friend's full ID, sticker pack import, group members and admins, new video player, encryption check, VPN for nodes, Xray update.
+
+2.2.0 and earlier - multi-source nodes, groups and channels, calls, voice and video notes, VPN, S-AI, stories, saved messages.

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Фирменная палитра StoykoMessenger -->
+    <color name="colorPrimaryLight">#7B6CF6</color>
+    <color name="colorPrimary">#5B4BDB</color>
+    <color name="colorPrimaryDark">#3A2DAF</color>
+    <color name="colorAccent">#00C2A8</color>
+    <color name="colorAccentDark">#00967F</color>
+    <color name="colorGray">#8A8FA3</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorBackground">#F4F3FB</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="textPrimary">#1B1A2E</color>
+    <color name="textSecondary">#6B6F85</color>
+    <color name="receivedBubble">#6E7189</color>
+
+    <color name="statusOffline">@color/colorGray</color>
+    <color name="statusBusy">#E5484D</color>
+    <color name="statusAway">#F5A524</color>
+    <color name="statusAvailable">#22C55E</color>
+
+    <item name="dividerColor" type="color">#E6E4F2</item>
+    <item name="textWhiteColor" type="color">#FFFFFF</item>
+    <item name="dialogIconButton" type="color">#6B6F85</item>
+    <item name="dialogTextButton" type="color">#F1F0FA</item>
+    <item name="dialogBackground" type="color">#2B2940</item>
+    <item name="transparentBar" type="color">#40000000</item>
+    <item name="transparent" type="color">#00000000</item>
+
+    <array name="contactBackgrounds">
+        <item>#5B4BDB</item>
+        <item>#00C2A8</item>
+        <item>#F5A524</item>
+        <item>#E5484D</item>
+        <item>#3B82F6</item>
+        <item>#A855F7</item>
+        <item>#14B8A6</item>
+        <item>#EC4899</item>
+    </array>
+    <color name="settingsAccent">#5B4BDB</color>
+    <color name="settingsIconBg">#1F5B4BDB</color>
+    <color name="dialogItem">#145B4BDB</color>
+    <color name="dialogButtonTonal">#225B4BDB</color>
+</resources>

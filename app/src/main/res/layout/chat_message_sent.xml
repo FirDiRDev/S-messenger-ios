@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/message_margin"
+            android:autoLink="all"
+            android:background="@drawable/sent_message_bubble"
+            android:padding="8dp"
+            android:textColor="@android:color/white"
+            android:textColorLink="@android:color/holo_orange_light"
+            tools:text="Message I sent"/>
+
+    <!-- Анимированный эмодзи (Noto Animated Emoji, анимированный WebP) вместо крупного текстового -->
+    <ImageView android:id="@+id/emojiAnim"
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:layout_gravity="end"
+            android:visibility="gone"/>
+
+    <!-- Превью ссылки YouTube: обложка и ▶, видео открывается в мессенджере -->
+    <FrameLayout android:id="@+id/linkPreview"
+            android:layout_width="260dp"
+            android:layout_height="146dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_media_bubble"
+            android:visibility="gone">
+        <ImageView android:id="@+id/linkPreviewImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                android:scaleType="centerCrop"/>
+        <TextView
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_video_play"
+                android:gravity="center"
+                android:text="▶"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"/>
+        <TextView android:id="@+id/linkPreviewLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="6dp"
+                android:background="@drawable/bg_system_line"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:text="YouTube"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"/>
+    </FrameLayout>
+
+    <!-- Карточка: контакт (добавить / отклонить) или приглашение в группу -->
+    <FrameLayout android:id="@+id/cardBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:visibility="gone"/>
+
+    <TextView android:id="@+id/timestamp"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="8dp"
+            tools:text="2020-12-24"/>
+</LinearLayout>

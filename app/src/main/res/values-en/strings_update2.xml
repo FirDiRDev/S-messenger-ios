@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="upd2_apk_broken">The downloaded file is not an APK or is damaged</string>
+    <string name="upd2_apk_other">The release contains an APK of another app (%1$s)</string>
+    <string name="upd2_apk_old">The release contains an APK of an old version (%1$s), you already have %2$s. Upload the new build APK to the release</string>
+    <string name="upd2_apk_sign">The APK is signed with a different key - Android won\'t update over it. Build the APK with the same signing key</string>
+    <string name="upd2_channel">Update download</string>
+    <string name="upd2_progress_title">Downloading update %1$s</string>
+    <string name="upd2_installing">Downloaded - installing…</string>
+    <string name="upd2_failed_title">Update %1$s failed to download</string>
+    <string name="upd2_failed_tap">Tap to download and install manually</string>
+    <string name="upd2_connecting">Connecting…</string>
+    <string name="upd2_eta">%1$d:%2$02d left</string>
+    <string name="upd2_retry">Retry</string>
+    <string name="upd2_browser">In browser</string>
+    <string name="upd2_in_background">In background</string>
+</resources>

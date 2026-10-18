@@ -1,0 +1,213 @@
+# Сборка iOS-версии StoykoMessenger на macOS-раннере GitHub - без своего Mac.
+# Результат: Actions -> этот запуск -> Artifacts -> StoykoMessenger-iOS-release.ipa
+#
+# Подпись «фальшивая» (ldid, без сертификата Apple). Такой .ipa:
+#   - ставится через TrollStore или на джейлбрейк-устройство как есть;
+#   - на обычный iPhone - после переподписи своим Apple ID (Sideloadly, AltStore, SideStore).
+# Для App Store / TestFlight нужен платный аккаунт разработчика и настоящая подпись.
+name: build-ios-ipa
+
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: "macOS-раннер (если на macos-14 не хватает свежего Xcode - выберите новее)"
+        type: choice
+        default: macos-14
+        options: [macos-14, macos-15, macos-26]
+      audio_codec:
+        description: "Кодек музыки тем: alac (бесшовно) или aac (меньше размер)"
+        type: choice
+        default: alac
+        options: [alac, aac]
+  push:
+    branches: [main, master]
+    paths:
+      - "shared/**"
+      - "iosApp/**"
+      - "scripts/ios/**"
+      - "app/src/main/assets/music/**"
+      - "gradle/**"
+      - "*.gradle.kts"
+      - "gradle.properties"
+      - ".github/workflows/build_ios_ipa.yml"
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ipa:
+    runs-on: ${{ inputs.runner || 'macos-14' }}
+    timeout-minutes: 75
+    env:
+      APP_NAME: StoykoMessenger
+      SCHEME: StoykoMessenger
+      IPA_NAME: StoykoMessenger-iOS-release.ipa
+      DERIVED: ${{ github.workspace }}/build/ios
+      IOS_AUDIO_CODEC: ${{ inputs.audio_codec || 'alac' }}
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+      HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: "1"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Cache Kotlin/Native toolchain (~/.konan)
+        uses: actions/cache@v4
+        with:
+          path: ~/.konan
+          key: konan-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('gradle/libs.versions.toml') }}
+          restore-keys: konan-${{ runner.os }}-${{ runner.arch }}-
+
+      - name: Select newest stable Xcode
+        run: |
+          XCODE="$(ls -d /Applications/Xcode_*.app 2>/dev/null | grep -vi beta | sort -V | tail -n 1)"
+          if [ -n "$XCODE" ]; then sudo xcode-select -s "$XCODE/Contents/Developer"; fi
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Install xcodegen, ffmpeg, ldid
+        run: |
+          brew install xcodegen ffmpeg ldid
+          xcodegen --version
+          ffmpeg -hide_banner -version | head -n 1
+          which ldid
+
+      - name: Android SDK path for :shared (android target)
+        run: |
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-$HOME/Library/Android/sdk}}"
+          echo "sdk.dir=$SDK" > local.properties
+          cat local.properties
+
+      - name: Hook :shared into Gradle files (idempotent)
+        run: python3 scripts/ios/patch_gradle.py .
+
+      - name: Convert theme music for iOS (ogg -> caf/m4a)
+        run: bash scripts/ios/convert_audio.sh app/src/main/assets/music iosApp/Resources/music
+
+      - name: App icon from Android ic_launcher
+        run: |
+          ICON_DIR=iosApp/Assets.xcassets/AppIcon.appiconset
+          SRC=""
+          for f in app/src/main/res/mipmap-xxxhdpi/ic_launcher.png app/src/main/res/mipmap-xxhdpi/ic_launcher.png; do
+            [ -f "$f" ] && { SRC="$f"; break; }
+          done
+          if [ -n "$SRC" ]; then
+            # Без прозрачности (iOS заливает её чёрным) и ровно 1024x1024.
+            sips -s format png -z 1024 1024 "$SRC" --out /tmp/icon.png >/dev/null
+            python3 - <<'PY' || cp /tmp/icon.png "$ICON_DIR/icon-1024.png"
+          import subprocess
+          subprocess.run(["sips", "-s", "format", "jpeg", "/tmp/icon.png", "--out", "/tmp/icon.jpg"], check=True, capture_output=True)
+          subprocess.run(["sips", "-s", "format", "png", "/tmp/icon.jpg", "--out", "iosApp/Assets.xcassets/AppIcon.appiconset/icon-1024.png"], check=True, capture_output=True)
+          PY
+            ls -la "$ICON_DIR"
+          else
+            echo "Нет ic_launcher.png - иконка по умолчанию"
+            rm -f "$ICON_DIR/Contents.json"
+            echo '{"images":[],"info":{"author":"xcode","version":1}}' > "$ICON_DIR/Contents.json"
+          fi
+
+      - name: Build Kotlin framework (Shared.framework, iosArm64, release)
+        run: |
+          set -o pipefail
+          mkdir -p build
+          chmod +x gradlew
+          ./gradlew --no-daemon --stacktrace -Psm.iosOnly=true :shared:linkReleaseFrameworkIosArm64 2>&1 | tee build/gradle.log
+          ls -la shared/build/bin/iosArm64/releaseFramework/
+
+      - name: App version from update.json
+        run: |
+          python3 - <<'PY' >> "$GITHUB_ENV"
+          import json
+          j = json.load(open("update.json", encoding="utf-8"))
+          print(f"APP_VERSION={j.get('versionName', '1.0')}")
+          print(f"APP_BUILD={j.get('versionCode', 1)}")
+          PY
+          grep APP_ "$GITHUB_ENV" || true
+
+      - name: Generate Xcode project (XcodeGen)
+        working-directory: iosApp
+        run: xcodegen generate --spec project.yml
+
+      - name: Build app (xcodebuild, без подписи)
+        run: |
+          set -o pipefail
+          mkdir -p build
+          xcodebuild \
+            -project "iosApp/$APP_NAME.xcodeproj" \
+            -scheme "$SCHEME" \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$DERIVED" \
+            ARCHS=arm64 ONLY_ACTIVE_ARCH=NO \
+            MARKETING_VERSION="${APP_VERSION:-1.0}" CURRENT_PROJECT_VERSION="${APP_BUILD:-1}" \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" CODE_SIGN_ENTITLEMENTS="" \
+            clean build | tee build/xcodebuild.log | grep -E "error:|warning: .*Shared|BUILD (SUCCEEDED|FAILED)" || true
+          test -d "$DERIVED/Build/Products/Release-iphoneos/$APP_NAME.app"
+
+      - name: Fake-sign with ldid
+        run: |
+          APP="$DERIVED/Build/Products/Release-iphoneos/$APP_NAME.app"
+          rm -rf Payload && mkdir Payload
+          cp -R "$APP" Payload/
+          APP="Payload/$APP_NAME.app"
+          rm -rf "$APP/_CodeSignature" "$APP/embedded.mobileprovision"
+          # Сначала вложенные Mach-O (фреймворки/dylib, если появятся), затем главный бинарник.
+          find "$APP" \( -name "*.dylib" -o -path "*.framework/*" -type f -perm +111 \) -print0 \
+            | xargs -0 -I{} sh -c 'file "{}" | grep -q Mach-O && ldid -S "{}" || true'
+          ldid -S"iosApp/ldid-entitlements.plist" "$APP/$APP_NAME"
+          ldid -e "$APP/$APP_NAME"
+          lipo -info "$APP/$APP_NAME"
+
+      - name: Package IPA
+        run: |
+          rm -f "$IPA_NAME"
+          zip -qry "$IPA_NAME" Payload
+          ls -la "$IPA_NAME"
+          unzip -l "$IPA_NAME" | tail -n 3
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v7
+        with:
+          name: StoykoMessenger-iOS-release
+          path: ${{ env.IPA_NAME }}
+          if-no-files-found: error
+
+      # Ошибки компилятора - в аннотации на странице запуска (их видно без входа в GitHub).
+      - name: Show compile errors as annotations
+        if: failure()
+        run: |
+          ROOT="file://$GITHUB_WORKSPACE/"
+          for f in build/gradle.log build/xcodebuild.log; do
+            [ -f "$f" ] || continue
+            grep -E '^e: |: error: |error: ' "$f" | grep -v 'Compilation finished with errors' \
+              | sed -e "s#$ROOT##g" -e "s#$GITHUB_WORKSPACE/##g" | awk '!seen[$0]++' | head -60 > errs.txt || true
+            [ -s errs.txt ] || continue
+            head -n 9 errs.txt | while IFS= read -r l; do
+              echo "::error title=$(basename "$f")::$(printf '%s' "$l" | sed 's/%/%25/g')"
+            done
+            echo "::error title=ALL $(basename "$f") ($(wc -l < errs.txt | tr -d ' '))::$(sed 's/%/%25/g' errs.txt | awk '{printf "%s%%0A", $0}')"
+          done
+
+      - name: Upload logs (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ios-build-logs
+          path: |
+            build/xcodebuild.log
+            build/gradle.log
+            shared/build/reports/**
+          if-no-files-found: ignore

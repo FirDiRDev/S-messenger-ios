@@ -1,0 +1,40 @@
+# Сборка StoykoMessenger (S-messenger) на серверах GitHub (необязательно - проект
+# собирается и локально через build_apk.bat). APK - во вкладке Actions -> Artifacts.
+name: build
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Build APK
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon --stacktrace :app:assembleDebug :app:assembleRelease
+
+      - name: Collect APK
+        run: |
+          mkdir -p APK
+          for f in app/build/outputs/apk/*/*.apk; do
+            n=$(basename "$f"); cp "$f" "APK/${n/app-/S-messenger-}"
+          done
+          ls -la APK
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: S-messenger-APK
+          path: APK/*.apk
+          if-no-files-found: error

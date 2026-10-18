@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rail Run: 3D graphics and music -->
+<resources>
+    <string name="runner_music">Music</string>
+    <string name="runner_music_on">🎵 Music on</string>
+    <string name="runner_music_off">Music off</string>
+</resources>

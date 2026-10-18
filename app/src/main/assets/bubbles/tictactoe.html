@@ -1,0 +1,43 @@
+<style>
+.hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hd b{font-size:15px}
+.sc{font:600 12.5px sans-serif;color:#94a3b8}.sc i{font-style:normal;color:#fff}
+.bd{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:230px;margin:0 auto}
+.c{aspect-ratio:1;border-radius:14px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s}
+.c:active{transform:scale(.94)}
+.c.w{background:rgba(250,204,21,.18)}
+.c svg{width:62%;height:62%;overflow:visible}
+.c path,.c circle{fill:none;stroke-width:12;stroke-linecap:round}
+.x path{stroke:#60a5fa;stroke-dasharray:90;stroke-dashoffset:90;animation:dr .28s ease-out forwards}
+.x path:nth-child(2){animation-delay:.14s}
+.o circle{stroke:#f472b6;stroke-dasharray:190;stroke-dashoffset:190;animation:dr .45s ease-out forwards}
+@keyframes dr{to{stroke-dashoffset:0}}
+.st{text-align:center;font:600 13.5px sans-serif;margin-top:8px;height:20px;transition:color .3s}
+.ag{display:block;margin:4px auto 0;border:0;border-radius:10px;padding:6px 14px;font:600 12.5px sans-serif;color:#fff;background:linear-gradient(135deg,#3b82f6,#2563eb);opacity:0;transform:translateY(6px);transition:all .3s cubic-bezier(.3,1.6,.5,1);pointer-events:none}
+.ag.on{opacity:1;transform:none;pointer-events:auto}
+</style>
+<div class=hd><b>❌⭕ Крестики-нолики</b><span class=sc>Вы <i id=s1>0</i> : <i id=s2>0</i> Бот</span></div>
+<div class=bd id=bd></div>
+<div class=st id=st>Ваш ход - вы ✕</div>
+<button class=ag id=ag>Ещё партию</button>
+<script>
+(function(){
+var B,cells=[],over,sc=[0,0],L=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+var bd=document.getElementById('bd');
+for(var i=0;i<9;i++){(function(i){var c=document.createElement('div');c.className='c';c.onclick=function(){move(i)};bd.appendChild(c);cells.push(c)})(i)}
+var X='<svg viewBox="0 0 100 100"><path d="M18 18L82 82"/><path d="M82 18L18 82"/></svg>',O='<svg viewBox="0 0 100 100"><circle cx=50 cy=50 r=30 /></svg>';
+function win(b){for(var k=0;k<8;k++){var l=L[k];if(b[l[0]]&&b[l[0]]==b[l[1]]&&b[l[1]]==b[l[2]])return l}return null}
+function mm(b,p,d){var w=win(b);if(w)return b[w[0]]=='o'?10-d:d-10;if(b.indexOf('')<0)return 0;var best=p=='o'?-99:99;
+ for(var i=0;i<9;i++)if(!b[i]){b[i]=p;var v=mm(b,p=='o'?'x':'o',d+1);b[i]='';best=p=='o'?Math.max(best,v):Math.min(best,v)}return best}
+function bot(){var mv=-1,best=-99,free=[];for(var i=0;i<9;i++)if(!B[i])free.push(i);
+ if(Math.random()<.18){mv=free[Math.floor(Math.random()*free.length)]}else free.forEach(function(i){B[i]='o';var v=mm(B,'x',1);B[i]='';if(v>best){best=v;mv=i}});put(mv,'o')}
+function put(i,p){B[i]=p;cells[i].className='c '+p;cells[i].innerHTML=p=='x'?X:O;var w=win(B),st=document.getElementById('st');
+ if(w){over=true;w.forEach(function(k,j){setTimeout(function(){cells[k].classList.add('w');cells[k].animate([{transform:'scale(1)'},{transform:'scale(1.12)'},{transform:'scale(1)'}],{duration:350,easing:'ease-out'})},j*90)});
+  if(p=='x'){sc[0]++;st.textContent='🎉 Победа!';st.style.color='#4ade80'}else{sc[1]++;st.textContent='🤖 Бот выиграл';st.style.color='#fb7185'}end()}
+ else if(B.indexOf('')<0){over=true;st.textContent='Ничья 🤝';st.style.color='#facc15';end()}}
+function end(){document.getElementById('s1').textContent=sc[0];document.getElementById('s2').textContent=sc[1];document.getElementById('ag').classList.add('on')}
+function move(i){if(over||B[i])return;put(i,'x');if(!over){document.getElementById('st').textContent='Бот думает…';setTimeout(function(){bot();if(!over)document.getElementById('st').textContent='Ваш ход'},450)}}
+function reset(){B=['','','','','','','','',''];over=false;cells.forEach(function(c){c.className='c';c.innerHTML=''});var st=document.getElementById('st');st.textContent='Ваш ход - вы ✕';st.style.color='';document.getElementById('ag').classList.remove('on')}
+document.getElementById('ag').onclick=reset;reset();
+})();
+</script>

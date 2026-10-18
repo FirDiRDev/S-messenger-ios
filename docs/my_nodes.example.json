@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {
+      "ipv4": "relay.example.ru",
+      "port": 443,
+      "tcp_ports": [443],
+      "public_key": "ВСТАВЬТЕ_64_HEX_СИМВОЛА_ПУБЛИЧНОГО_КЛЮЧА_ВАШЕГО_УЗЛА",
+      "status_udp": false,
+      "status_tcp": true
+    }
+  ]
+}

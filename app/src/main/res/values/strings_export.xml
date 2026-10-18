@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Экспорт и импорт профиля (.smsave) -->
+<resources>
+    <string name="smsave_progress_export">Экспорт профиля</string>
+    <string name="smsave_progress_import">Импорт профиля</string>
+    <string name="smsave_stage_prepare">Снимок переписки и настроек…</string>
+    <string name="smsave_stage_write">Запись файла…</string>
+    <string name="smsave_stage_verify">Проверка записанного файла…</string>
+    <string name="smsave_stage_read">Чтение и проверка файла…</string>
+    <string name="smsave_export_done">Профиль сохранён и проверен: %1$d файлов (%2$s). Ключи, переписка, подарки, монеты, покупки, игры, сеть, VPN и настройки.</string>
+    <string name="smsave_export_skipped">Не удалось прочитать файлов: %1$d (они менялись во время экспорта).</string>
+    <string name="smsave_export_bad">Файл профиля записался с ошибкой: %1$s. Сохраните ещё раз, лучше в другое место.</string>
+    <string name="smsave_err_title">Профиль не импортирован</string>
+    <string name="smsave_err_read">Не удалось открыть файл профиля.</string>
+    <string name="smsave_err_corrupt">Файл профиля повреждён или недописан (%1$s). Ваши данные не изменены.</string>
+    <string name="smsave_err_damaged">Файл профиля повреждён: «%1$s» не совпадает с контрольной суммой. Ваши данные не изменены.</string>
+    <string name="smsave_err_missing">Файл профиля неполный: нет «%1$s». Ваши данные не изменены.</string>
+    <string name="smsave_err_truncated">Файл профиля недописан (нет описи содержимого). Ваши данные не изменены.</string>
+    <string name="smsave_err_no_keys">В файле нет ключей профиля.</string>
+    <string name="smsave_err_newer">Профиль сохранён более новой версией приложения (%1$s). Обновите S-messenger и повторите импорт.</string>
+    <string name="smsave_err_space">Не хватает памяти телефона: освободите ещё %1$s.</string>
+    <string name="smsave_err_interrupted">раскладка несколько раз прерывалась</string>
+    <string name="smsave_restore_done">Профиль восстановлен целиком: %1$d файлов</string>
+    <string name="smsave_restore_failed">Не удалось разложить профиль (%1$s) - всё возвращено как было. Импортируйте файл ещё раз.</string>
+    <string name="smsave_percent">%1$d%%</string>
+</resources>

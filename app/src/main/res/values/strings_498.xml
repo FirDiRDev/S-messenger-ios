@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="theme_music">🎵 Музыка темы</string>
+    <string name="theme_music_hint">Новогодняя мелодия зимнего события (декабрь - февраль) играет по всему приложению. У осени, весны и лета музыки нет. Замолкает в фоне, в звонках, при видео, голосовых и в играх со своей музыкой</string>
+    <string name="theme_music_volume">Громкость музыки темы</string>
+    <string name="kbgif_failed">Не удалось отправить GIF</string>
+    <string name="runner3_skin14">🌸 Сакура</string>
+    <string name="runner3_skin14_d">Весенний облик: розовый хвост, шарф и звёздный след.</string>
+    <string name="runner3_skin15">☀ Сёрфер</string>
+    <string name="runner3_skin15_d">Летний облик: панама, шорты и бирюзовая доска.</string>
+    <string name="runner3_skin16">🍂 Тыквенный</string>
+    <string name="runner3_skin16_d">Осенний облик: тёплая шапка, шарф и огненный след.</string>
+    <string name="runner3_skin17">Ниндзя</string>
+    <string name="runner3_skin17_d">Чёрный костюм, маска и красные светящиеся детали.</string>
+    <string name="runner3_skin18">Космонавт</string>
+    <string name="runner3_skin18_d">Скафандр, шлем с фонарём, визор и звёздный след.</string>
+    <string name="runner3_skin19">Пират</string>
+    <string name="runner3_skin19_d">Бандана, золотая цепь и доска из старого корабля.</string>
+    <string name="runner3_skin20">Диджей</string>
+    <string name="runner3_skin20_d">Неоновые наушники, ирокез и светящийся след.</string>
+    <string name="runner3_skin21">Золотой чемпион</string>
+    <string name="runner3_skin21_d">Всё из золота: кепка, цепь, доска и звёздный след.</string>
+    <string name="runner3_p_shield">🛡 Щит!</string>
+    <string name="runner3_p_coins">💰 Монеты ×2!</string>
+    <string name="runner3_p_slow">⏳ Замедление!</string>
+    <string name="runner_m_play">▶  ИГРАТЬ</string>
+    <string name="runner_m_best">🏆 Рекорд: %1$d</string>
+    <string name="runner_m_skins">Облики</string>
+    <string name="runner_m_shop">Магазин</string>
+    <string name="runner_m_season">Сезон</string>
+    <string name="runner_m_music">Музыка</string>
+    <string name="runner_m_tap">Касание</string>
+    <string name="runner_m_on">вкл</string>
+    <string name="runner_m_off_state">выкл</string>
+    <string name="runner_m_auto">авто</string>
+    <string name="runner_m_winter">зима</string>
+    <string name="runner_m_spring">весна</string>
+    <string name="runner_m_summer">лето</string>
+    <string name="runner_m_autumn">осень</string>
+    <string name="runner_m_off">выкл</string>
+    <string name="runner_m_classic">🚆 Классический город</string>
+    <string name="runner_m_hint">Свайпы: ← → путь, ↑ прыжок, ↓ кувырок. 10 монет забега = 1 🪙</string>
+    <string name="photo_original">Отправлять фото в оригинале</string>
+    <string name="photo_original_hint">Выключено (рекомендуется): большие фото пересжимаются до 2560 точек - уходят в 3-8 раз быстрее, а координаты GPS и модель телефона из файла удаляются. Файлы, отправленные через «Документ», не меняются.</string>
+</resources>

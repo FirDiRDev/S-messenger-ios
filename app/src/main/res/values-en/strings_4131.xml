@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ob_reactions_title">Reactions</string>
+    <string name="ob_reactions_text">Tap a message to see the reaction bar - swipe it sideways. Your recent ones come first.
+
+🌈 The shimmering “+” in the bar opens all emoji: smileys, gestures, hearts, animals, food, celebration - 400+ by section.
+
+✖ removes your reactions. Even simpler: tap the reactions under a message and remove the one you don\'t want.
+
+Double-tap a message for your last reaction.</string>
+    <string name="tour_reactions_text">Tap a message for the reaction bar. The shimmering “+” opens all emoji (400+), ✖ removes your reactions, and tapping the reactions under a message lets you remove or change them.</string>
+</resources>

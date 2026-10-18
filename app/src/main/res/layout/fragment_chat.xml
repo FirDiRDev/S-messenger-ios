@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!-- Свои обои этого чата: картинка или «живые» (видео без звука, по кругу) -->
+    <ImageView android:id="@+id/chatWallpaper"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <TextureView android:id="@+id/chatWallpaperVideo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Сообщения идут под «стеклянными» шапкой и панелью ввода -->
+    <com.stoyko.smessenger.ui.SwipeReplyListView android:id="@+id/messages"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:divider="@drawable/message_divider"
+            android:dividerHeight="2dp"
+            android:paddingHorizontal="8dp"
+            android:stackFromBottom="true"
+            android:transcriptMode="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.stoyko.smessenger.ui.GlassFrameLayout
+            android:id="@+id/topGlass"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/appBarLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar app:popupTheme="@style/AppTheme.PopupOverlay"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:navigationIcon="?attr/homeAsUpIndicator">
+
+            <RelativeLayout
+                    android:id="@+id/contactHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?android:attr/selectableItemBackground">
+
+                <com.stoyko.smessenger.ui.AvatarImageView
+                        android:id="@+id/avatarImageView"
+                        android:layout_height="38dp"
+                        android:layout_width="38dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        app:shapeAppearanceOverlay="@style/CircleImageView"
+                        app:strokeColor="@null" />
+
+                <LinearLayout
+                        android:id="@+id/titleBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/avatarImageView"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                    <TextView
+                            android:id="@+id/title"
+                            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            tools:text="Subject name here" />
+
+                    <TextView
+                            android:id="@+id/subtitle"
+                            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:singleLine="true"
+                            tools:text="clever subtitle" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <include
+                android:id="@+id/ongoingCall"
+                layout="@layout/view_ongoing_call"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Закреплённое сообщение -->
+        <LinearLayout android:id="@+id/pinnedBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSurface"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:visibility="gone">
+            <View
+                    android:layout_width="3dp"
+                    android:layout_height="34dp"
+                    android:background="@color/colorPrimary"/>
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingVertical="6dp">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pinned_message"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+                <TextView android:id="@+id/pinnedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="14sp"/>
+            </LinearLayout>
+            <ImageButton android:id="@+id/pinnedClose"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/unpin"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/textSecondary"/>
+        </LinearLayout>
+
+        <!-- Поиск по чату -->
+        <LinearLayout android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSurface"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="12dp"
+                android:visibility="gone">
+            <EditText android:id="@+id/searchInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/search_in_chat"
+                    android:imeOptions="actionSearch"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColor="@color/textPrimary"/>
+            <TextView android:id="@+id/searchCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="6dp"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="13sp"/>
+            <ImageButton android:id="@+id/searchUp"
+                    android:layout_width="40dp"
+                    android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/search_prev"
+                    android:rotation="180"
+                    android:src="@drawable/ic_arrow_down"
+                    app:tint="@color/colorPrimary"/>
+            <ImageButton android:id="@+id/searchDown"
+                    android:layout_width="40dp"
+                    android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/search_next"
+                    android:src="@drawable/ic_arrow_down"
+                    app:tint="@color/colorPrimary"/>
+            <ImageButton android:id="@+id/searchClose"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@android:string/cancel"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/textSecondary"/>
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <!-- Стрелка «вниз»: появляется, когда пролистали вверх; касание - к последнему сообщению -->
+    <FrameLayout android:id="@+id/scrollDown"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_scroll_down"
+            android:elevation="6dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/bottomPanel"
+            app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/scroll_down_button"
+                android:src="@drawable/ic_arrow_down"
+                app:tint="@color/colorPrimary"/>
+        <TextView android:id="@+id/scrollDownBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="top|end"
+                android:background="@drawable/bg_unread_badge"
+                android:gravity="center"
+                android:minWidth="18dp"
+                android:paddingHorizontal="4dp"
+                android:textColor="@android:color/white"
+                android:textSize="10sp"
+                android:visibility="gone"/>
+    </FrameLayout>
+
+    <com.stoyko.smessenger.ui.GlassFrameLayout
+            android:id="@+id/bottomPanel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <!-- Отложенные сообщения этого чата -->
+            <TextView android:id="@+id/scheduledBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13sp"
+                    android:visibility="gone"/>
+            <!-- Ответ на сообщение -->
+            <LinearLayout android:id="@+id/replyBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:visibility="gone">
+                <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_reply"
+                        app:tint="@color/colorPrimary"/>
+                <View
+                        android:layout_width="3dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:background="@color/colorPrimary"/>
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                    <TextView android:id="@+id/replyLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reply_to"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp"
+                            android:textStyle="bold"/>
+                    <TextView android:id="@+id/replyText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="14sp"/>
+                </LinearLayout>
+                <ImageButton android:id="@+id/replyClose"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@android:string/cancel"
+                        android:src="@drawable/ic_close"
+                        app:tint="@color/textSecondary"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/bottomBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:orientation="horizontal">
+                <!-- Стикеры и эмодзи -->
+                <ImageButton android:id="@+id/stickers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/stickers"
+                        android:paddingHorizontal="4dp"
+                        android:src="@drawable/ic_sticker"
+                        app:tint="@color/colorPrimary"/>
+                <!-- «Скрепка» слева от поля ввода: при отправке её больше не задеть -->
+                <ImageButton android:id="@+id/attach"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/attach_file"
+                        android:paddingHorizontal="4dp"
+                        android:src="@drawable/ic_attach_file"/>
+                <EditText android:id="@+id/outgoingMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="@string/message"
+                        android:importantForAutofill="no"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:maxHeight="256dp"
+                        tools:targetApi="26"/>
+
+                <ImageButton android:id="@+id/send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/send"
+                        android:paddingHorizontal="4dp"
+                        android:src="@drawable/ic_send"
+                        android:visibility="gone"
+                        app:tint="@color/colorPrimary"/>
+
+
+                <!-- Голосовое сообщение: удерживайте -->
+                <ImageButton android:id="@+id/mic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/voice_message"
+                        android:paddingHorizontal="6dp"
+                        android:src="@drawable/ic_mic"
+                        app:tint="@color/colorPrimary"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.stoyko.smessenger.ui.GlassFrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

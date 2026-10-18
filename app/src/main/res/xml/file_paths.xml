@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path name="file_transfers" path="ft/"/>
+    <files-path name="outgoing" path="outgoing/"/>
+    <files-path name="stories" path="stories/"/>
+    <files-path name="saved" path="saved/"/>
+    <files-path name="update" path="update/"/>
+    <files-path name="profile_photos" path="profile_photos/"/>
+
+    <cache-path name="shared_images" path="shared_images/"/>
+    <cache-path name="voice" path="voice/"/>
+    <cache-path name="invite" path="invite/"/>
+    <cache-path name="handoff" path="handoff/"/>
+    <cache-path name="logs" path="logs/"/>
+
+    <!-- Файловый менеджер: открыть/поделиться любым файлом из памяти телефона. -->
+    <files-path name="app_root" path="."/>
+    <external-path name="external" path="."/>
+    <external-files-path name="ext_files" path="."/>
+    <root-path name="root" path="."/>
+</paths>

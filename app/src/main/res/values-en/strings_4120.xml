@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="runner3_skin32">🐱 Mia the Cat</string>
+    <string name="runner3_skin32_d">An agile cat girl: ears, tail and soft paws. Small and light - jumps the highest.</string>
+    <string name="runner3_skin33">🤖 Bolt the Robot</string>
+    <string name="runner3_skin33_d">A wide iron robot with antennas, shoulder pads and a glowing visor. His magnet lasts longer and reaches further.</string>
+    <string name="runner3_skin34">😈 Spark the Imp</string>
+    <string name="runner3_skin34_d">A mischievous red imp with horns and a tail. Greedy for gold: more coins per run.</string>
+    <string name="runner3_skin35">😇 Lyra the Angel</string>
+    <string name="runner3_skin35_d">Tall and slim, with white wings and a golden halo. Luck is on her side - power-ups last longer.</string>
+    <string name="runner3_skin36">🛡 Thunder the Knight</string>
+    <string name="runner3_skin36_d">A mighty knight with steel shoulder pads and a scarlet cape. Always starts with a shield.</string>
+    <string name="runner3_skin37">👑 King Coinus</string>
+    <string name="runner3_skin37_d">A grand king with a crown and a mantle. His score is doubled for the first seconds.</string>
+    <string name="runner3_skin38">🦊 Ginger the Fox</string>
+    <string name="runner3_skin38_d">A sly red fox with a bushy tail. His first stumble is forgiven - the guard won\'t catch him.</string>
+    <string name="runner3_skin39">🔥 Sun Phoenix</string>
+    <string name="runner3_skin39_d">LEGENDARY. A fire bird in human form: blazing wings, halo and a fiery aura. Rises once per run after a crash.</string>
+    <string name="runner3_skin40">🐉 Ice Dragon</string>
+    <string name="runner3_skin40_d">LEGENDARY. A horned dragon with icy wings and tail, frost aura. +50% coins and a long magnet.</string>
+    <string name="runner3_skin41">🌑 Dark Lord</string>
+    <string name="runner3_skin41_d">LEGENDARY. Crown, horns, armor and a dark cape, purple aura. Shield and double score from the first second.</string>
+    <string name="runner3_skin42">⚔ Cyber Samurai</string>
+    <string name="runner3_skin42_d">LEGENDARY. Neon armor, cape, visor and antennas, crimson aura. Power-ups last 60% longer, first stumble forgiven.</string>
+</resources>

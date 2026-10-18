@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Магазин монет: надёжная покупка (ожидание оплаты, восстановление), кнопка в профиле, рекорды игр -->
+<resources>
+    <string name="shop3_waiting">⏳ Ожидаем оплату: %1$s (+%2$d 🪙)…\nПроверяем автоматически - можно свернуть приложение, монеты придут сами.</string>
+    <string name="shop3_waiting_long">Оплата «%1$s» пока не подтверждена. Если деньги уже списались - нажмите «Проверить ещё раз»: чек хранится на сервере и не потеряется.</string>
+    <string name="shop3_credited">✅ Зачислено +%1$d 🪙</string>
+    <string name="shop3_check_again">🔄 Не пришло? Проверить ещё раз</string>
+    <string name="shop3_restore">♻ Восстановить покупки</string>
+    <string name="shop3_restoring">Сверяем покупки с сервером…</string>
+    <string name="shop3_restored_none">Все покупки на месте ✓ Куплено всего: %1$d 🪙</string>
+    <string name="shop3_net_retry">Нет связи с сервером оплаты - повторим автоматически…</string>
+    <string name="shop3_server_error">Сервер оплаты временно не отвечает. Повторим автоматически - платёж не потеряется.</string>
+    <string name="shop3_notify_title">Зачислено +%1$d 🪙</string>
+    <string name="shop3_notify_text">Спасибо за покупку! Баланс: %1$d 🪙</string>
+    <string name="profile_tile_shop">Магазин</string>
+    <string name="stat_match3">три в ряд · ур. %1$d · ★%2$d</string>
+    <string name="stat_runner">бег по рельсам</string>
+</resources>

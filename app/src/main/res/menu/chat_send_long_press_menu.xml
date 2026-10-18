@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/send_rich" android:title="@string/send_rich"/>
+    <item android:id="@+id/send_spoiler" android:title="@string/send_spoiler"/>
+    <item android:id="@+id/send_scheduled" android:title="@string/schedule_send"/>
+    <item android:id="@+id/send_action" android:title="@string/send_as_action"/>
+    <item android:id="@+id/send_buttons" android:title="@string/send_with_buttons"/>
+    <item android:id="@+id/send_poll" android:title="@string/send_poll"/>
+    <item android:id="@+id/send_html" android:title="@string/send_html"/>
+    <item android:id="@+id/send_files_inline" android:title="@string/send_files_inline"/>
+</menu>

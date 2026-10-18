@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- «Бег по рельсам»: объёмная графика и музыка -->
+<resources>
+    <string name="runner_music">Музыка</string>
+    <string name="runner_music_on">🎵 Музыка включена</string>
+    <string name="runner_music_off">Музыка выключена</string>
+</resources>

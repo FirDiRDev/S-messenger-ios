@@ -1,0 +1,14 @@
+# Сервер монет S-messenger для Cloudflare Workers.
+# Через консоль:  npx wrangler kv namespace create COINS  -> впишите id ниже;
+#                 npx wrangler secret put NOTIFICATION_SECRET
+#                 npx wrangler deploy
+name = "smessenger-coins"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+WALLET = "41001XXXXXXXXXXX"
+
+[[kv_namespaces]]
+binding = "COINS"
+id = "ВСТАВЬТЕ_ID_KV"

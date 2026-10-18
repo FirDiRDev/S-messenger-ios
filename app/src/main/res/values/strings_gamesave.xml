@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Сохранения онлайн-партий: «удалить у обоих». -->
+<resources>
+    <string name="gamesave_deleted_title">Сохранение партии удалено</string>
+    <string name="gamesave_deleted_text">%1$s удалил(а) сохранение партии «%2$s». Удалить и у вас?</string>
+    <string name="gamesave_delete">Удалить</string>
+    <string name="gamesave_keep">Оставить</string>
+    <string name="gamesave_deleted_mark">🗑 удалено соперником</string>
+    <string name="gamesave_deleted_done">Сохранение удалено</string>
+    <string name="gamesave_left">%1$s вышел(а) из партии</string>
+</resources>

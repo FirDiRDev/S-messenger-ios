@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="runner3_skin22">Snowman</string>
+    <string name="runner3_skin22_d">White puffer, red scarf and a bucket for a hat. Leaves frost behind.</string>
+    <string name="runner3_skin23">Santa\'s helper</string>
+    <string name="runner3_skin23_d">Green cap, red sneakers and a starry trail - presents won\'t deliver themselves.</string>
+    <string name="runner3_skin24">Northern lights</string>
+    <string name="runner3_skin24_d">Glows green and violet like the polar sky.</string>
+    <string name="runner3_skin25">Gingerbread</string>
+    <string name="runner3_skin25_d">A rosy gingerbread runner with icing - and fire on the heels.</string>
+    <string name="runner3_skin26">Hockey player</string>
+    <string name="runner3_skin26_d">Helmet, numbered jersey and an icy trail.</string>
+    <string name="runner3_skin27">Cyber neon</string>
+    <string name="runner3_skin27_d">Matches the new card deck: black suit and neon lines.</string>
+    <string name="sec_device_sync">Device sync</string>
+    <string name="runner3_skin28">⚡ Ice king</string>
+    <string name="runner3_skin28_d">Shop exclusive: an ice crown, a shining suit and frost behind.</string>
+    <string name="runner3_skin29">⚡ Fire phoenix</string>
+    <string name="runner3_skin29_d">Shop exclusive: blazing hair, gold and a trail of flame.</string>
+    <string name="runner3_skin30">⚡ Astronaut</string>
+    <string name="runner3_skin30_d">Shop exclusive: a white spacesuit, helmet and a starry trail.</string>
+    <string name="runner3_skin31">⚡ Neon ninja</string>
+    <string name="runner3_skin31_d">Shop exclusive: black suit, neon mask and a glowing trail.</string>
+</resources>

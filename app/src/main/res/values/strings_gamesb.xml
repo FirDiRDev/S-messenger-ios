@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4.7.0: сдача в шахматах, отказ от приглашений, скины Змейки, статистика игр в профиле. -->
+<resources>
+    <!-- Шахматы и приглашения -->
+    <string name="gamesb_chess_cancel_invite">Соперник ещё не ответил. Отозвать приглашение? Монеты не списывались.</string>
+    <string name="gamesb_chess_cancel_invite_yes">Отозвать</string>
+    <string name="gamesb_invite_declined_me">Вы отклонили приглашение</string>
+
+    <!-- Скины Змейки -->
+    <string name="gamesb_skin_neonglow">Неоновое свечение</string>
+    <string name="gamesb_skin_flametail">Огненный хвост</string>
+    <string name="gamesb_skin_stardust">Звёздная пыль</string>
+    <string name="gamesb_skin_pearl">Перламутр</string>
+    <string name="gamesb_skin_milkyway">Млечный Путь</string>
+    <string name="gamesb_skin_basilisk">Василиск</string>
+    <string name="gamesb_skin_festive">Праздничная</string>
+    <string name="gamesb_skin_koi">Карп кои</string>
+    <string name="gamesb_skin_matrix">Матрица</string>
+    <string name="gamesb_skin_sunrise">Рассвет</string>
+    <string name="gamesb_skin_ember">Тлеющие угли</string>
+    <string name="gamesb_skin_frost">Иней</string>
+    <string name="gamesb_skin_venom">Яд</string>
+    <string name="gamesb_skin_sapphire">Сапфир</string>
+    <string name="gamesb_skin_electro">Электро</string>
+    <string name="gamesb_skin_rosegold">Розовое золото</string>
+    <string name="gamesb_skin_twilight">Сумерки</string>
+    <string name="gamesb_skin_neonzebra">Неоновая зебра</string>
+    <string name="gamesb_skin_honeycomb">Медовые соты</string>
+
+    <!-- Статистика игр -->
+    <string name="gamesb_stats_button">📊 Статистика игр</string>
+    <string name="gamesb_stats_title">📊 Статистика игр</string>
+    <string name="gamesb_stats_mine">Мои победы, рекорды и партии во всех играх</string>
+    <string name="gamesb_stats_of">Статистика: %1$s</string>
+    <string name="gamesb_stats_note">Поражения, ничьи и сыгранные партии считаются с версии 4.7.0. Друзья видят статистику и витрину, если в «Играх» включено «Показывать друзьям».</string>
+    <string name="gamesb_stats_note_peer">«—» - друг пока не прислал эти данные (у него старая версия приложения или он скрыл статистику).</string>
+    <string name="gamesb_stat_na">—</string>
+    <string name="gamesb_stat_w">Победы</string>
+    <string name="gamesb_stat_l">Поражения</string>
+    <string name="gamesb_stat_d">Ничьи</string>
+    <string name="gamesb_stat_record">Рекорд</string>
+    <string name="gamesb_stat_played">Партий</string>
+    <string name="gamesb_stat_level">Уровень</string>
+    <string name="gamesb_stat_levels">Уровней</string>
+    <string name="gamesb_stat_stars">Звёзд</string>
+    <string name="gamesb_stat_hands">Раздач</string>
+    <string name="gamesb_stat_best_win">Лучший выигрыш</string>
+    <string name="gamesb_stat_runs">Забегов</string>
+    <string name="gamesb_stat_distance">Дальность</string>
+    <string name="gamesb_stat_meters">%1$s м</string>
+    <string name="gamesb_stat_games">сыграно всего</string>
+    <string name="gamesb_stat_wins">побед всего</string>
+    <string name="gamesb_stat_winrate">Побед: %1$d%%</string>
+    <string name="gamesb_stat_winrate_short">побед</string>
+    <string name="gamesb_game_chess">Шахматы с друзьями</string>
+    <string name="gamesb_game_chess_bot">Шахматы с ботом</string>
+
+    <!-- Витрина достижений -->
+    <string name="gamesb_showcase_header">🏅 Витрина достижений</string>
+    <string name="gamesb_showcase_button">✎ Выбрать достижения</string>
+    <string name="gamesb_showcase_title">Витрина достижений (до %1$d)</string>
+    <string name="gamesb_showcase_count">Выбрано: %1$d из %2$d. Их увидят друзья в вашем профиле.</string>
+    <string name="gamesb_showcase_max">На витрине не больше %1$d достижений</string>
+    <string name="gamesb_showcase_save">Сохранить</string>
+    <string name="gamesb_ach_snake">рекорд Змейки</string>
+    <string name="gamesb_ach_bot">побед над ботом</string>
+    <string name="gamesb_ach_bj">побед в блэкджеке</string>
+    <string name="gamesb_ach_bjbest">лучший выигрыш</string>
+    <string name="gamesb_ach_m3level">уровней «Три в ряд»</string>
+    <string name="gamesb_ach_m3stars">звёзд «Три в ряд»</string>
+    <string name="gamesb_ach_m3best">рекорд «Три в ряд»</string>
+    <string name="gamesb_ach_runbest">рекорд забега</string>
+    <string name="gamesb_ach_rundist">м - лучший забег</string>
+    <string name="gamesb_ach_total_wins">побед во всех играх</string>
+    <string name="gamesb_ach_total_games">сыграно партий</string>
+</resources>

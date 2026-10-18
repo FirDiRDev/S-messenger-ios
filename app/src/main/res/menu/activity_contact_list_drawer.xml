@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Боковое меню. «Новый контакт», «Создать группу/канал» и «Избранное» перенесены в меню «+»
+     (пункты скрыты, но оставлены: на их id ссылается код). -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/main_section">
+        <item android:id="@+id/drawer_profile" android:icon="@drawable/ic_person" android:title="@string/drawer_my_profile"/>
+        <item android:id="@+id/news_feed" android:icon="@drawable/ic_channel" android:title="@string/feed_title"/>
+        <item android:id="@+id/new_group" android:visible="false" android:icon="@drawable/ic_group" android:title="@string/create_group"/>
+        <item android:id="@+id/new_channel" android:visible="false" android:icon="@drawable/ic_channel" android:title="@string/create_channel"/>
+        <item android:id="@+id/add_contact" android:visible="false" android:icon="@drawable/ic_person_add" android:title="@string/add_contact"/>
+        <item android:id="@+id/groups" android:icon="@drawable/ic_chat" android:title="@string/groups_and_channels"/>
+        <item android:id="@+id/folders" android:icon="@drawable/ic_folder" android:title="@string/folders"/>
+        <item android:id="@+id/saved_messages" android:visible="false" android:icon="@drawable/ic_bookmark" android:title="@string/saved_messages"/>
+        <item android:id="@+id/search_chats" android:icon="@drawable/ic_search" android:title="@string/search_chats"/>
+        <item android:id="@+id/scan_qr" android:icon="@drawable/ic_qr_code" android:title="@string/scan_qr"/>
+        <item android:id="@+id/browser" android:icon="@drawable/ic_web" android:title="@string/browser_title"/>
+        <item android:id="@+id/entertainment" android:icon="@drawable/ic_play" android:title="@string/fun_title"/>
+        <item android:id="@+id/games" android:icon="@drawable/ic_gamepad" android:title="@string/games_menu"/>
+        <item android:id="@+id/metro_map" android:icon="@drawable/ic_metro" android:title="@string/metro_title"/>
+        <item android:id="@+id/law_ukrf" android:icon="@drawable/ic_law" android:title="@string/law_menu"/>
+        <item android:id="@+id/file_manager" android:icon="@drawable/ic_folder" android:title="@string/fm_title"/>
+    </group>
+    <group android:id="@+id/settings_section">
+        <item android:id="@+id/restart_app" android:icon="@drawable/ic_refresh" android:title="@string/restart_app"/>
+        <!-- Прокси - в Настройках, раздел «Сеть и узлы» (пункт скрыт, id нужен коду). -->
+        <item android:id="@+id/proxy" android:visible="false" android:icon="@drawable/ic_shield" android:title="@string/proxy_title"/>
+        <item android:id="@+id/settings" android:icon="@drawable/ic_settings" android:title="@string/settings"/>
+        <item android:id="@+id/invite" android:icon="@drawable/ic_share" android:title="@string/invite_friends"/>
+        <item android:id="@+id/write_dev" android:icon="@drawable/ic_chat" android:title="@string/write_developer"/>
+        <item android:id="@+id/export_tox_save" android:icon="@drawable/ic_backup" android:title="@string/export_tox_save"/>
+    </group>
+    <group android:id="@+id/quit_section">
+        <item android:id="@+id/quit_tox" android:icon="@drawable/ic_logout" android:title="@string/quit"/>
+    </group>
+</menu>

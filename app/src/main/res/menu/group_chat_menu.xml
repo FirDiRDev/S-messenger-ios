@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/group_call" android:icon="@drawable/ic_call" android:title="@string/group_call_join"
+            app:showAsAction="ifRoom"/>
+    <item android:id="@+id/group_info" android:title="@string/group_info"/>
+    <item android:id="@+id/group_search" android:title="@string/gs_search"/>
+    <item android:id="@+id/group_settings" android:title="@string/gs_title"/>
+    <item android:id="@+id/group_catalog" android:title="@string/channel_catalog_menu"/>
+    <item android:id="@+id/group_new_product" android:title="@string/channel_new_product_menu"/>
+    <item android:id="@+id/group_invite" android:title="@string/group_invite_contact"/>
+    <item android:id="@+id/group_mute" android:title="@string/mute_title"/>
+    <item android:id="@+id/group_copy_id" android:title="@string/group_copy_id"/>
+    <item android:id="@+id/group_share_id" android:title="@string/group_share_id"/>
+    <item android:id="@+id/group_leave" android:title="@string/group_leave"/>
+</menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 4.10.0: новые облики «Бега по рельсам» -->
+    <string name="runner3_skin22">Снеговик</string>
+    <string name="runner3_skin22_d">Белый пуховик, красный шарф и ведёрко вместо шапки. За ним - иней.</string>
+    <string name="runner3_skin23">Помощник Деда Мороза</string>
+    <string name="runner3_skin23_d">Зелёный колпак, красные кеды и звёздный след - подарки сами себя не разнесут.</string>
+    <string name="runner3_skin24">Северное сияние</string>
+    <string name="runner3_skin24_d">Светится зелёным и сиреневым, как небо за полярным кругом.</string>
+    <string name="runner3_skin25">Пряничный</string>
+    <string name="runner3_skin25_d">Румяный пряник с глазурью - и с огоньком за пятками.</string>
+    <string name="runner3_skin26">Хоккеист</string>
+    <string name="runner3_skin26_d">Шлем, свитер с номером и ледяной след - лёд везде, где он бежит.</string>
+    <string name="runner3_skin27">Кибер-неон</string>
+    <string name="runner3_skin27_d">В стиле новой колоды карт: чёрный костюм и неоновые линии.</string>
+    <string name="sec_device_sync">Синхронизация устройств</string>
+    <string name="runner3_skin28">⚡ Ледяной король</string>
+    <string name="runner3_skin28_d">Эксклюзив магазина: корона из льда, сияющий костюм и иней за спиной.</string>
+    <string name="runner3_skin29">⚡ Огненный феникс</string>
+    <string name="runner3_skin29_d">Эксклюзив магазина: пылающие волосы, золото и пламя по следу.</string>
+    <string name="runner3_skin30">⚡ Космонавт</string>
+    <string name="runner3_skin30_d">Эксклюзив магазина: белый скафандр, шлем и звёздный след.</string>
+    <string name="runner3_skin31">⚡ Неоновый ниндзя</string>
+    <string name="runner3_skin31_d">Эксклюзив магазина: чёрный костюм, неоновая маска и светящийся след.</string>
+</resources>

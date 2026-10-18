@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:installLocation="auto">
+    <!-- Ядро Xray (libv2ray) собрано для Android 7+, на старых версиях VPN просто не включается. -->
+    <uses-sdk tools:overrideLibrary="go.libv2ray.gojni,gn.nova.gnjni"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- Установка полученных в чате APK (по нажатию, с подтверждением системы). -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <!-- Android 12+: обновлять само приложение в фоне без лишнего подтверждения. -->
+    <uses-permission android:name="android.permission.UPDATE_PACKAGES_WITHOUT_USER_ACTION"/>
+    <!-- Сохранение в Галерею/Загрузки на Android 9 и старше (на 10+ не нужно). -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
+    <!-- Файловый менеджер: доступ ко всей памяти телефона (Android 11+, пользователь включает сам). -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+            tools:ignore="ScopedStorage"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <!-- Уведомления на заблокированном/выключенном экране: вибрация, обход «Не беспокоить» (по желанию) -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.TURN_SCREEN_ON" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <!-- Число непрочитанных на значке (Huawei/Honor). -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+
+    <!-- «Каналы связи» без интернета: Bluetooth и Wi-Fi Direct. Разрешения спрашиваются только
+         когда пользователь сам включает эти каналы. Как в Briar: BLUETOOTH нужен некоторым
+         Xiaomi/Nubia и на Android 12+. -->
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="false"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+            android:usesPermissionFlags="neverForLocation"
+            tools:targetApi="31"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE"/>
+    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES"
+            android:usesPermissionFlags="neverForLocation"
+            tools:targetApi="33"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- До Android 12 поиск Bluetooth-устройств и до Android 13 Wi-Fi Direct требуют геолокацию. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:maxSdkVersion="32"/>
+
+    <!-- Раздельное туннелирование VPN: список приложений с иконкой на рабочем столе -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <!-- Распознавание речи (расшифровка голосовых без интернета). -->
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+        <!-- Другие VPN-приложения для присланных серверов (v2rayNG, Hiddify, NekoBox…). -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="vless" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="vmess" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="trojan" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="ss" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="hysteria2" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="hy2" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND" />
+            <data android:mimeType="text/plain" />
+        </intent>
+    </queries>
+
+    <application
+            android:name=".App"
+            android:allowBackup="false"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
+            android:requestLegacyExternalStorage="true"
+            android:theme="@style/AppTheme">
+        <service android:name=".ToxService"
+                android:exported="false"
+                android:foregroundServiceType="specialUse">
+            <property
+                    android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                    android:value="serverless peer-to-peer messaging (StoykoMessenger)" />
+        </service>
+
+        <!-- Встроенный VPN (Xray): VLESS/VMess/Trojan/Shadowsocks. -->
+        <service android:name=".vpn.SmVpnService"
+                android:exported="false"
+                android:permission="android.permission.BIND_VPN_SERVICE"
+                android:foregroundServiceType="specialUse">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+            <property
+                    android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                    android:value="vpn" />
+        </service>
+
+        <!-- WARP на ядре Nova (WireGuard/AmneziaWG и Cloudflare MASQUE) - в отдельном процессе:
+             ядро Nova и ядро Xray собраны gomobile, два рантайма Go в одном процессе несовместимы.
+             Без intent-filter: система находит службу по имени (establish), а «постоянный VPN»
+             в настройках Android по-прежнему ведёт на основную службу SmVpnService. -->
+        <service android:name=".vpn.NovaVpnService"
+                android:exported="false"
+                android:process=":nova"
+                android:permission="android.permission.BIND_VPN_SERVICE"
+                android:foregroundServiceType="specialUse">
+            <property
+                    android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                    android:value="vpn" />
+        </service>
+
+        <service android:name=".vpn.VpnTileService"
+                android:exported="true"
+                android:icon="@drawable/ic_vpn"
+                android:label="@string/vpn_tile"
+                android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".BootReceiver" android:enabled="false" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".ActionReceiver"/>
+        <!-- Кнопка «Остановить» у фоновых подборов VPN в шторке. -->
+        <receiver android:name=".vpn.BgJobReceiver" android:exported="false"/>
+        <!-- Проверка обновлений по будильнику (раз в 3 часа) и кнопка «Напомнить позже» в уведомлении. -->
+        <receiver android:name=".update.UpdateReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <!-- Итог установки через PackageInstaller (фоновые обновления, .apks/.xapk из чата). -->
+        <receiver android:name=".update.InstallStatusReceiver" android:exported="false"/>
+        <!-- Кнопки уведомления музыки (⏮ ⏯ ⏭ ✕) -->
+        <receiver android:name=".media.MusicReceiver" android:exported="false"/>
+        <!-- Кнопки «Удалить» / «Оставить» в уведомлении «соперник удалил сохранение партии». -->
+        <receiver android:name=".games.GameSaveReceiver" android:exported="false"/>
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- configChanges: поворот экрана не пересоздаёт окно - видео во весь экран, браузер и
+             звонок не закрываются и не «выкидывают» обратно в чат. -->
+        <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask"
+                android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden|navigation"
+                android:resizeableActivity="true"
+                android:windowSoftInputMode="adjustResize|stateHidden"
+                android:theme="@style/AppTheme.Launch">
+            <!-- Значок на рабочем столе - через псевдонимы ниже (обычный, зимний, осенний и др.). -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="smessenger" />
+                <data android:scheme="tox" />
+            </intent-filter>
+            <!-- Ссылка на профиль https://…/u/ID: открыть S-messenger и отправить заявку в друзья. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https" android:host="coins-server.andrejstojko66.workers.dev" android:pathPrefix="/u/" />
+            </intent-filter>
+
+            <!-- Ссылки VPN, как в Happ / v2rayNG. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="vless" />
+                <data android:scheme="vmess" />
+                <data android:scheme="trojan" />
+                <data android:scheme="ss" />
+                <data android:scheme="hysteria2" />
+                <data android:scheme="hy2" />
+            </intent-filter>
+
+            <!-- «Поделиться» из любого приложения: текст, фото, видео, музыка, документы, APK. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+
+        <!-- Иконки приложения (Настройки → Персонализация → Иконка): включён ровно один псевдоним. -->
+        <activity-alias android:name=".LauncherDefault" android:targetActivity=".MainActivity"
+                android:enabled="true" android:exported="true"
+                android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".LauncherWinter" android:targetActivity=".MainActivity"
+                android:enabled="false" android:exported="true"
+                android:icon="@mipmap/ic_launcher_winter" android:roundIcon="@mipmap/ic_launcher_winter">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".LauncherAutumn" android:targetActivity=".MainActivity"
+                android:enabled="false" android:exported="true"
+                android:icon="@mipmap/ic_launcher_autumn" android:roundIcon="@mipmap/ic_launcher_autumn">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".LauncherDark" android:targetActivity=".MainActivity"
+                android:enabled="false" android:exported="true"
+                android:icon="@mipmap/ic_launcher_dark" android:roundIcon="@mipmap/ic_launcher_dark">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".LauncherNeon" android:targetActivity=".MainActivity"
+                android:enabled="false" android:exported="true"
+                android:icon="@mipmap/ic_launcher_neon" android:roundIcon="@mipmap/ic_launcher_neon">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".LauncherGold" android:targetActivity=".MainActivity"
+                android:enabled="false" android:exported="true"
+                android:icon="@mipmap/ic_launcher_gold" android:roundIcon="@mipmap/ic_launcher_gold">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:name=".LauncherOcean" android:targetActivity=".MainActivity"
+                android:enabled="false" android:exported="true"
+                android:icon="@mipmap/ic_launcher_ocean" android:roundIcon="@mipmap/ic_launcher_ocean">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+        <!-- Встроенный видеоплеер: своё окно, поворот без перезапуска, картинка в картинке. -->
+        <!-- Перезапуск приложения (смена темы и др.) - в отдельном процессе, открывает приложение заново. -->
+        <activity android:name=".RestartActivity" android:exported="false"
+                android:process=":restart"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                android:excludeFromRecents="true"
+                android:noHistory="true"/>
+        <activity android:name=".ui.player.VideoPlayerActivity" android:exported="false"
+                android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden|navigation"
+                android:supportsPictureInPicture="true"
+                android:resizeableActivity="true"
+                android:launchMode="singleTask"
+                android:taskAffinity="${applicationId}.player"
+                android:excludeFromRecents="true"
+                android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+
+        <!-- Длинные экраны (20:9, 21:9) у старых прошивок. -->
+        <meta-data android:name="android.max_aspect" android:value="2.6"/>
+    </application>
+</manifest>

@@ -1,0 +1,57 @@
+<style>
+.hd{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.hd b{font-size:16px;margin-right:4px}
+.tab{border:0;border-radius:8px;padding:3px 9px;font:600 12px sans-serif;color:#cbd5e1;background:transparent}
+.tab.on{background:rgba(59,130,246,.18);color:#60a5fa}
+.rp{margin-left:auto;border:0;border-radius:10px;padding:5px 10px;font:600 12.5px sans-serif;color:#fff;background:rgba(255,255,255,.1)}
+.rp:active{transform:scale(.92)}
+.row{display:flex;align-items:center;height:18px;border-radius:6px;transition:background .2s}
+.row.on{background:rgba(59,130,246,.14)}
+.row span{width:78px;font:11px ui-monospace,monospace;color:#94a3b8}
+.row.on span{color:#60a5fa;font-weight:700}
+.tr{flex:1;position:relative;height:2px;background:rgba(255,255,255,.08);margin-right:10px;border-radius:2px}
+.dot{position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;will-change:transform}
+.ft{margin-top:6px;font-size:11.5px;color:#94a3b8}
+#cv{display:none;width:100%;height:150px;background:rgba(255,255,255,.03);border-radius:12px}
+.chips{display:none;flex-wrap:wrap;gap:4px;margin-top:8px}
+.chips b{font:11px ui-monospace,monospace;background:rgba(255,255,255,.07);padding:3px 6px;border-radius:6px;font-weight:400;color:#cbd5e1}
+.chips b.on{background:#2563eb;color:#fff}
+</style>
+<div class=hd><b>Easing</b><button class="tab on" id=t1>Гонка</button><button class=tab id=t2>Кривая</button><button class=rp id=rp>↻ Ещё раз</button></div>
+<div id=race></div>
+<canvas id=cv></canvas>
+<div class=chips id=chips></div>
+<div class=ft id=ft>Нажмите на строку - увидите её кривую</div>
+<script>
+(function(){
+var c1=1.70158,c3=c1+1,c4=2*Math.PI/3;
+function bounce(t){var n=7.5625,d=2.75;if(t<1/d)return n*t*t;if(t<2/d)return n*(t-=1.5/d)*t+.75;if(t<2.5/d)return n*(t-=2.25/d)*t+.9375;return n*(t-=2.625/d)*t+.984375}
+var E=[['linear',function(t){return t},'#9ca3af','Ровно, без ускорения'],['inQuad',function(t){return t*t},'#f97316','Плавный старт'],['outQuad',function(t){return 1-(1-t)*(1-t)},'#facc15','Плавная остановка'],
+['inOutQuad',function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2},'#f97316','Мягко в начале и в конце'],['outCubic',function(t){return 1-Math.pow(1-t,3)},'#22c55e','Как в интерфейсах'],
+['inOutCubic',function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2},'#14b8a6','Сильнее «в середине»'],['outQuint',function(t){return 1-Math.pow(1-t,5)},'#2dd4bf','Резкий старт, долгий доход'],
+['outExpo',function(t){return t==1?1:1-Math.pow(2,-10*t)},'#38bdf8','Рывок и долгое торможение'],['inOutSine',function(t){return-(Math.cos(Math.PI*t)-1)/2},'#7dd3fc','Синус - очень мягко'],
+['outBack',function(t){return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2)},'#3b82f6','Перелетает на ~10% и возвращается'],['inOutBack',function(t){var c2=c1*1.525;return t<.5?(Math.pow(2*t,2)*((c2+1)*2*t-c2))/2:(Math.pow(2*t-2,2)*((c2+1)*(t*2-2)+c2)+2)/2},'#6366f1','Отступ назад, перелёт вперёд'],
+['outElastic',function(t){return t==0?0:t==1?1:Math.pow(2,-10*t)*Math.sin((t*10-.75)*c4)+1},'#a855f7','Пружина-резинка'],['outBounce',bounce,'#f43f5e','Мячик'],
+['spring',function(t){return 1-Math.exp(-6*t)*Math.cos(12*t)},'#ec4899','Физическая пружина']];
+var race=document.getElementById('race'),dots=[],rows=[],sel=9,T=1200,t0=0,mode=0;
+E.forEach(function(e,i){var r=document.createElement('div');r.className='row'+(i==sel?' on':'');r.innerHTML='<span>'+e[0]+'</span><div class=tr><div class=dot style="background:'+e[2]+';box-shadow:0 0 10px '+e[2]+'88"></div></div>';race.appendChild(r);rows.push(r);dots.push(r.querySelector('.dot'));r.onclick=function(){pick(i)}});
+var chips=document.getElementById('chips');E.forEach(function(e,i){var b=document.createElement('b');b.textContent=e[0];b.onclick=function(){pick(i)};chips.appendChild(b)});
+function pick(i){rows[sel].classList.remove('on');chips.children[sel].classList.remove('on');sel=i;rows[i].classList.add('on');chips.children[i].classList.add('on');document.getElementById('ft').innerHTML='<b style="color:#60a5fa">'+E[i][0]+'</b> '+E[i][3];if(mode==0)setMode(1);else play()}
+function play(){t0=performance.now();requestAnimationFrame(frame)}
+var cv=document.getElementById('cv'),x=cv.getContext('2d');
+function frame(now){var t=Math.min(1,(now-t0)/T);
+ if(mode==0){var w=dots[0].parentNode.clientWidth-12;for(var i=0;i<E.length;i++){dots[i].style.transform='translateX('+(E[i][1](t)*w)+'px)'}}
+ else drawCurve(t);
+ if(t<1)requestAnimationFrame(frame)}
+function drawCurve(t){var d=window.devicePixelRatio||1,W=cv.clientWidth,H=cv.clientHeight;if(cv.width!=W*d){cv.width=W*d;cv.height=H*d}x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,W,H);
+ var p=14,iw=W-2*p,ih=H-2*p-14,y0=p+14,f=E[sel][1];
+ x.strokeStyle='rgba(255,255,255,.12)';x.setLineDash([3,4]);x.beginPath();x.moveTo(p,y0);x.lineTo(W-p,y0);x.moveTo(p,y0+ih);x.lineTo(W-p,y0+ih);x.stroke();x.setLineDash([]);
+ x.strokeStyle='rgba(255,255,255,.3)';x.lineWidth=1.2;x.beginPath();x.moveTo(p,y0+ih);x.lineTo(p+iw,y0);x.stroke();
+ x.strokeStyle=E[sel][2];x.lineWidth=2.6;x.lineCap='round';x.beginPath();for(var k=0;k<=100*t;k++){var u=k/100;var X=p+iw*u,Y=y0+ih-ih*f(u);if(!k)x.moveTo(X,Y);else x.lineTo(X,Y)}x.stroke();
+ var X=p+iw*t,Y=y0+ih-ih*f(t);x.fillStyle='#fff';x.beginPath();x.arc(X,Y,4.5,0,7);x.fill();x.strokeStyle='rgba(255,255,255,.25)';x.beginPath();x.moveTo(X,p);x.lineTo(X,H-p);x.stroke()}
+function setMode(m){mode=m;document.getElementById('t1').classList.toggle('on',m==0);document.getElementById('t2').classList.toggle('on',m==1);race.style.display=m?'none':'';cv.style.display=m?'block':'none';chips.style.display=m?'flex':'none';chips.children[sel].classList.add('on');play()}
+document.getElementById('t1').onclick=function(){setMode(0)};document.getElementById('t2').onclick=function(){setMode(1)};
+document.getElementById('rp').onclick=play;
+function st(){if(!race.clientWidth){setTimeout(st,100);return}setTimeout(play,300)}st();
+})();
+</script>

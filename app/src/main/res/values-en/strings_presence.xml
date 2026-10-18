@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="presence_last_seen_just_now">last seen just now</string>
+    <string name="presence_last_seen_minutes">last seen %1$d min ago</string>
+    <string name="presence_last_seen_today">last seen today at %1$s</string>
+    <string name="presence_last_seen_yesterday">last seen yesterday at %1$s</string>
+    <string name="presence_last_seen_date">last seen %1$s</string>
+</resources>
