@@ -158,6 +158,10 @@ fun portToCommon(name: String, src: String): String {
         .replace(s) { m -> "${m.groupValues[1]}.copyInto(${m.groupValues[2]}, 0, 0, ${m.groupValues[3]})" }
     // "%02X".format(byte) -> без String.format (его нет в Kotlin/Native).
     s = s.replace("\"%02X\".format(it)", "it.toUByte().toString(16).padStart(2, '0').uppercase()")
+    // @JvmInline / @JvmField / @JvmStatic: на JVM пакет kotlin.jvm импортирован сам, в общем коде - нет.
+    if (s.contains("@Jvm") && !s.contains("import kotlin.jvm.")) {
+        s = s.replaceFirst(Regex("(?m)^(package [\\w.]+)\\s*$"), "$1\n\nimport kotlin.jvm.*")
+    }
     return "// АВТОМАТИЧЕСКИ перенесено из $name задачей :shared:syncPortedSources - правьте оригинал.\n$s"
 }
 
